@@ -55,7 +55,7 @@ def finish(path, subject):
         for t, k in (item[2] if len(item) > 2 else []):
             add(t, k, node)
     w.add_metadata({"/Title": "SLOOP, Gently: a beginner's handbook for the M-VAVE FM-1 (SLOOP 2.8.4)",
-                    "/Author": "suprsomething", "/Subject": subject})
+                    "/Author": "slowphase", "/Subject": subject})
     tmp = path + ".tmp"
     with open(tmp, "wb") as f: w.write(f)
     import os; os.replace(tmp, path)

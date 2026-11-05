@@ -1,6 +1,6 @@
 # SLOOP, Gently: editable source
 
-This folder holds everything needed to rebuild both editions of the handbook, for example when SLOOP changes. You don't need any of it to *read* the book: the finished PDFs are on the [Releases page](https://github.com/suprsomething/sloop-gently/releases).
+This folder holds everything needed to rebuild both editions of the handbook, for example when SLOOP changes. You don't need any of it to *read* the book: the finished PDFs are on the [Releases page](https://github.com/slowphase/sloop-gently/releases).
 
 One manuscript, two editions.
 

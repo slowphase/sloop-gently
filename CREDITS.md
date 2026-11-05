@@ -20,4 +20,4 @@ The FM-1 screen and web-editor images in the handbook come from the official SLO
 
 *SLOOP, Gently* was written, illustrated and laid out with AI assistance (Claude, by Anthropic) for the writing, the build code and the page layout. It went through repeated rounds of independent review against the official SLOOP 2.8.4 documentation and source.
 
-Neither the SLOOP nor the Felucca developers were involved in making it, and it is not endorsed by them or by M-VAVE. Any mistakes are this project's own. Please [report them](https://github.com/suprsomething/sloop-gently/issues/new/choose).
+Neither the SLOOP nor the Felucca developers were involved in making it, and it is not endorsed by them or by M-VAVE. Any mistakes are this project's own. Please [report them](https://github.com/slowphase/sloop-gently/issues/new/choose).

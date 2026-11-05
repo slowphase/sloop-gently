@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="LICENSE.md"><img src="https://img.shields.io/badge/licence-CC%20BY--SA%204.0-d4ff3a?style=flat-square&labelColor=19191c" alt="Licence: CC BY-SA 4.0"></a>
-  <a href="https://github.com/suprsomething/sloop-gently/releases"><img src="https://img.shields.io/github/downloads/suprsomething/sloop-gently/total?style=flat-square&label=downloads&color=d4ff3a&labelColor=19191c" alt="Total downloads"></a>
+  <a href="https://github.com/slowphase/sloop-gently/releases"><img src="https://img.shields.io/github/downloads/slowphase/sloop-gently/total?style=flat-square&label=downloads&color=d4ff3a&labelColor=19191c" alt="Total downloads"></a>
 </p>
 
 *A free, illustrated beginner's handbook for [SLOOP](https://github.com/isod89/sloop-fm1) on the [M-VAVE FM-1](https://www.cuvave.com/product?id=fm-1).*
@@ -19,14 +19,14 @@ No prior synthesis knowledge required.
 
 | Edition | Best for | Size | Download |
 | --- | --- | --- | --- |
-| **A4** | Desktop reading and A4 printing | 44 pages | [**Download the A4 PDF**](https://github.com/suprsomething/sloop-gently/releases/download/v0.9.0-preview/SLOOP-Gently-A4.pdf) |
-| **iPad mini** | Portrait reading on the 8.3-inch iPad mini | 114 screens | [**Download the iPad mini PDF**](https://github.com/suprsomething/sloop-gently/releases/download/v0.9.0-preview/SLOOP-Gently-iPad-Mini.pdf) |
+| **A4** | Desktop reading and A4 printing | 44 pages | [**Download the A4 PDF**](https://github.com/slowphase/sloop-gently/releases/download/v0.9.0-preview/SLOOP-Gently-A4.pdf) |
+| **iPad mini** | Portrait reading on the 8.3-inch iPad mini | 114 screens | [**Download the iPad mini PDF**](https://github.com/slowphase/sloop-gently/releases/download/v0.9.0-preview/SLOOP-Gently-iPad-Mini.pdf) |
 
 Both editions contain the same lessons. Only the layout changes, so pick whichever suits the screen (or the printer) you have.
 
 **Handbook:** v0.9 Preview · **Firmware documented:** SLOOP 2.8.4 · **Status:** pre-release, awaiting real-hardware testing
 
-Future versions will appear on the [Releases page](https://github.com/suprsomething/sloop-gently/releases).
+Future versions will appear on the [Releases page](https://github.com/slowphase/sloop-gently/releases).
 
 > **A note on this preview.** Every instruction was checked carefully against the official SLOOP 2.8.4 documentation, but the lessons have not yet been worked through one by one on a physical FM-1. If something on your unit behaves differently from the book, please [tell us](#corrections-and-feedback) so the next version can fix it.
 
@@ -102,7 +102,7 @@ SLOOP 2.8.5 added support for an additional FM-1 flash-chip variant. If you have
 
 ## Corrections and feedback
 
-Spotted a wrong button combination, an unclear step, a diagram mistake or something that behaves differently on your FM-1? Please [open an issue](https://github.com/suprsomething/sloop-gently/issues/new/choose). There are two short forms:
+Spotted a wrong button combination, an unclear step, a diagram mistake or something that behaves differently on your FM-1? Please [open an issue](https://github.com/slowphase/sloop-gently/issues/new/choose). There are two short forms:
 
 - **Technical correction:** something in the book does not match what SLOOP actually does.
 - **Documentation or design improvement:** something could be clearer, kinder or easier to read.

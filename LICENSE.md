@@ -11,7 +11,7 @@
 | SLOOP screen and web-editor screenshots | Not covered by this project's licences (see below) | Ask the SLOOP developers before reusing them outside this handbook |
 | Fonts (Albert Sans, Big Shoulders Display, Liberation Serif) | [SIL Open Font License 1.1](LICENSES/fonts/) | Embed and redistribute under the OFL |
 
-Copyright © 2026 suprsomething, except where noted below.
+Copyright © 2026 slowphase, except where noted below.
 
 ## The handbook (CC BY-SA 4.0)
 
@@ -19,7 +19,7 @@ The original writing, illustrations, diagrams and page designs are licensed unde
 
 If you adapt the handbook (for a newer SLOOP version, a translation, a different page size):
 
-1. Credit it as *SLOOP, Gently* by suprsomething, with a link to this repository.
+1. Credit it as *SLOOP, Gently* by slowphase, with a link to this repository.
 2. Say that you changed it.
 3. Release your adaptation under CC BY-SA 4.0 as well.
 4. Keep the third-party credits in [CREDITS.md](CREDITS.md), and do not present your version as official SLOOP documentation.
@@ -30,7 +30,7 @@ The handbook reproduces a number of FM-1 screen captures and web-editor captures
 
 SLOOP's code is licensed under GPL-3.0-only. Its [licensing notes](https://github.com/isod89/sloop-fm1/blob/main/LICENSING.md) do not state a licence for these screenshots, and they record some Felucca assets (including the icon atlas) as "all rights reserved", with terms to be published later. These images are therefore **not** covered by CC BY-SA 4.0 or MIT. All rights in them remain with their creators. They appear here, with credit, so that beginners can recognise what they see on their own FM-1.
 
-If you are a rights holder and would like an image changed or removed, please [open an issue](https://github.com/suprsomething/sloop-gently/issues) and it will be dealt with promptly.
+If you are a rights holder and would like an image changed or removed, please [open an issue](https://github.com/slowphase/sloop-gently/issues) and it will be dealt with promptly.
 
 ## Fonts
 
