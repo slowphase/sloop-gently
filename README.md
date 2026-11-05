@@ -7,7 +7,7 @@
   <a href="https://github.com/suprsomething/sloop-gently/releases"><img src="https://img.shields.io/github/downloads/suprsomething/sloop-gently/total?style=flat-square&label=downloads&color=d4ff3a&labelColor=19191c" alt="Total downloads"></a>
 </p>
 
-*A free, illustrated beginner's handbook for SLOOP on the M-VAVE FM-1.*
+*A free, illustrated beginner's handbook for [SLOOP](https://github.com/isod89/sloop-fm1) on the [M-VAVE FM-1](https://www.cuvave.com/product?id=fm-1).*
 
 Not a technical encyclopaedia. Not a music-theory course. Just a friendly, visual introduction to making atmospheric electronic music, grooves, basslines and melodies on an inexpensive little synthesiser.
 
