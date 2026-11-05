@@ -1,0 +1,56 @@
+<!-- =========================================================== PAGE 25 -->
+<div class="page odd trk1 dense">
+  <div class="runhead"><span>L8 · the step sequencer, essentials only</span><span class="trk">track 1</span></div>
+
+  <h2 class="title compact">Length, division, and the slow&#8209;music trick</h2>
+  <p>Each track's pattern has its own <span class="v">LENGTH</span> (1 to 64 steps) and its own <span class="v">DIV</span>, how much musical time one step lasts: from 1/32 of a bar up to one or even two whole bars per step. Both live on the <kbd>SEQ</kbd> hold (<kbd class="knob">KNOB 4</kbd> and <kbd class="knob">KNOB 2</kbd>). One honest mechanic first: <b>changing DIV never moves notes between steps</b>; every step simply lasts longer or shorter, so flipping a recorded 1/16 pattern to 1BAR just stretches the whole take sixteen&#8209;fold. Slow music is best <i>built</i> slow:</p>
+
+  <figure style="margin:1.5mm 0 0;">
+    <svg viewBox="0 0 352 70" width="100%">
+      <!--TIMESCALE-->
+    </svg>
+  </figure>
+
+  <h3 class="sub" style="margin-top:3mm;">Build a slow chord bed from a clean start</h3>
+  <div class="careful"><div class="label">before you clear</div>
+    <p style="margin:0;">This replaces the pad's pattern, so park the loop somewhere safe first: hold <kbd>SAVE</kbd>: among <kbd class="key">keys 5–8</kbd>, a <b>dark</b> key is an <b>empty</b> section, and pressing a dark one saves the whole loop there without touching anything else (lit keys already hold music, so leave those alone; Lesson&nbsp;10 explains sections). If all four are lit, or you would rather not touch sections yet, postpone this exercise until after Lesson&nbsp;10; nothing else depends on it.</p>
+  </div>
+  <ol class="steps">
+    <li><p>Select the pad, track <span class="tt t1">1</span>, and clear its pattern: hold <kbd>REC</kbd> about two seconds until the ring fills. (<kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> right now brings it straight back.)</p></li>
+    <li><p>Hold <kbd>SEQ</kbd>: turn <kbd class="knob">KNOB 4</kbd> (LENGTH) to <span class="v">4</span> and <kbd class="knob">KNOB 2</kbd> (DIV) to <span class="v">1BAR</span>. Four steps, each lasting a whole bar.</p></li>
+    <li><p>Give <i>this</i> track chords too: CHORD is per&#8209;track (Lesson&nbsp;5 set it on track 2 only), so hold <kbd>SEL</kbd> and turn <kbd class="knob">KNOB 1</kbd> to <span class="v">TRIAD</span> here; key and scale are shared by all synth tracks and already right.</p></li>
+    <li><p>Write a known chord onto each step (an empty step takes the chord you played last): play <kbd class="key">key 5</kbd> (the home chord, I), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 1</kbd> to put it on step 1; play <kbd class="key">key 10</kbd> (VI), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 2</kbd> for step 2; play <kbd class="key">key 8</kbd> (IV), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 3</kbd> for step 3; play <kbd class="key">key 9</kbd> (V), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 4</kbd> for step 4.</p></li>
+    <li><p><kbd>PLAY</kbd>. The pad changes chord once a bar (how much of each bar it rings is the PATTERN page's GATE; your pad's long release does the rest) while the drums tick in 1/16 underneath. For glacial: DIV <span class="v">2BAR</span>, one chord every two bars.</p></li>
+  </ol>
+
+  <div class="row" style="grid-template-columns:1.9fr 1fr;align-items:center;gap:6mm;margin-top:0;">
+    <div class="aside">
+      <div class="label"><svg width="3mm" height="3mm" style="color:#6b4dff"><use href="#i-spark"/></svg>Polymeter, free of charge</div>
+      <p>Length belongs to a whole <b>track</b> (all sixteen drum sounds share track 4's one pattern and length), so the trick lives between tracks: set this chord bed's LENGTH to <b>3</b> and a three&#8209;chord round turns against the four&#8209;bar drums, realigning every twelve bars. Set it back to 4 when done; the fourth chord returns, since shortening hides far steps rather than erasing them.</p>
+    </div>
+    <svg viewBox="0 0 200 58" width="92%">
+      <!--POLY-->
+    </svg>
+  </div>
+
+  <div class="hear" style="margin:3mm 0 3mm;padding:3.4mm 5mm 3.4mm 4.4mm;">
+    <svg viewBox="0 0 96 30" width="24mm" height="7.5mm"><use href="#i-wave"/></svg>
+    <div><div class="label"><svg width="2.6mm" height="2.6mm"><use href="#i-play"/></svg>you should now be hearing</div>
+    <p>A beat you can see and edit cell by cell, and a chord bed you placed by hand that changes on a one&#8209;bar clock over drums ticking in 1/16: two timescales in one loop.</p></div>
+  </div>
+
+  <div class="row" style="grid-template-columns:1.05fr 1fr;gap:7mm;align-items:start;">
+    <div>
+    <div class="try"><div class="label"><svg width="3mm" height="3mm"><use href="#i-spark"/></svg>try this</div>
+      <p>On the grid, demote every hat except the ones on the beat to <b>ghost</b> with <kbd class="knob">KNOB 4</kbd>, and push one unexpected hat to <b>hard</b>. Tiny level moves like this are where grooves actually live.</p></div>
+    <p style="margin:2.6mm 0 0 1mm;font-size:8.1pt;line-height:1.45;color:#4f4b44;"><span style="font-family:'IBM Plex Mono';font-weight:500;font-size:7pt;color:#1f1e1b;">parked for later&ensp;</span>Per&#8209;step nudges, parameter locks and the NOTES editor wait in <a href="#">"Where to next", page&nbsp;31</a>.</p>
+    </div>
+    <div class="mess"><div class="label"><svg width="3mm" height="3mm"><use href="#i-undo"/></svg>made a mess?</div>
+      <p>A step you just set: tap its key again (SEQ held, or on the grid) and it is gone; <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> undoes the last change (one level, so after further edits the road back to the old pad pass is to record it again). A silent synth pattern? Check DIV: at 1BAR it crawls, and may not have reached its next step yet.</p>
+</div>
+  </div>
+
+
+  <div class="folio"><span class="n">25</span><span class="t">SLOOP, Gently</span></div>
+</div>
+

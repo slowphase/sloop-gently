@@ -1,0 +1,50 @@
+/* ===== A4 edition: explicit, art-directed pages ===== */
+@page{size:A4;margin:0;}
+body{font-size:9.4pt;line-height:1.52;background:#77736b;}
+.page{width:210mm;height:297mm;overflow:hidden;position:relative;background:var(--paper);padding:21mm 17mm 22mm;margin:0 auto;break-after:page;}
+@media screen{.page{margin:8mm auto;box-shadow:0 2mm 10mm rgba(0,0,0,.35);}}
+.page.dense{padding-top:18.5mm;padding-bottom:19mm;}
+.page.dense p{margin-bottom:.6em;} .page.dense ol.steps>li{margin-bottom:.55em;} .page.dense h3{margin-top:1.1em;margin-bottom:.4em;}
+.page.dense .hear{margin:.9em 0;padding:.95em 1.4em .95em 1.25em;}
+.page.refpage{padding:16mm 15mm 18mm;}
+
+.runhead{position:absolute;top:10mm;left:17mm;right:17mm;display:flex;justify-content:space-between;align-items:center;font-size:7pt;color:var(--ink-3);}
+.page.dense .runhead{top:9mm;}
+.runhead .trk{display:inline-flex;align-items:center;gap:1.6mm;color:var(--ink-2);}
+.runhead .trk::before{content:"";width:2.6mm;height:2.6mm;border-radius:50%;background:var(--track);}
+.folio{position:absolute;bottom:9mm;display:flex;align-items:baseline;gap:2.4mm;}
+.folio .n{font-weight:600;font-size:17pt;letter-spacing:-.02em;} .folio .t{font-size:6.8pt;color:var(--ink-3);}
+.page.odd .folio{right:17mm;flex-direction:row-reverse;} .page.even .folio{left:17mm;}
+.opener .folio .t,.opener .runhead{color:#8e897f;} .opener .folio .n{color:#efece4;}
+
+/* grids only exist on A4 */
+.row{display:grid;gap:7mm;align-items:start;}
+.c-2-1{grid-template-columns:2fr 1fr;} .c-1-1{grid-template-columns:1fr 1fr;} .c-3-2{grid-template-columns:1.55fr 1fr;}
+.c-1-2{grid-template-columns:1fr 2fr;} .c-5-4{grid-template-columns:1.25fr 1fr;}
+.ipad-only{display:none;}
+
+/* cover / openers full bleed */
+.page.cover,.page.opener{padding:0;background:var(--night);color:#efece4;}
+.opener .inner{position:absolute;left:17mm;right:17mm;}
+.opener .big{font-size:64pt;}
+.opener .partno{font-size:9pt;}
+.opener .quiet{font-size:12.5pt;max-width:110mm;}
+.cover .title{position:absolute;left:17mm;top:38mm;font-size:74pt;font-weight:600;letter-spacing:-.04em;line-height:.9;color:#f2efe8;}
+.cover .sub{position:absolute;left:17mm;top:126mm;font-size:13pt;color:#c8c2b4;font-style:italic;line-height:1.45;max-width:120mm;}
+.cover .meta{position:absolute;left:17mm;bottom:16mm;font-family:"IBM Plex Mono";font-size:7.6pt;letter-spacing:.04em;color:#a9a39a;line-height:1.7;}
+.cover .meta b{color:#f2efe8;font-weight:500;}
+.cover svg.field{position:absolute;left:0;right:0;bottom:0;width:210mm;height:150mm;}
+.opener svg.art{position:absolute;}
+.opener svg.art.wide{left:0;right:0;bottom:0;width:210mm;}
+.art-part1{height:130mm;} .art-part2{height:115mm;} .art-part3{height:125mm;}
+.art-part0{right:12mm;bottom:22mm;width:120mm;height:120mm;}
+.art-part4{right:-30mm;bottom:-30mm;width:150mm;height:150mm;opacity:.5;}
+
+/* hardware page */
+.hw svg{width:100%;}
+.hw-a4 svg{width:100%;display:block;}
+.page.r2{padding-top:16mm;padding-bottom:20mm;} .page.r2 .runhead{top:8.5mm;} .page.r2 h1{line-height:.95;}
+.page.r2 p{margin-bottom:.6em;} .page.r2 ol.steps>li{margin-bottom:.6em;} .page.r2 .hear{padding:.9em 1.3em .9em 1.2em;margin:.7em 0;}
+.page.r2 .gb,.page.r2 .aside,.page.r2 .mess{margin-bottom:.6em;} .page.r2 .kicker{margin-bottom:.8em;}
+figure svg{display:block;max-width:100%;}
+ol.steps.two{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;}

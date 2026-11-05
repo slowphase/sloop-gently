@@ -1,0 +1,26 @@
+name: Documentation or design improvement
+description: Something could be clearer, kinder or easier to read.
+title: "[Improvement] "
+labels: ["improvement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas big and small are welcome: a confusing sentence, a diagram that's hard to read, a lesson that felt too fast, or a page that looks odd on your screen or printer.
+  - type: input
+    id: where
+    attributes:
+      label: Where in the book?
+      description: Lesson, page or screen number, and which edition (A4 or iPad mini). Leave blank if it's about the whole book.
+      placeholder: "e.g. iPad mini edition, screen 40"
+  - type: textarea
+    id: idea
+    attributes:
+      label: What could be better?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Any suggestion?
+      description: Optional. A rewording, a sketch or a screenshot all help.

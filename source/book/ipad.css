@@ -1,0 +1,67 @@
+/* ===== iPad mini edition: 128.5 × 195.6 mm (the 8.3-inch panel at 1:1), reflowed single column =====
+   The same content; pages become sections and Chrome paginates. */
+@page{size:128.5mm 195.6mm;margin:11mm 8.5mm 12.5mm;
+  @bottom-right{content:counter(page);font-family:"Space Grotesk";font-weight:600;font-size:11pt;color:#1f1e1b;vertical-align:top;padding-top:2mm;}
+  @bottom-left{content:"SLOOP, Gently";font-family:"IBM Plex Mono";font-size:6.6pt;color:#8a857b;vertical-align:top;padding-top:3mm;}
+}
+@page night{margin:0;background:#17171a; @bottom-right{content:none;} @bottom-left{content:none;}}
+body{font-size:11.6pt;line-height:1.48;background:var(--paper);}
+.page{display:block;width:auto;height:auto;overflow:visible;position:static;padding:0;margin:0;background:transparent;break-after:auto;}
+.page.newpage,.page.opener,.page.cover,.page.refpage,.page[id]{break-before:page;}
+.runhead,.folio,.a4-only{display:none !important;}
+.ipad-only{display:block;}
+h1{font-size:2.15em;} h2{font-size:1.35em;} .lead{font-size:1.08em;}
+kbd{font-size:.86em;} .v{font-size:.9em;}
+.row,.cols{display:block;} .row>*,.cols>*{margin-bottom:.9em;}
+.shelf{grid-template-columns:repeat(2,1fr);}
+figure.shot{max-width:100%;} figure{break-inside:avoid;}
+.hear,.try,.start,.careful,.aside,.gb,.mess,.pad,ol.steps>li,dl.gloss dt+dd{break-inside:avoid;}
+table tr{break-inside:avoid;} thead{display:table-header-group;}
+h1,h2,h3,.label,.kicker{break-after:avoid;break-inside:avoid;}
+p{orphans:2;widows:2;}
+.page.refpage{background:transparent;}
+table.ref{font-size:.92em;}
+/* cover & openers: one full dark page each, their own @page with no margin boxes */
+.page.cover,.page.opener{page:night;break-before:page;break-after:page;background:var(--night);color:#efece4;
+  box-sizing:border-box;width:128.5mm;height:195.6mm;padding:14mm 10mm 12mm;margin:0;position:relative;overflow:hidden;}
+.opener .inner{position:absolute;left:10mm;right:10mm;top:16mm;}
+.opener .big{font-size:38pt;}
+.opener .partno{font-size:8.6pt;}
+.opener .quiet{font-size:10.5pt;max-width:100%;margin-top:6mm;}
+.opener svg.art{position:absolute;}
+.opener svg.art.wide{left:0;right:0;bottom:0;width:128.5mm;height:auto;}
+.art-part4{opacity:.5;}
+.opener svg.art.ring{right:-18mm;bottom:-12mm;width:95mm;height:95mm;}
+.cover .title{font-size:44pt;font-weight:600;letter-spacing:-.04em;line-height:.9;margin-top:16mm;}
+.cover .sub{font-size:11pt;color:#c8c2b4;font-style:italic;line-height:1.45;margin-top:9mm;max-width:95mm;}
+.cover .meta{position:absolute;left:10mm;right:10mm;bottom:9mm;font-family:"IBM Plex Mono";font-size:6.6pt;letter-spacing:.04em;color:#a9a39a;line-height:1.7;}
+.cover .meta b{color:#f2efe8;font-weight:500;}
+.cover svg.field{position:absolute;left:0;right:0;bottom:0;width:128.5mm;height:95mm;}
+/* the first block after a dark page starts fresh */
+.page.cover + .page,.page.opener + .page{break-before:page;}
+.hw svg{width:100%;}
+
+/* the four-track bars were drawn for a 176mm column; on 110mm they need a taller box */
+svg.tracks-bars{height:42mm;} svg.tracks-bars text{font-size:3.1px;}
+/* the saved-where diagram keeps its aspect; just let its lettering grow */
+svg[viewBox="0 0 176 46"]:not(.tracks-bars){overflow:visible;} svg[viewBox="0 0 176 46"]:not(.tracks-bars) text{font-size:3.1px;}
+svg[viewBox="0 0 176 46"]:not(.tracks-bars) text[y="43.8"]{font-size:2.35px;}
+/* diagrams drawn for the A4 column: let the fixed-pixel text breathe on the narrower page */
+.hw svg{width:100%;}
+/* hardware diagram: a page of its own, turned so the wide device fills the tall screen */
+.hw-ipad{break-before:page;break-after:page;width:111.5mm;height:172mm;position:relative;}
+#ch3{break-before:page;}
+.hw-rot{position:absolute;left:0;top:0;width:172mm;height:111.5mm;transform:rotate(90deg) translateY(-111.5mm);transform-origin:top left;}
+.hw-rot svg{width:168mm;height:auto;display:block;margin:-2mm 0 0 2mm;}
+/* small inline diagrams were drawn for a 176mm column; on 110mm, enlarge them and their lettering */
+figure svg[viewBox="0 0 176 34"],svg[viewBox="0 0 176 30"]{width:100%;}
+svg[viewBox="0 0 176 34"]{height:32mm;} svg[viewBox="0 0 176 30"]{height:30mm;}
+svg[viewBox="0 0 176 34"] text,svg[viewBox="0 0 176 30"] text{font-size:3.6px;}
+/* the step pattern: full width, lettering up, legend kept with it */
+svg[viewBox="0 0 352 124"]{width:100%;height:auto;}
+figure + .row{break-before:avoid;}
+/* the two sequencer diagrams were set at 80% for A4; on iPad they take the whole measure */
+svg[viewBox="0 0 352 70"],svg[viewBox="0 0 352 90"]{width:100% !important;}
+figure.shot{max-width:92mm;margin-left:auto;margin-right:auto;}
+.refhead{display:block;} .refhead h1{font-size:1.9em;margin-bottom:.15em;} .refhead .kicker{margin:0 0 .6em;}
+.refpage .row>div{margin-bottom:0;}

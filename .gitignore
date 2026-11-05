@@ -1,0 +1,5 @@
+# build output (the finished PDFs live on the Releases page)
+source/editions/out/
+__pycache__/
+*.pyc
+.DS_Store

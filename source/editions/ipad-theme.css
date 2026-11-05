@@ -1,0 +1,208 @@
+/* ===== iPad mini 7 edition: 128.5 × 195.6 mm, single column, Chrome paginates =====
+   Zero page margin (so the night canvas paints on every page); the body carries the margins. Folios are stamped after render. */
+@page{size:128.5mm 195.6mm;margin:0;}
+html{background:#0e0e10;}
+body{font-size:11.6pt;line-height:1.5;background:#0e0e10;padding:12mm 9mm 13mm;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+/* clone: every screen gets the same top and bottom margin, not only the first */
+.page{display:block;width:auto;height:auto;overflow:visible;position:static;padding:0;margin:0;background:transparent;break-after:auto;}
+.page.newpage,.page.opener,.page.cover,.page.refpage,.page[id],.page.wordpage{break-before:page;}
+.runhead,.folio,.a4-only{display:none !important;}
+.ipad-only{display:block;}
+h1{font-size:2.9em;} h2{font-size:1.36em;} .lead{font-size:1.1em;}
+kbd{font-size:.86em;} .v{font-size:.88em;}
+.row,.cols{display:block;} .row>*,.cols>*{margin-bottom:1em;}
+.shelf{grid-template-columns:repeat(2,1fr);}
+figure.shot{max-width:100%;} figure{break-inside:avoid;}
+.hear,.try,.start,.careful,.aside,.gb,.mess,.pad,ol.steps>li,dl.gloss dt+dd,.hwpanel,.annot{break-inside:avoid;}
+table tr{break-inside:avoid;} thead{display:table-header-group;} table{break-inside:auto;}
+h1,h2,h3,.label,.kicker{break-after:avoid;break-inside:avoid;}
+p{orphans:2;widows:2;}
+table.ref{font-size:.95em;}
+.hear{grid-template-columns:1fr;row-gap:.6em;} .hear .wave{display:none;} .hear .label{font-size:1.35em;}
+.weathers{grid-template-columns:repeat(3,1fr) !important;row-gap:4mm;}
+.knoblabels{font-size:.92em !important;}
+ol.steps.two{display:block;}
+
+/* cover & openers: one full dark page each */
+.page.cover,.page.opener,.page.wordpage{break-before:page;break-after:page;background:var(--night);color:var(--ink);
+  box-sizing:border-box;width:110.5mm;height:170.6mm;padding:0;margin:0;position:relative;overflow:hidden;}
+.opener .inner{position:absolute;left:0;right:0;top:6mm;}
+.opener .big{font-size:60pt;}
+.opener .partno{font-size:8pt;}
+.opener .quiet{font-size:11pt;max-width:100%;margin-top:6mm;}
+.opener svg.art{position:absolute;}
+.opener svg.art.wide{left:-9mm;right:-9mm;bottom:-13mm;width:128.5mm;height:auto;}
+.art-part4{opacity:.5;}
+.opener svg.art.ring{right:-26mm;bottom:-20mm;width:95mm;height:95mm;}
+.cover .title{position:static;font-size:84pt;line-height:.96;margin-top:4mm;letter-spacing:-.005em;}
+.cover .sub{position:static;font-size:11pt;color:var(--ink-2);font-style:italic;font-weight:300;line-height:1.45;margin-top:9mm;max-width:95mm;}
+.cover .meta{position:static;margin-top:7mm;font-size:6.8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);line-height:1.8;}
+.cover .meta b{color:var(--signal);}
+.cover svg.field{position:absolute;left:-9mm;right:-9mm;bottom:-22mm;width:128.5mm;height:80mm;}
+.page.cover + .page,.page.opener + .page,.page.wordpage + .page{break-before:page;}
+
+/* the lesson word page, re-composed for the tall screen */
+.wordpage .word{position:absolute;left:-9mm;top:-6mm;width:128.5mm;height:74mm;}
+.wordpage .kick{position:absolute;left:0;top:70mm;}
+.wordpage .title{position:absolute;left:0;top:77mm;font-size:24pt;font-weight:300;letter-spacing:-.02em;line-height:1.05;}
+.wordpage .lead{position:absolute;left:0;right:0;top:92mm;font-size:11.4pt;line-height:1.42;}
+.wordpage .start{position:absolute;left:0;right:0;top:124mm;margin:0;background:transparent;padding:2mm 0 0;font-size:9.6pt;border-radius:0;}
+.wordpage .hero{display:none;}
+
+/* hardware diagram: a page of its own, turned so the wide device fills the tall screen */
+.hw-ipad{break-before:page;break-after:page;width:110.5mm;height:168mm;position:relative;}
+#ch3{break-before:page;}
+.hw-rot{position:absolute;left:0;top:0;width:168mm;height:110.5mm;transform:rotate(90deg) translateY(-110.5mm);transform-origin:top left;}
+.hw-rot svg{width:164mm;height:auto;display:block;margin:-2mm 0 0 2mm;}
+.hw svg{width:100%;}
+/* diagrams drawn for the A4 column: let them take the whole measure */
+svg.tracks-bars{height:42mm;} svg.tracks-bars text{font-size:3.1px;}
+figure svg[viewBox="0 0 176 34"],svg[viewBox="0 0 176 30"]{width:100%;}
+svg[viewBox="0 0 176 34"]{height:32mm;} svg[viewBox="0 0 176 30"]{height:30mm;}
+svg[viewBox="0 0 176 34"] text,svg[viewBox="0 0 176 30"] text{font-size:3.6px;}
+svg[viewBox="0 0 352 124"]{width:100%;height:auto;}
+figure + .row{break-before:avoid;}
+svg[viewBox="0 0 352 70"],svg[viewBox="0 0 352 90"]{width:100% !important;}
+figure[style*="width"]{width:100% !important;}
+.refhead{display:block;} .refhead h1{font-size:2.2em;margin-bottom:.15em;} .refhead .kicker{margin:0 0 .6em;}
+.refpage .row>div{margin-bottom:0;}
+.hwpanel{max-width:100% !important;}
+
+/* iPad: drawings may use the full screen width (margins included) */
+.ipad-only{margin-left:-6mm;margin-right:-6mm;}
+.ipad-only>svg,.ipad-only figure>svg,.ipad-only .weathers svg{width:100%;display:block;}
+.ipad-only .label svg{width:1.25em;height:1.25em;display:inline-block;} .ipad-only svg.gl{width:1.05em;height:.85em;display:inline-block;} .ipad-only .hear .wave{display:none;}
+
+/* the Weather lesson's four screens, and screen-sized pages in general */
+.iscreen{break-before:page;break-after:page;}
+.ihead{display:flex;justify-content:space-between;border-top:.35mm solid var(--ink);padding-top:1.6mm;margin-bottom:6mm;font-weight:600;font-size:.74em;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);}
+.ihead span:first-child{color:var(--ink);}
+.ipad-weather .weathers-big .weathers{grid-template-columns:repeat(2,1fr) !important;column-gap:6mm !important;row-gap:7mm;}
+.ipad-weather .weathers .t{font-size:1.05em;} .ipad-weather .weathers .d{font-size:.92em;}
+.ipad-weather ol.steps{font-size:1.04em;}
+.ipad-weather .hwpanel{margin-bottom:6mm;}
+.ipad-only.ipad-weather{margin:0;}
+.weathers{break-inside:avoid;}
+
+.toc-part i{background:var(--signal) !important;}
+
+
+.hw-maps{margin:0 -6mm;} .hw-maps figure{margin:0 0 7mm;break-inside:avoid;} .hw-maps svg{width:100%;display:block;}
+.hw-maps figcaption{font-size:.86em;margin-top:1.5mm;padding:0 6mm;}
+
+
+/* keep a screenshot with the paragraph that follows it, so a two-line tail is not orphaned */
+figure.shot + p, figure.shot + h2, figure.shot + .gb{break-before:avoid;}
+p{orphans:3;widows:3;}
+
+
+/* screenshots: an in-flow block, the screen on the left and its caption beside it.
+   (Floats were tried and rejected: a float that does not fit is pushed to the next screen while the text after it stays behind.) */
+figure.shot{display:grid;grid-template-columns:52mm 1fr;column-gap:5mm;align-items:start;max-width:none !important;width:auto;
+  margin:1.1em 0 1.3em !important;float:none;break-inside:avoid;}
+figure.shot .frame{grid-column:1;}
+figure.shot figcaption{grid-column:2;margin-top:0;font-size:.88em;line-height:1.45;}
+/* the web editor's backup page is a wide screen: full measure, caption underneath */
+figure.shot:has(img[alt^="The web editor"]){display:block;}
+figure.shot:has(img[alt^="The web editor"]) figcaption{margin-top:.6em;}
+
+h2 + p, h3 + p{break-before:avoid;}
+
+
+
+/* smallest labels: a floor, so nothing instructional drops below about 7.5 pt on the iPad mini's screen */
+kbd{font-size:max(.8em, 8.6pt);} .v,.scr{font-size:max(.84em, 8.6pt);} .plus{font-size:max(.82em, 8.6pt);}
+.label,.kicker,th,.hwpanel .lab,.ihead{font-size:max(.74em, 8pt);}
+.cover .meta{font-size:7.6pt;}
+.annot .n,.leg,.adot{font-size:max(.8em, 8pt);}
+/* About this book: a narrower first column lets the conventions table set in fewer lines */
+[data-part="Before you begin"] table th:first-child{width:27mm !important;}
+[data-part="Before you begin"] table td{padding-top:.42em;padding-bottom:.42em;}
+
+
+/* A4 column wrappers do not limit the iPad measure */
+.row>div[style*="max-width"]{max-width:none !important;}
+/* small notes keep a readable floor */
+p[style*="font-size:8.1pt"]{font-size:9.4pt !important;} p[style*="font-size:8.1pt"] span[style*="font-size:7pt"]{font-size:8pt !important;}
+.refpage .note{font-size:max(.92em, 8.6pt);}
+
+/* ---- final polish ---- */
+/* hardware maps: a numbered overview, then four enlargements at one scale, each in a deliberate frame */
+.hw-maps figure.overview{margin:0 0 3mm;}
+.hw-maps figure.enl{margin-top:0;margin-bottom:5mm;}
+.hw-maps figure.enl svg{border-radius:3mm;box-shadow:0 0 0 .35mm #3a3a41;background:#141417;}
+.hw-maps figcaption{display:flex;gap:2mm;align-items:baseline;font-size:.86em;margin-top:1.8mm;padding:0 6mm;}
+.hw-maps figure.enl figcaption{padding:0;}
+.hw-maps figcaption .leg{flex:none;margin:0;}
+.hwlegend{display:flex;flex-wrap:wrap;gap:1.5mm 5mm;margin:0 6mm 6mm;font-size:.84em;color:var(--ink-2);}
+.hwlegend kbd{margin-right:1.2mm;}
+/* continued lessons flow on; their heading stays with what follows it */
+.page.cont .kicker{break-after:avoid;} .page.cont h1,.page.cont h2{break-after:avoid;}
+/* long asides may continue on the next screen (the label stays with its first lines) */
+.aside.long{break-inside:auto;} .aside .label{break-after:avoid;}
+/* contents: a part heading never ends a screen */
+.toc-part{break-after:avoid;break-inside:avoid;} .toc li{break-inside:avoid;}
+/* the web editor's backup page: the wide screenshot stays whole, its long caption may continue */
+figure.shot:has(img[alt^="The web editor"]){break-inside:auto;}
+figure.shot:has(img[alt^="The web editor"]) .frame{break-inside:avoid;break-after:avoid;}
+
+/* contents: the visualiser is a reward picture, not an instruction; a smaller frame keeps the guide to the lessons on the same screen */
+#contents figure.shot{grid-template-columns:40mm 1fr;}
+#contents .aside{margin-top:3mm !important;}
+
+.hw-maps figure.enl{width:var(--w) !important;margin-left:auto !important;margin-right:auto !important;}
+
+/* vertical rhythm between blocks, a touch tighter (body text unchanged): clears several near-miss page breaks */
+figure.shot{margin:.8em 0 1em !important;}
+.mess[style*="margin-top"]{margin-top:0 !important;}
+.hear{margin:1em 0;}
+.gb,.aside,.mess,.careful,.try{margin-bottom:.75em;}
+td{padding-top:.4em;padding-bottom:.4em;}
+/* Weather, fourth screen: the panel drawn a little smaller so "try this" and "made a mess?" share its screen, as approved */
+.ipad-weather .hwpanel > div[style*="relative"]{width:84%;margin:0 auto;}
+/* hardware maps: overview on the chapter's first screen, the top panel on the next, the keyboard on the one after */
+.hwlegend{break-before:page;font-size:.82em;gap:1mm 4mm;margin:0 0 4mm;}
+.hw-maps figure.enl{margin-bottom:3mm;}
+.hw-maps figure.enl.brk{break-before:page;}
+
+/* contents on two screens plus its guide: slightly closer rows (still comfortable tap targets), a smaller reward picture */
+.toc li{padding:.34em 0;}
+#contents figure.shot{grid-template-columns:36mm 1fr;}
+/* ch3: the control table starts its own screen, after the keyboard maps */
+.hw-maps > figure:last-child{break-after:page;}
+/* Weather, second and fourth screens: fit their approved content */
+.ihead{margin-bottom:4mm;}
+.ipad-weather .weathers-big .weathers{row-gap:3.5mm !important;}
+.ipad-weather .hwpanel > div[style*="relative"]{width:80%;}
+/* stacked A4 columns: the gap between them, a little less */
+.row>*{margin-bottom:.6em;}
+.try{padding:.85em 1.1em .8em;}
+/* a block marked to stay with what follows (iPad only, set by the build) */
+.keepnext{break-after:avoid;}
+/* long translation, caution and note boxes may continue on the next screen, like long asides */
+.gb.long,.careful.long,.mess.long{break-inside:auto;} .gb .label,.careful .label,.mess .label{break-after:avoid;}
+
+/* L2: the row that ends with "A word you now own" hands its last block to "made a mess?" */
+/* contents: closer still, so its short guide joins the second screen */
+.toc li{padding:.28em 0;} .toc-part{margin:1em 0 .2em;}
+#contents figure.shot{grid-template-columns:32mm 1fr;}
+/* Weather second screen: narrower tiles (shorter), so the grid sits under its heading */
+.ipad-weather .weathers-big .weathers{column-gap:14mm !important;}
+
+.keep{break-inside:avoid;}
+#contents figure.shot{grid-template-columns:28mm 1fr;}
+#contents .aside{margin-top:1.5mm !important;}
+
+.refpage p.note[style*="font-size:7.6pt"]{font-size:9pt !important;}
+
+.cover .meta{font-size:8.2pt;}
+
+/* reference sheets on the iPad: the tables keep a readable floor (they may run a little longer) */
+.refpage table, .refpage table.ref, #r1 table.ref{font-size:max(.88em, 9pt) !important;}
+.refpage td{padding-top:.36em;padding-bottom:.36em;}
+
+table[style*="font-size:7.8pt"]{font-size:9pt !important;}
+
+.ipad-weather .iscreen:last-child .hwpanel{margin-bottom:3.5mm;padding-bottom:.7em;}
+.ipad-weather .iscreen:last-child .hwpanel .key div{margin-top:.15em;}
+.ipad-weather .iscreen:last-child .try{margin-bottom:.5em;}

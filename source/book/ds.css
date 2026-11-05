@@ -1,0 +1,161 @@
+/* ==========================================================================
+   SLOOP, Gently · design system (shared by the A4 and iPad editions)
+   Space Grotesk — titles, numerals, folios · Inter — reading · IBM Plex Mono — the instrument
+   Two visual modes: expressive (openers, cover, lesson starts) and precise (procedures, reference).
+   Edition-specific layout lives in a4.css / ipad.css. Colours live here, in :root.
+   ========================================================================== */
+:root{
+  --paper:#f2f0ea; --card:#fbfaf7; --wash:#e6e2d8; --line:#d9d4c8;
+  --ink:#1f1e1b; --ink-2:#4f4b44; --ink-3:#8a857b;
+  --t1:#2f6fde; --t2:#22995a; --t3:#e0a92a; --t4:#e2661d;
+  --t1-soft:#dfe8fa; --t2-soft:#dcefe3; --t3-soft:#f8eccb; --t4-soft:#f8dccb;
+  --signal:#6b4dff; --signal-soft:#e9e5ff;
+  --track:var(--t1);
+  --night:#17171a;  /* cover and openers */
+}
+@font-face{font-family:"Space Grotesk";font-weight:500;src:url(fonts/space-grotesk-latin-500-normal.woff2) format("woff2");}
+@font-face{font-family:"Space Grotesk";font-weight:600;src:url(fonts/space-grotesk-latin-600-normal.woff2) format("woff2");}
+@font-face{font-family:"Space Grotesk";font-weight:700;src:url(fonts/space-grotesk-latin-700-normal.woff2) format("woff2");}
+@font-face{font-family:"Inter";font-weight:400;src:url(fonts/inter-latin-400-normal.woff2) format("woff2");}
+@font-face{font-family:"Inter";font-weight:400;font-style:italic;src:url(fonts/inter-latin-400-italic.woff2) format("woff2");}
+@font-face{font-family:"Inter";font-weight:500;src:url(fonts/inter-latin-500-normal.woff2) format("woff2");}
+@font-face{font-family:"Inter";font-weight:600;src:url(fonts/inter-latin-600-normal.woff2) format("woff2");}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2");}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2");}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;src:url(fonts/ibm-plex-mono-latin-600-normal.woff2) format("woff2");}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+body{font-family:"Inter",sans-serif;color:var(--ink);background:var(--paper);font-feature-settings:"cv11","ss01";}
+.trk0{--track:var(--ink);} .trk1{--track:var(--t1);} .trk2{--track:var(--t2);} .trk3{--track:var(--t3);} .trk4{--track:var(--t4);}
+.sg,h1,h2,h3,.folio .n,ol.steps>li::before,.chno,.big{font-family:"Space Grotesk";font-feature-settings:normal;}
+.mono,kbd,.v,.scr,.tt,.label,.kicker,.runhead,.folio .t,.vc,.pn{font-family:"IBM Plex Mono";font-feature-settings:normal;}
+
+/* ---------- type ---------- */
+h1{font-weight:600;font-size:2.55em;line-height:1.02;letter-spacing:-.03em;margin:0 0 .5em;max-width:28ch;}
+h2{font-weight:600;font-size:1.45em;line-height:1.12;letter-spacing:-.02em;margin:1.6em 0 .55em;}
+h2:first-child,.kicker+h1{margin-top:0;}
+h2.cont{font-size:1.95em;margin:0 0 .6em;letter-spacing:-.025em;}
+h3{font-weight:600;font-size:1.05em;line-height:1.2;letter-spacing:-.01em;margin:1.4em 0 .45em;}
+h3 .aside-t,h2 .aside-t{font-weight:500;color:var(--ink-3);}
+p{margin:0 0 .72em;}
+.lead{font-size:1.14em;line-height:1.5;color:var(--ink);max-width:62ch;}
+.note{font-size:.92em;line-height:1.5;color:var(--ink-2);}
+.tight{margin-bottom:.35em;}
+b,strong{font-weight:600;} i,em{font-style:italic;}
+a{color:var(--signal);text-decoration:none;border-bottom:.4pt solid currentColor;}
+ul.plain{padding-left:1.3em;margin:0 0 .7em;} ul.plain li{margin-bottom:.3em;}
+hr.sp{border:none;border-top:.4pt solid var(--line);margin:1.4em 0;}
+
+.kicker{font-weight:500;font-size:.78em;letter-spacing:.02em;color:var(--ink-2);display:flex;align-items:center;gap:.9em;margin-bottom:1.1em;}
+.kicker .chno{font-size:1.9em;font-weight:600;color:var(--track);letter-spacing:-.03em;line-height:1;}
+.kicker .ring{width:1.6em;height:1.6em;flex:none;}
+
+/* ---------- the instrument in type ---------- */
+kbd{font-weight:500;font-size:.8em;line-height:1;letter-spacing:.01em;white-space:nowrap;display:inline-block;position:relative;top:-.08em;
+    padding:.33em .5em .3em;border-radius:.4em;background:var(--ink);color:#f4f1ea;box-shadow:0 .16em 0 #000;}
+kbd.knob{background:transparent;color:var(--ink);box-shadow:none;border:.6pt solid var(--ink);border-radius:2em;padding:.26em .55em .25em .4em;}
+kbd.knob::before{content:"";display:inline-block;width:.42em;height:.42em;border-radius:50%;background:var(--ink);margin-right:.32em;position:relative;top:-.05em;}
+kbd.key{background:#fff;color:var(--ink);box-shadow:0 .16em 0 #bdb6a8;border:.45pt solid #bdb6a8;}
+.plus{font-family:"IBM Plex Mono";font-size:.82em;color:var(--ink-3);padding:0 .12em;}
+.v{font-weight:500;font-size:.88em;color:var(--ink);background:var(--wash);border-radius:.25em;padding:0 .3em;white-space:nowrap;}
+.scr{font-weight:500;font-size:.84em;background:#121212;color:#e9f0ff;border-radius:.25em;padding:.08em .4em;white-space:nowrap;}
+.tt{display:inline-block;font-weight:600;font-size:.76em;line-height:1;color:#fff;border-radius:.32em;padding:.28em .42em;position:relative;top:-.06em;}
+.tt.t1{background:var(--t1);} .tt.t2{background:var(--t2);} .tt.t3{background:var(--t3);color:var(--ink);} .tt.t4{background:var(--t4);}
+.combo{white-space:nowrap;}
+
+/* ---------- procedures ---------- */
+ol.steps{list-style:none;counter-reset:st;margin:.3em 0 .6em;}
+ol.steps>li{counter-increment:st;display:grid;grid-template-columns:2.4em 1fr;margin-bottom:.8em;}
+ol.steps>li::before{content:counter(st);font-weight:600;font-size:1.65em;line-height:.95;color:var(--track);letter-spacing:-.02em;}
+ol.steps>li>p{margin:0 0 .35em;} ol.steps>li>p:last-child{margin-bottom:0;}
+
+/* ---------- component language ---------- */
+.label{font-weight:500;font-size:.78em;letter-spacing:.02em;display:flex;align-items:center;gap:.5em;margin-bottom:.4em;}
+.label svg{flex:none;width:1.25em;height:1.25em;}
+
+.start{background:var(--card);border-radius:.9em;padding:1.05em 1.25em .95em;margin:0 0 1.3em;font-size:.93em;line-height:1.5;}
+.start .label{color:var(--track);}
+.start ul{list-style:none;} .start li{position:relative;padding-left:1.1em;margin-bottom:.3em;}
+.start li::before{content:"";position:absolute;left:0;top:.56em;width:.42em;height:.42em;border-radius:50%;background:var(--track);}
+
+.hear{background:var(--ink);color:#f2efe8;border-radius:1em;padding:1.15em 1.4em 1.15em 1.25em;margin:1.3em 0;
+      display:grid;grid-template-columns:6.2em 1fr;gap:1.1em;align-items:center;}
+.hear .wave{width:6.2em;height:2em;}
+.hear .label{color:#a9a39a;}
+.hear p{margin:0;font-size:1.06em;line-height:1.45;font-weight:500;}
+
+.try{background:var(--signal-soft);border-radius:1em 1em 1em .25em;padding:1em 1.2em .95em;margin:0 0 .9em;}
+.try .label{color:var(--signal);} .try p{margin:0;font-size:.95em;}
+.mess{padding:.25em 0 0;margin:0 0 .9em;} .mess .label{color:var(--ink-2);}
+.mess p{margin:0;font-size:.93em;color:var(--ink-2);line-height:1.5;}
+.aside{font-size:.93em;line-height:1.5;color:var(--ink-2);margin:0 0 .9em;}
+.aside .label{color:var(--ink);font-family:"Space Grotesk";font-weight:600;font-size:1.04em;letter-spacing:-.005em;}
+.aside p{margin:0;}
+.gb{font-size:.93em;line-height:1.5;color:var(--ink-2);margin:0 0 .9em;position:relative;padding-left:1.9em;}
+.gb::before{content:"≈";position:absolute;left:0;top:-.12em;font-family:"Space Grotesk";font-weight:600;font-size:1.9em;line-height:1;color:var(--ink);}
+.gb .label{color:var(--ink-2);} .gb p{margin:0 0 .35em;} .gb p:last-child{margin:0;}
+.careful{font-size:.93em;line-height:1.5;color:var(--ink-2);margin:0 0 .9em;position:relative;padding-left:2.1em;}
+.careful::before{content:"!";position:absolute;left:0;top:.05em;width:1.5em;height:1.5em;border-radius:50%;background:var(--ink);color:#fff;
+   font-family:"Space Grotesk";font-weight:700;font-size:1em;display:flex;align-items:center;justify-content:center;}
+.careful .label{color:var(--ink);margin-bottom:.25em;} .careful p{margin:0 0 .35em;} .careful p:last-child{margin:0;}
+.careful table{margin:.4em 0 .3em;}
+
+/* ---------- tables (hairline, no boxes) ---------- */
+table{border-collapse:collapse;width:100%;font-size:.9em;line-height:1.42;margin:.5em 0 .9em;}
+th{text-align:left;font-family:"IBM Plex Mono";font-weight:500;font-size:.8em;letter-spacing:.02em;color:var(--ink-3);padding:.35em .6em .45em 0;border-bottom:.7pt solid var(--ink);}
+td{padding:.5em .6em .5em 0;border-bottom:.4pt solid var(--line);vertical-align:top;}
+tr:last-child td{border-bottom:none;} td.c,th.c{text-align:center;}
+table.ref{font-size:.86em;} table.ref td{padding:.38em .5em .38em 0;}
+
+/* ---------- figures ---------- */
+figure{margin:0 0 1em;} figcaption{font-size:.88em;color:var(--ink-2);line-height:1.5;margin-top:.5em;}
+figcaption b{font-weight:600;color:var(--ink);}
+figure.shot .frame{background:#0c0c0c;border-radius:.9em;padding:.55em;display:block;position:relative;}
+figure.shot img{display:block;width:100%;image-rendering:pixelated;border-radius:.45em;}
+.adot{position:absolute;width:1.5em;height:1.5em;border-radius:50%;background:#fff;color:#1c1a16;border:.45pt solid #1c1a16;
+      font-family:"IBM Plex Mono";font-weight:600;font-size:.8em;line-height:1.45em;text-align:center;box-shadow:0 .15em .4em rgba(0,0,0,.55);}
+.leg{display:inline-block;width:1.3em;height:1.3em;border-radius:50%;background:#fff;color:#1c1a16;border:.4pt solid #1c1a16;
+     font-family:"IBM Plex Mono";font-weight:600;font-size:.75em;line-height:1.25em;text-align:center;margin-right:.3em;}
+svg text{font-family:"Inter";} svg .mono{font-family:"IBM Plex Mono";} svg .disp{font-family:"Space Grotesk";}
+
+/* preset shelf: a curated collection */
+.shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:.7em;margin:.3em 0 .8em;}
+.pad{background:var(--card);border-radius:.8em;padding:.7em .9em .8em;display:flex;flex-direction:column;gap:.3em;position:relative;overflow:hidden;}
+.pad .art{height:1.8em;margin:-.15em -.2em .1em;}
+.pad .nm{font-family:"IBM Plex Mono";font-weight:600;font-size:.9em;}
+.pad .eng{display:flex;gap:.4em;align-items:center;font-family:"IBM Plex Mono";font-size:.7em;color:var(--ink-3);}
+.pad .vc{background:var(--ink);color:#f2efe8;border-radius:.25em;padding:.08em .35em;}
+.pad .ch{font-size:.88em;line-height:1.38;color:var(--ink-2);}
+
+/* reference sheets: precise mode, white paper */
+.refpage{background:#fff;}
+.refhead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1pt solid var(--ink);padding-bottom:.4em;margin-bottom:1em;}
+.refhead h1{font-size:1.9em;margin:0;} .refhead .kicker{margin:0;}
+dl.gloss dt{font-weight:600;font-size:.95em;margin-top:.7em;} dl.gloss dd{margin:0;color:var(--ink-2);font-size:.93em;line-height:1.45;}
+
+/* openers and cover: expressive mode */
+.opener{background:var(--night);color:#efece4;}
+.opener .big{font-weight:600;letter-spacing:-.035em;line-height:.92;}
+.opener .partno{font-family:"IBM Plex Mono";font-weight:500;color:#a9a39a;letter-spacing:.04em;}
+.opener .quiet{font-style:italic;color:#c8c2b4;line-height:1.5;}
+.opener a{color:#c9c2ff;}
+.toc{list-style:none;} .toc li{display:grid;grid-template-columns:2.4em 1fr auto;gap:.6em;align-items:baseline;padding:.42em 0;border-bottom:.4pt solid var(--line);}
+.toc li:last-child{border-bottom:none;}
+.toc .no{font-family:"IBM Plex Mono";font-size:.8em;color:var(--ink-3);} .toc a{color:var(--ink);border:none;}
+.toc .pn{font-family:"Space Grotesk";font-weight:600;font-size:1em;}
+.toc-part{font-family:"Space Grotesk";font-weight:600;font-size:1.05em;letter-spacing:-.01em;margin:1.3em 0 .25em;display:flex;align-items:center;gap:.5em;}
+.toc-part i{display:inline-block;width:.75em;height:.75em;border-radius:50%;}
+
+/* drawn glyphs for the three symbols the Latin subsets lack */
+svg.gl{display:inline-block;width:1.05em;height:.85em;vertical-align:-.1em;}
+svg.gl.approx{position:absolute;left:0;top:.05em;width:1.35em;height:1.15em;color:var(--ink);}
+
+/* annotations tied to a numbered point on a diagram */
+.annot{display:grid;grid-template-columns:7mm 1fr;gap:1.5mm;align-items:start;}
+.annot .n{width:5.6mm;height:5.6mm;border-radius:50%;color:#fff;background:var(--ink);font-family:"Space Grotesk";font-weight:600;font-size:10pt;display:flex;align-items:center;justify-content:center;margin-top:.2mm;}
+.annot.a1 .n{background:var(--signal);} .annot.a4 .n{background:var(--ink);}
+.annot p{margin:0;}
+ol.steps[start="4"]>li::before{content:counter(st);}
+.page.r2 .lead{font-size:1.06em;}
+.page.r2 .start{padding:.85em 1.1em .8em;} .page.r2 .try{padding:.85em 1.1em .8em;}

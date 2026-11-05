@@ -1,0 +1,1521 @@
+<!-- ============================ COVER ============================ -->
+<section class="page cover nofooter">
+  <div style="margin-top:26mm; text-align:center;">
+    <img src="{{IMG:sloop-logo.png}}" alt="SLOOP logo" style="width:64mm; filter:brightness(1.05);">
+  </div>
+  <div style="text-align:center; margin-top:16mm;">
+    <div style="font-family:'Inter'; font-weight:600; font-size:8.5pt; letter-spacing:.42em; color:#9aa7b8; text-transform:uppercase;">A beginner's handbook</div>
+    <div style="font-family:'Lora'; font-weight:600; font-size:40pt; letter-spacing:-.015em; margin-top:6mm; line-height:1.05;">SLOOP, Gently</div>
+    <div style="font-family:'Lora'; font-style:italic; font-size:13pt; color:#c8c2b4; margin-top:7mm; line-height:1.6;">
+      Atmospheres first, drums later.<br>A slow, friendly tour of the M&#8209;VAVE FM&#8209;1<br>running the SLOOP groovebox firmware.
+    </div>
+  </div>
+  <div style="position:absolute; left:0; right:0; bottom:38mm; text-align:center;">
+    <div style="display:inline-block; border:.6pt solid #4a5260; border-radius:2mm; padding:2.6mm 6mm; font-family:'Inter'; font-size:8pt; letter-spacing:.18em; color:#c3cbd6;">
+      WRITTEN FOR SLOOP <b style="color:#fff;">2.8.4</b> &nbsp;·&nbsp; BETA FIRMWARE &nbsp;·&nbsp; NOVEMBER 2026
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 210 42" width="100%" preserveAspectRatio="none" style="height:40mm;">
+    <defs>
+      <linearGradient id="cw" x1="0" x2="1">
+        <stop offset="0" stop-color="#2f6fde"/><stop offset=".35" stop-color="#27a05f"/>
+        <stop offset=".68" stop-color="#d9a62e"/><stop offset="1" stop-color="#e06a1f"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,30 C25,18 45,38 70,30 C95,22 115,40 140,31 C165,22 185,36 210,27 L210,42 L0,42 Z" fill="url(#cw)" opacity=".22"/>
+    <path d="M0,33 C25,23 45,41 70,33 C95,26 115,43 140,34 C165,26 185,39 210,31" fill="none" stroke="url(#cw)" stroke-width=".9" opacity=".85"/>
+  </svg>
+</section>
+
+<!-- ============================ ABOUT / HOW TO READ ============================ -->
+<section class="page" data-part="Before you begin">
+  <div class="kicker"><span>About this book</span></div>
+  <h1>A hobby, not a syllabus</h1>
+  <p class="lead">This handbook keeps one promise: within a few minutes of every sitting, you will be making a sound worth listening to. It is written for someone who has never touched a synthesiser, but who knows what a track is in GarageBand and can count a bar of four.</p>
+
+  <p>SLOOP is a free, open&#8209;source firmware by <b>isod89</b> that turns the inexpensive M&#8209;VAVE FM&#8209;1 into a four&#8209;track groovebox: three synthesisers and a drum machine, played live with your hands. This book is a gentle course through it, aimed squarely at atmospheric, unhurried electronic music. Drums, basslines and melodies arrive only once you have somewhere beautiful to put them.</p>
+
+  <div class="careful"><div class="label">Beta firmware, honestly labelled</div>
+  <p>This book is pinned to SLOOP 2.8.4 (30 October 2026), which its author still calls a <b>beta</b>: install at your own risk and expect the occasional rough edge. Maintenance releases follow quickly: 2.8.5 (4 November 2026) exists only to accept the different flash chip inside recently sold FM&#8209;1s, so before installing, check the project's releases page for anything newer and read its notes; the lessons here describe 2.8.4 and stay valid until the guide itself changes. The documented safety nets are good ones, a rescue mode, a path back to the official firmware, and one&#8209;file backups, and Chapter&nbsp;2 teaches all three before anything else, so that the ordinary mishaps stay ordinary.</p></div>
+
+  <h2>How instructions are written</h2>
+  <p>Every instruction in this book uses the same five patterns, borrowed from SLOOP's own guide:</p>
+  <table>
+    <tr><th style="width:34mm;">Written</th><th>Means</th></tr>
+    <tr><td><span class="combo">tap <kbd>FX</kbd></span></td><td>press FX and let go without touching anything else (shorter than about half a second)</td></tr>
+    <tr><td><span class="combo">hold <kbd>FX</kbd></span></td><td>keep FX pressed down while you do the next thing</td></tr>
+    <tr><td><span class="combo"><kbd>FX</kbd><span class="plus">+</span><kbd class="key">key 3</kbd></span></td><td>hold FX, and while it is held, press white key 3</td></tr>
+    <tr><td><span class="combo"><kbd>SEL</kbd><span class="plus">+</span><kbd class="knob">KNOB 2</kbd></span></td><td>hold SEL, and while it is held, turn KNOB 2</td></tr>
+    <tr><td><kbd class="key">key 1</kbd> … <kbd class="key">key 16</kbd></td><td>the 16 white keys, counted from the lowest (key 1, the note F3) to the highest (key 16, G5)</td></tr>
+  </table>
+  <p class="note" style="margin-top:2mm;">One more convention from SLOOP itself: a value marked <b>GO</b> (LOAD, SAVE, NEW…) is deliberately hard to trigger by accident. Turn its knob one click and the screen asks <i>AGAIN: …</i>; turn one more click within about 1.5 seconds to actually do it.</p>
+
+  <div class="gb"><div class="label">GarageBand translation</div>
+  <p>Boxes like this one appear throughout. They translate what the FM&#8209;1 is doing into the GarageBand ideas you already have, so nothing feels foreign for long.</p></div>
+
+  <div class="aside"><div class="label">Where this book comes from</div>
+  <p>Every button combination and menu path here was checked against the official SLOOP&nbsp;2.8.4 documentation (GUIDE.md and SLOOP.md in the project's GitHub repository), and the screen pictures are the project's own, used under its GPL&#8209;3.0 licence. Links to everything are on the final page.</p></div>
+</section>
+
+<!-- ============================ CONTENTS ============================ -->
+<section class="page" data-part="Contents">
+  <div class="kicker"><span>Contents</span></div>
+  <h1>The journey</h1>
+  <div class="row c-1-1" style="margin-top:7mm;">
+    <div>
+      <div class="tinylabel" style="color:var(--accent); margin-bottom:2.5mm;">Part 0 · Before the music</div>
+      <table class="ref" style="margin-top:0;">
+        <tr><td style="width:7mm;">1</td><td><a href="#ch1">What SLOOP turns your FM&#8209;1 into</a></td><td class="c" style="width:9mm;">4</td></tr>
+        <tr><td>2</td><td><a href="#ch2">Install, back up, stay safe</a></td><td class="c">5</td></tr>
+        <tr><td>3</td><td><a href="#ch3">Meet the hardware</a></td><td class="c">8</td></tr>
+      </table>
+      <div class="tinylabel" style="color:var(--t2); margin:6mm 0 2.5mm;">Part 1 · Atmosphere</div>
+      <table class="ref" style="margin-top:0;">
+        <tr><td style="width:7mm;">L1</td><td><a href="#l1">Your first sound</a></td><td class="c" style="width:9mm;">10</td></tr>
+        <tr><td>L2</td><td><a href="#l2">Shaping a sound</a></td><td class="c">12</td></tr>
+        <tr><td>L3</td><td><a href="#l3">Record your first loop</a></td><td class="c">14</td></tr>
+        <tr><td>L4</td><td><a href="#l4">Weather: textures and dust</a></td><td class="c">16</td></tr>
+        <tr><td>L5</td><td><a href="#l5">Playing in key</a></td><td class="c">17</td></tr>
+      </table>
+      <div class="tinylabel" style="color:var(--t4); margin:6mm 0 2.5mm;">Part 2 · Rhythm and low end</div>
+      <table class="ref" style="margin-top:0;">
+        <tr><td style="width:7mm;">L6</td><td><a href="#l6">Drums, gently</a></td><td class="c" style="width:9mm;">19</td></tr>
+        <tr><td>L7</td><td><a href="#l7">Bass, melody and the mix</a></td><td class="c">22</td></tr>
+        <tr><td>L8</td><td><a href="#l8">The step sequencer, essentials only</a></td><td class="c">24</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="tinylabel" style="color:var(--t1); margin-bottom:2.5mm;">Part 3 · Performing and keeping it</div>
+      <table class="ref" style="margin-top:0;">
+        <tr><td style="width:7mm;">L9</td><td><a href="#l9">Live hands: punch&#8209;in effects and fills</a></td><td class="c" style="width:9mm;">26</td></tr>
+        <tr><td>L10</td><td><a href="#l10">Sections, songs, and saving your music</a></td><td class="c">28</td></tr>
+        <tr><td>14</td><td><a href="#ch14">The web editor in ten minutes</a></td><td class="c">30</td></tr>
+        <tr><td>15</td><td><a href="#ch15">Where to next: the advanced shelf</a></td><td class="c">31</td></tr>
+      </table>
+      <div class="tinylabel" style="margin:6mm 0 2.5mm;">Part 4 · Reference (print these)</div>
+      <table class="ref" style="margin-top:0;">
+        <tr><td style="width:7mm;">R1</td><td><a href="#r1">Everyday controls</a></td><td class="c" style="width:9mm;">32</td></tr>
+        <tr><td>R2</td><td><a href="#r2">Deeper shortcuts</a></td><td class="c">33</td></tr>
+        <tr><td>G</td><td><a href="#gloss">Plain&#8209;words glossary</a></td><td class="c">34</td></tr>
+        <tr><td>T</td><td><a href="#links">Troubleshooting &amp; links</a></td><td class="c">35</td></tr>
+      </table>
+      <figure class="shot" style="margin-top:8mm;">
+        <span class="frame"><img src="{{IMG:visualiser.png}}" alt="SLOOP visualiser, Lissajous style"></span>
+        <figcaption><b>The reward for pressing HOME twice:</b> SLOOP's full&#8209;screen visualiser. Twelve styles; this one draws the stereo image of whatever you are playing. Turn <span class="combo"><kbd class="knob">SELECT</kbd></span> to change style, tap <kbd>HOME</kbd> to leave.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="aside"><div class="label">How to use the lessons</div>
+  <p>Each lesson opens with <b>Starting from here</b>, the exact state it assumes, so you can sit down weeks later and do any lesson on its own. Each one ends with an audible result, a small <b>Try this</b> idea, and a <b>Made a mess?</b> box for undoing whatever went sideways.</p></div>
+</section>
+
+<!-- ============================ CH 1 : WHAT SLOOP IS ============================ -->
+<section class="page" id="ch1" data-part="Part 0 · Before the music">
+  <div class="kicker"><span class="chno">1</span><span>Chapter one</span></div>
+  <h1>What SLOOP turns your FM&#8209;1 into</h1>
+  <p class="lead">Out of the box, the FM&#8209;1 is a little FM synthesiser. With SLOOP installed, it becomes something friendlier and far more complete: a pocket studio with four tracks that loop together, played entirely by hand.</p>
+
+  <div class="gb"><div class="label">GarageBand translation</div>
+  <p>A <b>track</b> in SLOOP is a close cousin of a GarageBand track: an independent layer of music with its own instrument, its own loop and its own volume. Two honest differences: here you <i>play</i> each layer on the keys and SLOOP catches it into a loop that repeats, rather than dragging regions with a mouse; and each track is one live instrument with <b>one sound at a time</b>, not a lane that can hold many different regions. You still build the song the same way, by stacking layers.</p></div>
+
+  <svg class="tracks-bars" viewBox="0 0 176 46" preserveAspectRatio="none" width="100%" style="margin:3mm 0 1mm;">
+    <text x="0" y="5" font-size="3.4" font-weight="600" letter-spacing=".8" fill="#8a8378">THE FOUR TRACKS, ALWAYS IN THESE COLOURS</text>
+    <g font-size="3.6" font-weight="600" fill="#fff">
+      <rect x="0" y="9"  width="176" height="7.4" rx="1.4" fill="#2f6fde"/><text x="3" y="14">1</text><text x="9" y="14">SYNTH · in this book: pads and atmospheres</text>
+      <rect x="0" y="18.4" width="176" height="7.4" rx="1.4" fill="#27a05f"/><text x="3" y="23.4">2</text><text x="9" y="23.4">SYNTH · later: chords and keys</text>
+      <rect x="0" y="27.8" width="176" height="7.4" rx="1.4" fill="#d9a62e"/><text x="3" y="32.8">3</text><text x="9" y="32.8">SYNTH · later: bass or melody</text>
+      <rect x="0" y="37.2" width="176" height="7.4" rx="1.4" fill="#e06a1f"/><text x="3" y="42.2">4</text><text x="9" y="42.2">DRUM MACHINE · 16 sounds, one on each white key</text>
+    </g>
+  </svg>
+  <p class="note">The three synth tracks share eight voices between them (a <i>voice</i> is one note sounding at once); the drum track has six of its own. You never manage this: SLOOP does. One more ground rule worth knowing from day one: <b>each synth track plays one sound at a time</b>, and changing a track’s sound with PRESETS re&#8209;voices everything already recorded on that track. Lesson&nbsp;7 shows how to arrange around this.</p>
+
+  <h2>Three ideas carry the whole instrument</h2>
+  <p class="tight"><b>1 · One knob picks the track.</b> The <kbd class="knob">ALGORITHM</kbd> knob selects which track you are playing, recording and editing, on every screen (with the documented exceptions: it waits while a layer button is held, during a free take, on the SONG screen and in the menu). The screen takes on the colour of the selected track, so you always know where you are.</p>
+  <p class="tight"><b>2 · Every function button has two lives.</b> <b>Tap</b> a button and its settings pages open. <b>Hold</b> it and the 16 white keys and four knobs temporarily do something else; this is called a <b>layer</b>. Let go, and you are back to playing notes. The whole instrument is taps and holds; there is nothing deeper to memorise.</p>
+  <p class="tight"><b>3 · The screen speaks two colours.</b> <b>White</b> always means <i>the thing you are touching right now</i>. <b>Red</b> always means <i>recording</i>. Everything else is decoration.</p>
+
+  <div class="aside"><div class="label">Why this suits atmospheric music</div>
+  <p>SLOOP ships with granular clouds, drones, bowed metal and choir pads among its 153 sounds, a built&#8209;in bed of rain, wind or vinyl crackle to sit underneath everything, and loops that can stretch to two bars per step for music that moves slowly. It has no factory patterns and no demo songs: every sound you hear will be yours.</p></div>
+
+  <p class="note" style="margin-top:2em">SLOOP is built on <i>Felucca</i> by Leo Kuroshita (Hügelton Instruments) and is free software under the GPL&#8209;3.0 licence. M&#8209;VAVE and FM&#8209;1 are trademarks of their owners; SLOOP is not affiliated with them.</p>
+</section>
+
+<!-- ============================ CH 2 : INSTALL (p5) ============================ -->
+<section class="page" id="ch2" data-part="Part 0 · Before the music">
+  <div class="kicker"><span class="chno">2</span><span>Chapter two</span></div>
+  <h1>Install, back up, stay safe</h1>
+  <p class="lead">Ten minutes of setup buys you real peace of mind: SLOOP installed, your work protected by backups, and a documented road back to the official firmware whenever you want it.</p>
+
+  <h2>Installing SLOOP</h2>
+  <ol class="steps">
+    <li><p><b>Open the installer page</b> at <a href="https://isod89.github.io/sloop-fm1/">isod89.github.io/sloop-fm1</a> in <b>Chrome or Edge</b> (Safari and Firefox will not work; the installer talks to the FM&#8209;1 over a browser feature called Web MIDI that only Chrome&#8209;family browsers provide).</p></li>
+    <li><p><b>Connect the FM&#8209;1 by USB</b> with a <b>data cable</b>, plugged <b>straight into the computer</b>, no hub. Many USB&#8209;C cables are charge&#8209;only; if the installer cannot find the device, suspect the cable first. Switch the FM&#8209;1 on.</p></li>
+    <li><p><b>Press INSTALL</b> on the page and <b>allow MIDI access</b> when the browser asks. Then wait, cable untouched, until the page says <i>Done</i>.</p></li>
+    <li><p>The FM&#8209;1 restarts on the SLOOP logo. That is the whole installation.</p></li>
+  </ol>
+
+  <div class="aside"><div class="label">Updating later is just as easy</div>
+  <p>Future SLOOP versions install the same way, and an update <b>keeps</b> your projects, presets, samples, kits and settings. The installer checks every package twice before a single byte is written, and refuses a damaged one; the practical risk sits in interruptions, which is why the one rule below exists.</p></div>
+
+  <div class="gb"><div class="label">GarageBand translation</div>
+  <p>Think of firmware as swapping which app the hardware runs. Installing SLOOP does not "jailbreak" or modify the FM&#8209;1 permanently; it simply loads a different program, and the official program can be loaded back the same way.</p></div>
+
+  <div class="careful"><div class="label">The one rule</div>
+  <p>Never unplug or switch off the FM&#8209;1 while an install is running. If one does get interrupted, the documented behaviour is forgiving: the FM&#8209;1 waits in update mode and pressing <span class="v">INSTALL</span> again finishes the job, and USB rescue (next page) covers the stubborn cases. Treat careful cables and patience as the real protection.</p></div>
+</section>
+
+<!-- ============================ CH 2 : BACKUP (p6) ============================ -->
+<section class="page" data-part="Part 0 · Before the music">
+  <h2 style="margin-top:0;">Backing up: one file holds everything</h2>
+  <p>SLOOP comes with a companion <b>web editor</b> that runs in the same browser (Chapter&nbsp;14 tours it properly). For now you only need its single most important button.</p>
+  <ol class="steps">
+    <li><p>Open the editor at <a href="https://isod89.github.io/sloop-fm1/webapp/editor/">isod89.github.io/sloop-fm1/webapp/editor</a> in Chrome or Edge with the FM&#8209;1 on USB, press <b>Connect</b>, and allow MIDI.</p></li>
+    <li><p>Go to the <b>Song&nbsp;&amp;&nbsp;sections</b> page, find <b>Backup</b>, and press <b>Save a backup</b>. One file lands in your Downloads folder, named like <span style="font-family:'IBM Plex Mono'; font-size:.9em;">SLOOP&#8209;backup&#8209;DATE.json</span>.</p></li>
+  </ol>
+  <figure class="shot" style="max-width:128mm; margin-left:auto; margin-right:auto;">
+    <span class="frame"><img src="{{IMG:editor-backup.png}}" alt="The web editor's backup page"></span>
+    <figcaption><b>The backup page in the web editor</b> (a historical capture from an earlier SLOOP, when this page was called "Projects" and the song sections "projects"; on 2.8.4 the page is <b>Song&nbsp;&amp;&nbsp;sections</b> and the Backup buttons are unchanged). One file captures the music you are working on, the song sections A–D, all 32 user presets, your samples and drum kits, and the device settings. <b>Restore from a file</b> puts it all back, safely: a damaged file is refused before anything is written. One documented exception: your ☆ <b>favourites</b> list is a device setting that survives power&#8209;off but is <i>not</i> included in a backup, so expect to re&#8209;star sounds after a restore onto a fresh device.</figcaption>
+  </figure>
+  <div class="aside"><div class="label">When to back up</div>
+  <p>Before every firmware update, before going back to the official firmware, and whenever you finish something you would be sad to lose. Backups are also how you keep <b>more than one song</b>; Lesson&nbsp;10 returns to this.</p></div>
+
+  <h2>Autosave: the FM&#8209;1 remembers by itself</h2>
+  <p>Day to day you do not press save at all. Whenever playback is stopped and you have left the controls alone for about 2.5 seconds (at most once every 20 seconds), SLOOP quietly writes your working music to the device's memory. So before switching off: stop playback, take your hands off the controls for a few seconds, then power down; done that way, in the documented behaviour, it comes back on exactly as you left it. Switch off while playing, or the instant you stop, and the latest changes may not have been written yet. Autosave protects against forgetting, not against hardware failure or a beta bug: the backups above remain the real safety net for anything you love.</p>
+</section>
+
+<!-- ============================ CH 2 : RECOVERY (p7) ============================ -->
+<section class="page" data-part="Part 0 · Before the music">
+  <h2 style="margin-top:0;">If things go wrong: the complete recovery kit</h2>
+  <p>Read this page once now, so that if a bad day ever comes, you already know the documented way out of it. With a current backup in hand, nothing on this list needs to cost you music.</p>
+
+  <h3>SLOOP will not start</h3>
+  <p>Hold <kbd>OCT−</kbd> alone while switching the FM&#8209;1 on. The screen shows <i>SLOOP USB RESCUE</i>; now install again from the browser installer as normal. (Fixed and made reliable in 2.8.)</p>
+
+  <h3>An install stopped half&#8209;way</h3>
+  <p>The FM&#8209;1 waits patiently in update mode. Press <span class="v">INSTALL</span> on the installer page again.</p>
+
+  <h3>A button or knob does the wrong thing</h3>
+  <p>Hold <kbd>OCT−</kbd><span class="plus">+</span><kbd>OCT+</kbd> together while switching on (or use the menu: hold <kbd>HOME</kbd> → SYSTEM → HARDWARE CALIBRATION) and follow the on&#8209;screen prompts, pressing each control as asked.</p>
+
+  <h3>Going back to the official firmware</h3>
+  <ol class="steps">
+    <li><p><b>Save a backup first</b> (previous page). Going back does not erase your SLOOP work, but the backup makes it certain.</p></li>
+    <li><p>Use M&#8209;VAVE's own updater, <b>M&#8209;UPGRADE</b>: on <a href="https://www.m-vave.com">m&#8209;vave.com</a> go to Downloads → PC Software → M&#8209;UPGRADE, and separately fetch the official <span class="v">FM&#8209;1 V16</span> firmware file (<span style="font-family:'IBM Plex Mono'; font-size:.9em;">FM&#8209;1.fwsc</span>) from PC Firmware → FM&#8209;1. Close every other app that uses MIDI, then flash the file with M&#8209;UPGRADE.</p></li>
+    <li><p><b>If M&#8209;UPGRADE cannot find the FM&#8209;1</b> (with SLOOP installed the device announces itself under SLOOP's own name, and on some systems M&#8209;UPGRADE then does not list it): open the <b>Clipper</b> installer page at <a href="https://isod89.github.io/clipper-fm1/webapp/installer/">isod89.github.io/clipper&#8209;fm1/webapp/installer</a> and use its <b>Return to the official firmware</b> option with the same official file. This works with SLOOP still on the FM&#8209;1; you do not need to install Clipper itself, and the file is checked before anything is written.</p></li>
+    <li><p>To come back later, install SLOOP again and <b>Restore</b> your backup, which brings your sections, presets, samples and settings back from the file.</p></li>
+  </ol>
+
+  <div class="careful"><div class="label">Odd settings after going back?</div>
+  <p>If the official firmware comes up with strange settings or a scrambled display, it is only reading the settings SLOOP left in memory; nothing is damaged. A factory reset in the official firmware (or M&#8209;UPGRADE's full restore) clears it.</p></div>
+
+  <div class="aside"><div class="label">Why SLOOP's own guide no longer offers a browser "return to stock"</div>
+  <p>Up to version 2.7 the SLOOP installer had its own return&#8209;to&#8209;stock button. It was removed in 2.8 because it was not reliable on every system; the M&#8209;UPGRADE route above, with the Clipper page as fallback, is the documented path for 2.8.4.</p></div>
+</section>
+
+<!-- ============================ CH 3 : HARDWARE (p8) ============================ -->
+<section class="page" id="ch3" data-part="Part 0 · Before the music">
+  <div class="kicker"><span class="chno">3</span><span>Chapter three</span></div>
+  <h1>Meet the hardware</h1>
+  <p class="lead">Every control on the FM&#8209;1 at its real proportions, and the key map every lesson uses.</p>
+
+  <svg viewBox="70 236 860 618" width="100%" style="margin:1mm 0 0;" role="img" aria-label="Top view of the M-VAVE FM-1 with SLOOP key numbering">
+    <rect x="80" y="248" width="840" height="504" rx="34" fill="#3a3a3d" stroke="#1e1e20" stroke-width="2"/>
+    <text x="147" y="295" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">MASTER</text>
+    <circle cx="147" cy="326" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="147" cy="326" r="14.5" fill="#2c2c2f"/>
+    <line x1="147" y1="313" x2="147" y2="320" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="232" y="295" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">SELECT</text>
+    <circle cx="232" cy="326" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="232" cy="326" r="14.5" fill="#2c2c2f"/>
+    <line x1="232" y1="313" x2="232" y2="320" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="147" y="382" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">PRESETS</text>
+    <circle cx="147" cy="413" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="147" cy="413" r="14.5" fill="#2c2c2f"/>
+    <line x1="147" y1="400" x2="147" y2="407" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="232" y="382" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">ALGORITHM</text>
+    <circle cx="232" cy="413" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="232" cy="413" r="14.5" fill="#2c2c2f"/>
+    <line x1="232" y1="400" x2="232" y2="407" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <rect x="123" y="462" width="136" height="43" rx="8" fill="#2b2b2e" stroke="#202022" stroke-width="1.2"/>
+    <rect x="135" y="468" width="56" height="31" rx="6" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="163" y="488" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">OCT−</text>
+    <rect x="197" y="468" width="56" height="31" rx="6" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="225" y="488" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">OCT+</text>
+    <rect x="296" y="285" width="200" height="201" rx="24" fill="#0d0d0e" stroke="#060606" stroke-width="1.5"/>
+    <rect x="318" y="311" width="156" height="150" rx="5" fill="#050505" stroke="#2c2c2c" stroke-width="1"/>
+    <text x="396" y="368" font-family="Inter" font-size="14" font-weight="700" letter-spacing="1.6" fill="#d9d9d9" text-anchor="middle">SCREEN</text>
+    <text x="396" y="386" font-family="Inter" font-size="9.5" fill="#a8c4f2" text-anchor="middle">SLOOP draws its pages here;</text>
+    <text x="396" y="398" font-family="Inter" font-size="9.5" fill="#a8c4f2" text-anchor="middle">the four dials match KNOB1–4</text>
+    <circle cx="341" cy="434" r="10" fill="none" stroke="#2f6fde" stroke-width="3"/>
+    <circle cx="377" cy="434" r="10" fill="none" stroke="#27a05f" stroke-width="3"/>
+    <circle cx="413" cy="434" r="10" fill="none" stroke="#d9a62e" stroke-width="3"/>
+    <circle cx="449" cy="434" r="10" fill="none" stroke="#e06a1f" stroke-width="3"/>
+    <text x="553" y="296" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">KNOB1</text>
+    <circle cx="553" cy="327" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="553" cy="327" r="14.5" fill="#2c2c2f"/>
+    <line x1="553" y1="314" x2="553" y2="321" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="648" y="296" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">KNOB2</text>
+    <circle cx="648" cy="327" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="648" cy="327" r="14.5" fill="#2c2c2f"/>
+    <line x1="648" y1="314" x2="648" y2="321" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="742" y="296" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">KNOB3</text>
+    <circle cx="742" cy="327" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="742" cy="327" r="14.5" fill="#2c2c2f"/>
+    <line x1="742" y1="314" x2="742" y2="321" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="838" y="296" font-family="Inter" font-size="12.5" font-weight="600" letter-spacing=".6" fill="#e8e8e8" text-anchor="middle">KNOB4</text>
+    <circle cx="838" cy="327" r="19" fill="#202023" stroke="#141415" stroke-width="1.5"/>
+    <circle cx="838" cy="327" r="14.5" fill="#2c2c2f"/>
+    <line x1="838" y1="314" x2="838" y2="321" stroke="#e8e8e8" stroke-width="2.4" stroke-linecap="round"/>
+    <rect x="528" y="388" width="338" height="117" rx="14" fill="#2b2b2e" stroke="#202022" stroke-width="1.2"/>
+    <rect x="542" y="398" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="565" y="424.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">FX</text>
+    <rect x="595" y="398" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="618" y="424.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">SEL</text>
+    <rect x="647" y="398" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="670" y="424.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">ENV</text>
+    <rect x="699" y="398" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="722" y="424.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">LFO</text>
+    <rect x="752" y="398" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="775" y="424.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">EDIT</text>
+    <rect x="805" y="398" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="828" y="424.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">GLO</text>
+    <rect x="542" y="451" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="565" y="477.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">HOME</text>
+    <rect x="595" y="451" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="618" y="477.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">SAVE</text>
+    <rect x="647" y="451" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="670" y="477.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">ARP</text>
+    <rect x="699" y="451" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="722" y="477.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">SEQ</text>
+    <rect x="752" y="451" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="805" y="451" width="46" height="44" rx="8" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <text x="828" y="477.5" font-family="Inter" font-size="12" font-weight="700" fill="#e8e8e8" text-anchor="middle">REC</text>
+    <text x="775" y="468" font-family="Inter" font-size="11" font-weight="700" fill="#e8e8e8" text-anchor="middle">PLAY</text>
+    <line x1="763" y1="472" x2="787" y2="472" stroke="#e8e8e8" stroke-width="1.2"/>
+    <text x="775" y="485" font-family="Inter" font-size="11" font-weight="700" fill="#e8e8e8" text-anchor="middle">STOP</text>
+    <circle cx="696" cy="446.5" r="2.4" fill="#6b6b70"/>
+    <rect x="108" y="535" width="785" height="183" rx="22" fill="#2b2b2e" stroke="#202022" stroke-width="1.2"/>
+    <rect x="148.7" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="166.2" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="168.7" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">OP1</text>
+    <text x="168.7" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">F#3</text>
+    <rect x="196.1" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="213.6" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="216.1" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">OP2</text>
+    <text x="216.1" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">G#3</text>
+    <rect x="243.5" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="261.0" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="263.5" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">OP3</text>
+    <text x="263.5" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">A#3</text>
+    <rect x="338.3" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="355.8" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="358.3" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">OP4</text>
+    <text x="358.3" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">C#4</text>
+    <rect x="385.7" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="403.2" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="405.7" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">OP5</text>
+    <text x="405.7" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">D#4</text>
+    <rect x="480.5" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="498.0" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="500.5" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">OP6</text>
+    <text x="500.5" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">F#4</text>
+    <rect x="527.9" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="545.4" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="547.9" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">PIT</text>
+    <text x="547.9" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">G#4</text>
+    <rect x="575.3" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="592.8" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="595.3" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">GLO</text>
+    <text x="595.3" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">A#4</text>
+    <rect x="670.1" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="687.6" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="690.1" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">MONO</text>
+    <text x="690.1" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">C#5</text>
+    <rect x="717.5" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="735.0" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="737.5" y="608" font-family="Inter" font-size="9.5" font-weight="500" fill="#8e8e93" text-anchor="middle">POLY</text>
+    <text x="737.5" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">D#5</text>
+    <rect x="812.3" y="548" width="40" height="77" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="829.8" y="565" width="5" height="25" rx="2.5" fill="#f1f1f1"/>
+    <text x="832.3" y="528" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">F#5</text>
+    <circle cx="310.9" cy="627" r="2.4" fill="#6b6b70"/>
+    <circle cx="453.1" cy="627" r="2.4" fill="#6b6b70"/>
+    <circle cx="642.7" cy="627" r="2.4" fill="#6b6b70"/>
+    <circle cx="784.9" cy="627" r="2.4" fill="#6b6b70"/>
+    <rect x="125.0" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="142.5" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="172.4" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="189.9" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="219.8" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="237.3" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="267.2" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="284.7" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="314.6" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="332.1" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="362.0" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="379.5" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="409.4" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="426.9" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="456.8" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="474.3" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="504.2" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="521.7" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="551.6" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="569.1" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="599.0" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="616.5" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="646.4" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="663.9" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="693.8" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="711.3" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="741.2" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="758.7" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="788.6" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="806.1" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <rect x="836.0" y="629" width="40" height="78" rx="19" fill="#1c1c1e" stroke="#0e0e0f" stroke-width="1.2"/>
+    <rect x="853.5" y="645" width="5" height="46" rx="2.5" fill="#f1f1f1"/>
+    <line x1="145.0" y1="756" x2="145.0" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="145.0" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">1</text>
+    <text x="145.0" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">F3</text>
+    <line x1="192.4" y1="756" x2="192.4" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="192.4" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">2</text>
+    <text x="192.4" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">G3</text>
+    <line x1="239.8" y1="756" x2="239.8" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="239.8" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">3</text>
+    <text x="239.8" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">A3</text>
+    <line x1="287.2" y1="756" x2="287.2" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="287.2" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">4</text>
+    <text x="287.2" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">B3</text>
+    <line x1="334.6" y1="756" x2="334.6" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="334.6" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">5</text>
+    <text x="334.6" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">C4</text>
+    <line x1="382.0" y1="756" x2="382.0" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="382.0" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">6</text>
+    <text x="382.0" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">D4</text>
+    <line x1="429.4" y1="756" x2="429.4" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="429.4" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">7</text>
+    <text x="429.4" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">E4</text>
+    <line x1="476.8" y1="756" x2="476.8" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="476.8" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">8</text>
+    <text x="476.8" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">F4</text>
+    <line x1="524.2" y1="756" x2="524.2" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="524.2" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">9</text>
+    <text x="524.2" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">G4</text>
+    <line x1="571.6" y1="756" x2="571.6" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="571.6" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">10</text>
+    <text x="571.6" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">A4</text>
+    <line x1="619.0" y1="756" x2="619.0" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="619.0" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">11</text>
+    <text x="619.0" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">B4</text>
+    <line x1="666.4" y1="756" x2="666.4" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="666.4" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">12</text>
+    <text x="666.4" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">C5</text>
+    <line x1="713.8" y1="756" x2="713.8" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="713.8" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">13</text>
+    <text x="713.8" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">D5</text>
+    <line x1="761.2" y1="756" x2="761.2" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="761.2" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">14</text>
+    <text x="761.2" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">E5</text>
+    <line x1="808.6" y1="756" x2="808.6" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="808.6" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">15</text>
+    <text x="808.6" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">F5</text>
+    <line x1="856.0" y1="756" x2="856.0" y2="762" stroke="#3d5a80" stroke-width="1" opacity=".55"/>
+    <text x="856.0" y="780" font-family="Inter" font-size="16" font-weight="700" fill="#3d5a80" text-anchor="middle">16</text>
+    <text x="856.0" y="797" font-family="Inter" font-size="11" fill="#8a8378" text-anchor="middle">G5</text>
+    <rect x="86" y="817" width="38" height="21" rx="4" fill="#1c1c1e"/><text x="105" y="832" font-family="Inter" font-size="11.5" font-weight="700" fill="#e8e8e8" text-anchor="middle">FX</text><text x="132" y="832" font-family="Inter" font-size="12" fill="#5a544a">printed on the FM&#8209;1</text>
+    <rect x="318" y="817" width="38" height="21" rx="4" fill="#1c1c1e"/><text x="337" y="832" font-family="Inter" font-size="11.5" font-weight="700" fill="#a8c4f2" text-anchor="middle">F#3</text><text x="364" y="832" font-family="Inter" font-size="12" fill="#5a544a">SLOOP names, and key numbers in blue</text>
+    <rect x="642" y="817" width="38" height="21" rx="4" fill="#1c1c1e"/><text x="661" y="832" font-family="Inter" font-size="10" font-weight="500" fill="#8e8e93" text-anchor="middle">OP1</text><text x="688" y="832" font-family="Inter" font-size="12" fill="#5a544a">stock legends, unused by SLOOP</text>
+    </svg>
+  <p class="note" style="margin-top:1.5mm;">Traced from a photograph of the FM&#8209;1. The OP1&nbsp;…&nbsp;POLY legends belong to the stock firmware; under SLOOP, use the blue names and numbers. The dots mark gaps with no upper key. Round the back: stereo out, TRS MIDI in, USB&#8209;C and the power switch.</p>
+
+  <h3 style="margin-top:3mm;">What each control mainly does under SLOOP</h3>
+  <table class="ref">
+    <tr><th style="width:30mm;">Control</th><th>Main job</th></tr>
+    <tr><td><kbd class="knob">ALGORITHM</kbd></td><td>selects the track, 1 to 4, on every screen; it waits while a layer is held, during a free take, on SONG and in the menu</td></tr>
+    <tr><td><kbd class="knob">PRESETS</kbd></td><td>picks the selected track's sound; on the drum track, the drum kit</td></tr>
+    <tr><td><kbd class="knob">SELECT</kbd></td><td>the tempo on the main screen and inside layers; elsewhere, the previous or next page</td></tr>
+    <tr><td><kbd class="knob">KNOB 1–4</kbd></td><td>whatever the four dials at the bottom of the screen currently show</td></tr>
+    <tr><td><kbd class="knob">MASTER</kbd></td><td>output volume for the headphones and line out</td></tr>
+    <tr><td><kbd>PLAY</kbd> <kbd>REC</kbd></td><td>start and stop everything; record (Lesson&nbsp;3). PLAY's light flashes on the beat</td></tr>
+    <tr><td><kbd>OCT−</kbd> <kbd>OCT+</kbd></td><td>octave down/up on synth tracks (both: centre); on drums, held: quiet and loud hits</td></tr>
+    <tr><td><kbd>HOME</kbd></td><td>tap: the main TRACKS screen (tap again there: the visualiser) · hold: the settings menu</td></tr>
+  </table>
+</section>
+
+<!-- ============================ CH 3 : TAP, HOLD, LAYERS (p9) ============================ -->
+<section class="page" data-part="Part 0 · Before the music">
+  <h2 style="margin-top:0;">Tap, hold, and the seven layers</h2>
+  <div class="row c-5-4">
+    <div>
+      <p>Every function button leads two lives. <b>Tap</b> it and its settings pages open; tap again for the next page, or walk back and forth with <kbd class="knob">SELECT</kbd>. <b>Hold</b> it and a <b>layer</b> opens: while the button is down, the 16 white keys and KNOB&nbsp;1–4 take on new jobs, drawn on the screen as sixteen tiles and four dials. Let go and you are instantly back to playing. The lessons introduce each layer as it becomes useful:</p>
+      <table>
+        <tr><th>Hold</th><th>The keys become…</th><th>Lesson</th></tr>
+        <tr><td><kbd>FX</kbd></td><td>27 punch&#8209;in effects</td><td class="c">9</td></tr>
+        <tr><td><kbd>EDIT</kbd></td><td>erasers, one per sound or note</td><td class="c">3</td></tr>
+        <tr><td><kbd>ARP</kbd></td><td>note repeat (rolls)</td><td class="c">6</td></tr>
+        <tr><td><kbd>SEQ</kbd></td><td>the 16 steps of the pattern</td><td class="c">8</td></tr>
+        <tr><td><kbd>SEL</kbd></td><td>the key of the song</td><td class="c">5</td></tr>
+        <tr><td><kbd>GLO</kbd></td><td>mute, solo, fill, tap tempo</td><td class="c">7</td></tr>
+        <tr><td><kbd>SAVE</kbd></td><td>song sections A to D</td><td class="c">10</td></tr>
+      </table>
+      <p class="note">ENV and LFO have no layer; tapping them opens their pages only. While any layer is held, keys 1, 5, 9 and 13 glow dimly: the first key of each row of tiles, landmarks for your fingers. <kbd>PLAY</kbd> always works, and <kbd class="knob">SELECT</kbd> is always the tempo.</p>
+      <div class="aside"><div class="label">Lock a layer open</div>
+      <p>Hold a layer's button and tap <kbd>HOME</kbd>: the layer stays open after you let go (<i>LOCK</i> on screen, the button blinks), leaving both hands free. Press any other button to release it.</p></div>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:tracks-screen.png}}" alt="The TRACKS screen">
+          <span class="adot" style="left:5%; top:5%;">1</span>
+          <span class="adot" style="left:3.5%; top:44%;">2</span>
+          <span class="adot" style="left:47%; top:84%;">3</span>
+        </span>
+        <figcaption><b>TRACKS, the home screen</b> (tap <kbd>HOME</kbd> from anywhere). <span class="leg">1</span>tempo, play state and bar.beat; <span class="leg">2</span>the four tracks, each with its sound, its steps and a moving playhead; <span class="leg">3</span>the four dials, driven by KNOB&nbsp;1–4, here swing, level, steps and pan. Pictured on SLOOP&nbsp;2.6: on 2.8.4 a small coloured A–D badge also sits by the title once you use song sections (Lesson&nbsp;10).</figcaption>
+      </figure>
+      <div class="gb"><div class="label">GarageBand translation</div>
+      <p>TRACKS is your arrange window: every layer at a glance, with the playhead sweeping each loop. The dials under it are the four knobs, exactly as a channel strip's controls.</p></div>
+    </div>
+  </div>
+  <h2>The screen's two colours, one more time</h2>
+  <p><b>White</b> is always <i>the thing you are touching</i>: the value a knob is changing, the key you are holding, the cursor. <b>Red</b> is always <i>recording</i>: the REC light, the red <i>rec</i> badge on a track, the red armed screen. If something is white, you moved it; if something is red, you are on tape. Everything in the lessons ahead reads through those two rules.</p>
+</section>
+
+<!-- ============================ L1 p10 ============================ -->
+<section class="page" id="l1" data-part="Part 1 · Atmosphere">
+    <div class="kicker"><span class="chno">L1</span><span>Lesson one · Atmosphere</span></div>
+  <h1>Your first sound</h1>
+  <p class="lead">No recording, no theory, no tempo. This lesson is simply you, one beautiful sound, and a room slowly filling with it.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul>
+      <li>FM&#8209;1 on, headphones or a speaker in the 3.5&nbsp;mm output, <kbd class="knob">MASTER</kbd> low to start, then up to taste.</li>
+      <li>Tap <kbd>HOME</kbd> so you are on the TRACKS screen.</li>
+      <li>Turn <kbd class="knob">ALGORITHM</kbd> to track <span class="tt t1">1</span>. The screen turns blue.</li>
+      <li><b>Want a totally clean slate?</b> Tap <kbd>ENV</kbd>, then tap <kbd>SAVE</kbd> (its pages open), then turn <kbd class="knob">SELECT</kbd> right until the <span class="v">TOOLS</span> page shows. Turn <kbd class="knob">KNOB 4</kbd> (NEW) one click; the screen asks <i>AGAIN: NEW</i>; one more click does it. A new loop starts at 90&nbsp;BPM with fresh sounds on all four tracks. Your saved song sections A–D are kept, but the <b>working loop itself is replaced</b> and only its last&#8209;edited track can be undone, so once Lesson&nbsp;10 has taught you sections, save a loop you like into one before reaching for NEW.</li>
+    </ul>
+  </div>
+
+  <ol class="steps">
+    <li><p><b>Play a few white keys.</b> Track 1 wakes up on a bass sound called <i>808 BOOM</i>, one note at a time. Fine, but not why we are here.</p></li>
+    <li><p><b>Turn <kbd class="knob">PRESETS</kbd> slowly to the right.</b> You are browsing 153 sounds, grouped by kind, each labelled on screen (bass, keys, organ, <b>pad</b>, lead…). Keep going until the pads arrive, and stop on <span class="v">WARM PAD</span>. Hold three or four white keys together: your first chord of the course.</p></li>
+    <li><p><b>Find your register.</b> Tap <kbd>OCT−</kbd> once or twice to move the whole keyboard down into darker territory; <kbd>OCT+</kbd> brings it back up. Press both together to return to centre. The OCT lights glow whenever you are away from centre.</p></li>
+    <li><p><b>Add space.</b> Tap <kbd>FX</kbd> and check the title says <span class="v">FX</span> (its button remembers its last page; tap again or turn <kbd class="knob">SELECT</kbd> left until it does). Four dials show. <kbd class="knob">KNOB 4</kbd> is <span class="v">REV</span>, how much of this track feeds the reverb; take it up around 60–80 and hold a chord. <kbd class="knob">KNOB 3</kbd> is <span class="v">DLY</span>, the delay: a quieter echo of everything you play, repeating in time. A little of both and the room gets much bigger. Tap <kbd>HOME</kbd> to come back to TRACKS.</p></li>
+  </ol>
+
+  <div class="gb"><div class="label">GarageBand translation</div>
+  <p><b>Reverb</b> and <b>delay</b> here are send effects, exactly like GarageBand's Master Echo and Reverb sliders on a track: the dial sets how much of this track is poured into a shared effect, and every track has its own pour.</p></div>
+</section>
+
+<!-- ============================ L1 p11 ============================ -->
+<section class="page" data-part="Part 1 · Atmosphere">
+  <h2 style="margin-top:0;">Let the sound hold itself</h2>
+  <p>A pad only becomes an <i>atmosphere</i> when it keeps sounding while your hands do other things. SLOOP has a lovely feature for exactly this, keyboard hold:</p>
+  <ol class="steps">
+    <li><p>Tap <kbd>ARP</kbd> until the page titled <b>ARP&nbsp;2</b> shows (or tap once and walk there with <kbd class="knob">SELECT</kbd>).</p></li>
+    <li><p>Turn <kbd class="knob">KNOB 3</kbd> to set <span class="v">HOLD ON</span>. (The arpeggiator itself stays OFF; with the arp off, HOLD simply sustains whatever you play.)</p></li>
+    <li><p>Tap <kbd>HOME</kbd>, hold a chord, and <b>let go</b>. It keeps sounding. Play a new chord with no keys down and it replaces the old one; add notes while keys are still down and they join in.</p></li>
+  </ol>
+  <p class="note">To silence it: set HOLD back to OFF on ARP&nbsp;2, or load another sound. Up to eight notes can sound across the three synth tracks, so a four&#8209;note chord leaves room to spare.</p>
+
+  <h3>Pads worth holding (a shortlist to browse toward)</h3>
+  <table>
+    <tr><th style="width:26mm;">Sound</th><th style="width:20mm;">Engine</th><th>Character</th></tr>
+    <tr><td><span class="v">WARM PAD</span></td><td>ANALOG</td><td>soft, classic, impossible to dislike</td></tr>
+    <tr><td><span class="v">ATMOS PAD</span></td><td>ANALOG</td><td>wider and hazier</td></tr>
+    <tr><td><span class="v">LOFI CLOUD</span></td><td>GRAIN</td><td>a granular mist; grainy in the best way</td></tr>
+    <tr><td><span class="v">SHIMMER</span></td><td>GRAIN</td><td>glassy, slowly glittering</td></tr>
+    <tr><td><span class="v">DRONE</span></td><td>GRAIN</td><td>one deep, endless tone; try a single low key</td></tr>
+    <tr><td><span class="v">CHOIR AAH</span></td><td>VOICE</td><td>distant voices</td></tr>
+    <tr><td><span class="v">BOWED MTL</span></td><td>PHYS</td><td>a bowed metal bar, eerie and lovely</td></tr>
+    <tr><td><span class="v">OCEAN</span></td><td>NOISE</td><td>not notes at all: the sea</td></tr>
+  </table>
+
+  <p class="note" style="margin-top:1.5mm;">One gentle cap worth knowing: the engines behind the mistiest pads trade voices for richness, so <span class="v">GRAIN</span> (LOFI CLOUD, SHIMMER, DRONE) and <span class="v">PHYS</span> (BOWED MTL) play <b>three</b> notes at once and <span class="v">VOICE</span> (CHOIR AAH) four; on the three&#8209;voice engines a four&#8209;note chord lets its oldest note go. Three&#8209;note chords suit them beautifully.</p>
+
+  <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A held chord washing through reverb and delay, sustaining on its own while your hands are off the keys. That is an atmosphere, and it took four knobs.</p></div></div>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Audition every pad in the shortlist and crown two favourites. On the SAVE pages' <span class="v">PRESETS</span> page (tap <kbd>ENV</kbd> then <kbd>SAVE</kbd>; SELECT to PRESETS if needed), turn <kbd class="knob">KNOB 4</kbd> one click right: <i>FAV ADDED</i>. Favourites jump to the front of the PRESETS list, so your sounds are always two clicks away.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>A note will not stop sounding: that is HOLD doing its job; set HOLD OFF on ARP&nbsp;2, or load any other sound. The sound itself got strange after knob exploring: just re&#8209;select it with <kbd class="knob">PRESETS</kbd> (one click away and back), which reloads the preset fresh. Nothing in this lesson is recorded, so there is nothing to undo.</p></div>
+</section>
+
+<!-- ============================ L2 p12 ============================ -->
+<section class="page" id="l2" data-part="Part 1 · Atmosphere">
+    <div class="kicker"><span class="chno">L2</span><span>Lesson two · Atmosphere</span></div>
+  <h1>Shaping a sound</h1>
+  <p class="lead">Three ideas, envelope, LFO and filter, are most of what "synthesis" means. Each is one page of four knobs, and each makes immediate sense on a pad.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul>
+      <li>Track <span class="tt t1">1</span> selected, a pad loaded (WARM PAD is perfect), some reverb on it, as in Lesson&nbsp;1.</li>
+      <li>HOLD can be on or off; off is less confusing while you experiment.</li>
+    </ul>
+  </div>
+
+  <h2>The envelope: how a note fades in and out</h2>
+  <p>Tap <kbd>ENV</kbd> (the page titled <span class="v">ENV</span>; tap again if ENV&nbsp;DEST shows instead). Four dials: <span class="v">ATK</span> (attack), <span class="v">DEC</span> (decay), <span class="v">SUS</span> (sustain) and <span class="v">REL</span> (release). Together they draw the shape of every note's loudness:</p>
+  <svg viewBox="0 0 176 34" width="100%" style="margin:1mm 0 2mm;">
+    <line x1="8" y1="28" x2="170" y2="28" stroke="#ddd6c8" stroke-width=".5"/>
+    <path d="M8,28 L46,6 L72,13 L116,13 L158,28" fill="none" stroke="#3d5a80" stroke-width="1.4" stroke-linejoin="round"/>
+    <path d="M8,28 L46,6 L72,13 L116,13 L158,28 Z" fill="#3d5a80" opacity=".08"/>
+    <g font-size="3.2" font-weight="600" fill="#5a544a" text-anchor="middle">
+      <text x="27" y="33">ATK · fade in</text><text x="59" y="33">DEC · settle</text><text x="94" y="33">SUS · held level</text><text x="137" y="33">REL · fade out</text>
+    </g>
+    <g font-size="2.8" fill="#8a8378"><text x="10" y="5">loud</text><text x="40" y="26" text-anchor="middle"></text></g>
+    <line x1="46" y1="6" x2="46" y2="28" stroke="#b9c5d4" stroke-width=".4" stroke-dasharray="1.5 1.5"/>
+    <line x1="72" y1="13" x2="72" y2="28" stroke="#b9c5d4" stroke-width=".4" stroke-dasharray="1.5 1.5"/>
+    <line x1="116" y1="13" x2="116" y2="28" stroke="#b9c5d4" stroke-width=".4" stroke-dasharray="1.5 1.5"/>
+    <text x="116" y="10" font-size="2.8" fill="#8a8378" text-anchor="middle">key released here</text>
+  </svg>
+  <ol class="steps">
+    <li><p><b>Raise ATK</b> well up and play a chord: it now blooms instead of starting. This single move turns almost any sound into a pad.</p></li>
+    <li><p><b>Raise REL</b> too: when you let go, the chord exhales slowly rather than stopping. Long attack, long release, and you can play lazily; the sound smooths everything over.</p></li>
+  </ol>
+
+  <h2>The filter: one knob of brightness</h2>
+  <p>Hold <kbd>FX</kbd> and turn <kbd class="knob">KNOB 4</kbd>: this is the track's filter on one dial. Left of centre it is a <b>low&#8209;pass</b>, closing the sound down to something dark and distant; right of centre a <b>high&#8209;pass</b>, thinning it to a whisper; centre is off. To sweep it while a chord sounds, let the chord hold itself first (KBD&nbsp;HOLD from Lesson&nbsp;1), since one hand is on FX and the other on the knob; then sweep slowly and you will hear why filters are the most loved control in electronic music. It stays where you leave it, even when you change sounds.</p>
+  <div class="gb"><div class="label">GarageBand translation</div>
+  <p>A low&#8209;pass filter is the "cutoff" dial on GarageBand's synth Smart Controls, or an EQ with the treble pulled right down: the tone control of the synth world. <b>Cutoff</b> just means the point where brightness stops.</p></div>
+</section>
+
+<!-- ============================ L2 p13 ============================ -->
+<section class="page" data-part="Part 1 · Atmosphere">
+  <h2 style="margin-top:0;">The LFO: movement you do not have to play</h2>
+  <div class="row c-3-2">
+    <div>
+      <p>An <span class="v">LFO</span> (low&#8209;frequency oscillator) is an invisible hand that slowly turns a knob for you, round and round, forever. Point it at the filter and the sound breathes; at the pitch and it shimmers; at the volume and it swells and recedes like a tide.</p>
+      <ol class="steps">
+        <li><p>Tap <kbd>LFO</kbd> until the page titled <span class="v">LFO</span> shows. Set <span class="v">RATE</span> slow (well left), <span class="v">WAVE</span> to <span class="v">SIN</span> (a smooth sine), and give <span class="v">FADE</span> a little so the movement eases in.</p></li>
+        <li><p>Tap <kbd>LFO</kbd> until <b>LFO&nbsp;DEST</b> shows. Turn <span class="v">FLT</span> up a modest amount. Hold a chord: the brightness now slowly rises and falls on its own.</p></li>
+        <li><p>Tap <kbd>LFO</kbd> until the page titled <b>LFO&nbsp;2</b> shows, and set <span class="v">SYNC</span> to <span class="v">2BAR</span> or <span class="v">4BAR</span>: the cycle now locks to the tempo, one slow breath every two or four bars, perfect for loops later. (RATE is ignored while SYNC is on.)</p></li>
+      </ol>
+      <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A chord that blooms in, breathes in brightness by itself, and exhales when released. You have just done sound design.</p></div></div>
+      <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+      <p>On LFO&nbsp;DEST, set FLT back near zero and raise <span class="v">AMP</span> instead: now the <i>volume</i> breathes, a slow tremolo. With SYNC at 4BAR and POL set to UNI on LFO&nbsp;2 (so it only dips, never boosts), a held drone turns into a tide.</p></div>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:lfo-page.png}}" alt="The LFO 2 page"></span>
+        <figcaption><b>The LFO&nbsp;2 page</b> with its wave drawn across the screen: synced to 1/4 here, TRIG set to FREE (the LFO keeps running rather than restarting on each new phrase, even with SYNC on a tempo value), one&#8209;sided (UNI). Every settings page in SLOOP looks like this: four labelled values, driven by KNOB&nbsp;1–4.</figcaption>
+      </figure>
+      <div class="aside"><div class="label">A word you now own</div>
+      <p><b>Modulation</b> is the general word for "something automatically moving a control": the LFO modulates the filter. That is the entire mystery of the term.</p></div>
+    </div>
+  </div>
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>Too much wobble, lost track of what you changed? Re&#8209;select the sound with <kbd class="knob">PRESETS</kbd> to reload it clean. Or start the sound from scratch: on the SAVE pages' <span class="v">TOOLS</span> page, <span class="v">INIT</span> (<kbd class="knob">KNOB 2</kbd>, the two&#8209;click GO) resets the track's sound to its engine's defaults. Your other tracks are untouched either way.</p></div>
+</section>
+
+<!-- ============================ L3 p14 ============================ -->
+<section class="page" id="l3" data-part="Part 1 · Atmosphere">
+    <div class="kicker"><span class="chno">L3</span><span>Lesson three · Atmosphere</span></div>
+  <h1>Record your first loop</h1>
+  <p class="lead">SLOOP's recorder is built around a beautiful idea: play first, and let the loop form around what you played. If you can count four beats, you already have the only skill this needs.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul>
+      <li>An <b>empty</b> loop (the clean&#8209;slate NEW from Lesson&nbsp;1's start box if anything is lying around), so the free take is available.</li>
+      <li>Track <span class="tt t1">1</span> selected with a pad you like; HOLD <b>off</b> for now (ARP&nbsp;2 page), so notes end when your fingers lift.</li>
+    </ul>
+  </div>
+
+  <h2>The free take: the loop follows you</h2>
+  <ol class="steps">
+    <li><p><b>Press <kbd>REC</kbd> while stopped.</b> The screen says <i>rec ready · play freely</i>; the REC light blinks. Nothing is recording yet.</p></li>
+    <li><p><b>Play.</b> At your own pace, no click, no countdown: a chord, a change, another. From your first note SLOOP is listening, showing the seconds and the loop it would make right now (<i>2 bars · 92 bpm</i>).</p></li>
+    <li><p><b>Count yourself round, and press <kbd>REC</kbd> on the "1" after your last bar.</b> That press is the only timing that matters: it tells SLOOP where the loop ends. The loop closes, your playing snaps gently into it, the tempo is set from how you played, and it starts looping immediately.</p></li>
+  </ol>
+  <svg viewBox="0 0 176 30" width="100%" style="margin:1mm 0 2mm;">
+    <g font-size="3.1" font-weight="600">
+      <rect x="4" y="8" width="74" height="10" rx="1.4" fill="#e7eefb" stroke="#2f6fde" stroke-width=".5"/>
+      <rect x="78" y="8" width="74" height="10" rx="1.4" fill="#e7eefb" stroke="#2f6fde" stroke-width=".5"/>
+      <g fill="#3d5a80" text-anchor="middle">
+        <text x="13" y="14.6">1</text><text x="32" y="14.6">2</text><text x="50" y="14.6">3</text><text x="69" y="14.6">4</text>
+        <text x="87" y="14.6">1</text><text x="106" y="14.6">2</text><text x="124" y="14.6">3</text><text x="143" y="14.6">4</text>
+      </g>
+      <text x="41" y="5.5" fill="#5a544a" text-anchor="middle">bar 1 · press REC, then play</text>
+      <text x="115" y="5.5" fill="#5a544a" text-anchor="middle">bar 2 · keep playing</text>
+    </g>
+    <g>
+      <circle cx="160" cy="13" r="5.4" fill="#8c2f23"/>
+      <text x="160" y="14.7" font-size="3.4" font-weight="700" fill="#fff" text-anchor="middle">REC</text>
+      <text x="158" y="26.5" font-size="3" font-weight="600" fill="#8c2f23" text-anchor="middle">press on this "1"</text>
+      <text x="158" y="29.8" font-size="2.6" fill="#8a8378" text-anchor="middle">and the loop closes</text>
+    </g>
+  </svg>
+  <p class="note">SLOOP chooses 1, 2 or 4 bars, whichever best fits what you played, and all four tracks adopt that length. Change your mind mid&#8209;take? <kbd>PLAY</kbd> drops the take; a take also closes by itself after 24 seconds.</p>
+
+  <div class="gb"><div class="label">GarageBand translation</div>
+  <p>This is cycle recording without drawing the cycle region first: you perform, then mark the end, and the region is cut to fit. "Snapping to the grid" is quantise, the same tidy&#8209;up GarageBand applies to MIDI regions.</p></div>
+</section>
+
+<!-- ============================ L3 p15 ============================ -->
+<section class="page" data-part="Part 1 · Atmosphere">
+  <h2 style="margin-top:0;">Prefer a count&#8209;in? There is one</h2>
+  <p>Once a loop exists (or any time you would rather set the tempo first), recording works the familiar way: set the tempo with <kbd class="knob">SELECT</kbd> on TRACKS, press <kbd>REC</kbd> while stopped, and on the armed screen use the four dials: <b>mode</b> (on an empty loop: <i>free</i> or <i>tempo</i>), <b>length</b> (1, 2 or 4 bars), <b>start</b> (<i>note</i>: your first note begins the loop · <i>count</i>: press <kbd>PLAY</kbd> for one bar of clicks, 4&#8209;3&#8209;2&#8209;1 on screen, then recording begins), and <b>quant</b> (on: notes land on the grid · off: your exact timing is kept). These are device settings; they stay as you leave them.</p>
+
+  <h2>Layering: the overdub</h2>
+  <ol class="steps">
+    <li><p>With the loop playing, press <kbd>REC</kbd>: recording starts <b>immediately</b> on the selected track, on top of what is there. Play a few more notes across a pass or two, then press <kbd>REC</kbd> again to stop recording; the loop plays on.</p></li>
+    <li><p>Held notes record as held notes, chords as chords, and everything you layer joins the same loop. This stack&#8209;another&#8209;pass habit is the heart of SLOOP.</p></li>
+  </ol>
+  <div class="aside"><div class="label">The quiet metronome</div>
+  <p>The <kbd>PLAY</kbd> light flashes on every beat, always: a silent conductor. If you want an audible click, it lives at GLO → GLOBAL → CLICK (<i>OFF</i>, <i>REC</i>&nbsp;=&nbsp;only while recording, <i>ON</i>). The click is never recorded.</p></div>
+
+  <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A one&#8209;, two&#8209; or four&#8209;bar pad progression looping by itself, at a tempo you set just by playing, with a second pass layered over it.</p></div></div>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Undo the pass you just made (<kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd>), then record the same chords again with QUANT <b>off</b> and compare: the loop keeps your human timing. Then open the ENV page while the loop plays and slowly raise ATK: you can redesign the sound of notes that are already recorded, because SLOOP stores the notes, not the audio.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>Three sizes of eraser, gentlest first. <b>Undo the last pass:</b> <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> (redo: <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT+</kbd>; one level, covering the last recording pass or edit). <b>Clear just this track:</b> hold <kbd>REC</kbd> about two seconds; a ring fills on screen, and letting go early cancels. Undo can bring a cleared track back. <b>Start the whole loop over:</b> the NEW tool from Lesson&nbsp;1's start box. And remember autosave: stop playback, hands off for a moment, and the current state is kept through power&#8209;off.</p></div>
+</section>
+
+<!-- ============================ L4 p16 ============================ -->
+<section class="page" id="l4" data-part="Part 1 · Atmosphere">
+    <div class="kicker"><span class="chno">L4</span><span>Lesson four · Atmosphere</span></div>
+  <h1>Weather: textures and dust</h1>
+  <p class="lead">The secret glue of ambient and lo&#8209;fi records is a quiet bed of noise underneath everything: rain, tape hiss, vinyl crackle. SLOOP generates these for you, without using up a track.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul><li>Any loop playing (Lesson&nbsp;3's, ideally), or even just a held pad. Any track can be selected; this lesson's settings are global.</li></ul>
+  </div>
+
+  <div class="row c-3-2">
+    <div>
+      <ol class="steps">
+        <li><p>Tap <kbd>GLO</kbd> repeatedly until the <span class="v">TEXTURE</span> page shows.</p></li>
+        <li><p>Turn <span class="v">SRC</span> to <span class="v">RAIN</span>. Bring <span class="v">LEVEL</span> up until it sits just under the music. Try the other weathers: <span class="v">VINYL</span> (hiss, rumble and crackle), <span class="v">TAPE</span>, <span class="v">WIND</span>, <span class="v">RADIO</span>, <span class="v">ROOM</span>.</p></li>
+        <li><p><span class="v">TONE</span> darkens (left) or thins (right) the bed; <span class="v">MOVE</span> makes it breathe, swelling and receding. On the next page, <b>TEXTURE&nbsp;2</b>, <span class="v">RATE</span> sets how long each breath takes, 1 to 16 bars of your tempo.</p></li>
+        <li><p>One more colour: hold <kbd>FX</kbd> and turn <kbd class="knob">KNOB 2</kbd>, <span class="v">DUST</span>. It runs the whole mix through an old sampler and a worn record: softly driven, fewer bits, a little hiss and crackle while the music plays. A small amount warms everything.</p></li>
+      </ol>
+      <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>Your loop sitting inside weather: rain breathing beneath it, a little dust on top. It instantly sounds like a finished record.</p></div></div>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:texture-page.png}}" alt="The TEXTURE page, VINYL source"></span>
+        <figcaption><b>GLO → TEXTURE.</b> A vinyl bed at 63%, darkened with TONE, breathing with MOVE. The texture is saved with your project, and each song section can carry its own.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Set TEXTURE&nbsp;2's <span class="v">WHEN</span> to <i>PLAY</i> so the weather fades in and out with the transport: press <kbd>PLAY</kbd> to stop and the rain politely stops with the band.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>Everything here is reversible by turning it off: SRC to <span class="v">OFF</span> silences the bed entirely (and costs nothing while off), DUST back to 0 cleans the mix. Nothing in this lesson records into your loop.</p></div>
+</section>
+
+<!-- ============================ L5 p17 ============================ -->
+<section class="page" id="l5" data-part="Part 1 · Atmosphere">
+    <div class="kicker"><span class="chno">L5</span><span>Lesson five · Atmosphere</span></div>
+  <h1>Playing in key</h1>
+  <p class="lead">Here is the deal SLOOP offers: tell it one note, and it will quietly make wrong notes impossible. You get to sound like you know music theory years before you do.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul>
+      <li>Track <span class="tt t2">2</span> selected (green), which starts life as a <span class="v">RHODES</span> electric piano: lovely for chords.</li>
+      <li>A loop can be playing or not; this works live either way.</li>
+    </ul>
+  </div>
+
+  <div class="row c-3-2">
+    <div>
+      <h3>Three words, then the keys do the theory</h3>
+      <p class="tight"><b>Key</b>: the home note a piece of music gravitates to. <b>Scale</b>: the family of notes that belong with that home. <b>Chord</b>: three or four of those notes sounding together. That is all the theory this book needs.</p>
+      <ol class="steps">
+        <li><p><b>Choose the key.</b> Hold <kbd>SEL</kbd> and press any key, say the one labelled D on page&nbsp;8's map. The screen says <i>KEY&nbsp;D</i>, and all three synth tracks now treat D as home.</p></li>
+        <li><p><b>Choose the mood.</b> Still holding <kbd>SEL</kbd>, turn <kbd class="knob">KNOB 2</kbd>, <span class="v">SCALE</span>. <span class="v">MAJ</span> is bright, <span class="v">MIN</span> is melancholy; for atmospheres also try <span class="v">DOR</span> (minor with a glow), <span class="v">LYD</span> (floating), <span class="v">MPEN</span> (minor pentatonic: five notes, nothing can clash).</p></li>
+        <li><p><b>Make wrong notes impossible.</b> <kbd>SEL</kbd><span class="plus">+</span><kbd class="knob">KNOB 3</kbd> is <span class="v">KEYS</span>. On <span class="v">SNAP</span>, anything you play is nudged into the scale. On <span class="v">WHITE</span>, the white keys simply walk the scale upward from key&nbsp;5 (C4), and the black keys fall silent.</p></li>
+        <li><p><b>One finger, whole chords.</b> <kbd>SEL</kbd><span class="plus">+</span><kbd class="knob">KNOB 1</kbd> is <span class="v">CHORD</span>: set it to <span class="v">TRIAD</span>, the plain three&#8209;note chord. Now every white key plays a full, correct chord of your key: key&nbsp;5 is the home chord, and each key up plays the next one along. That is the whole mechanism; richer voicings wait on the next page.</p></li>
+      </ol>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:key-layer.png}}" alt="The SEL layer: key of the song"></span>
+        <figcaption><b>Hold <kbd>SEL</kbd>:</b> the 16 keys shown as tiles, each labelled with the chord it would play; the key of the song lit. The four dials beneath are CHORD, SCALE, KEYS and TRANSPOSE (pictured with CHORD on 9TH; this lesson starts you on TRIAD).</figcaption>
+      </figure>
+      <div class="gb"><div class="label">GarageBand translation</div>
+      <p>This is Smart Instrument chord strips, generalised: the instrument constrains you to the key so every choice is a good one. Unlike chord strips, you pick the key, scale and voicing yourself.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ L5 p18 ============================ -->
+<section class="page" data-part="Part 1 · Atmosphere">
+  <h2 style="margin-top:0;">The main exercise: a progression in one take</h2>
+  <ol class="steps">
+    <li><p>With CHORD on <span class="v">TRIAD</span> and your Rhodes sounding, practise a slow four&#8209;chord journey on single white keys until it feels natural: for instance key&nbsp;5, key&nbsp;10, key&nbsp;8, key&nbsp;9, <b>one chord per bar, four bars in all</b> (a free take closes at 1, 2 or 4 bars, so four fits it exactly; chords that each last two bars come later, in Lesson&nbsp;8's slow sequencer).</p></li>
+    <li><p><b>Record it in one pass.</b> If you are on an empty loop, free&#8209;take it exactly as in Lesson&nbsp;3: <kbd>REC</kbd>, play the four bars, <kbd>REC</kbd> on the "1" after the fourth. If a shorter loop from Lesson&nbsp;3 is already playing, give this track four bars first: stop, press <kbd>REC</kbd> to arm, set the armed screen's <span class="v">LENGTH</span> dial to <i>4&nbsp;bars</i>, then play; your shorter pad simply repeats underneath, in time. Whatever you hear is exactly what records.</p></li>
+    <li><p><b>One learned flourish:</b> record the take again (undo first: <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd>), and this time <b>hold the black key G#</b> while you play one chord of the cycle. G# adds the <b>7th</b>, so that one chord records richer, every time around. One black key, one chord, is plenty.</p></li>
+  </ol>
+
+  <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A chord progression that sounds deliberate and harmonically "right", looping under your pad, played with one finger per chord, with a single 7th glowing in it.</p></div></div>
+
+  <h2>Optional exploration: CHORD+, the black keys bend the chord</h2>
+  <p>When the basics feel comfortable, the other black keys open up: each one <i>edits the chord under your finger</i> while held (press the black key with the white one, or while the chord still sounds):</p>
+  <table style="max-width:120mm;">
+    <tr><th style="width:22mm;">Black key</th><th>Changes the chord</th></tr>
+    <tr><td><span class="v">F#</span></td><td>major ↔ minor</td></tr>
+    <tr><td><span class="v">G#</span></td><td>adds the 7th (the one you just used)</td></tr>
+    <tr><td><span class="v">A#</span></td><td>sus4 (the "hanging, unresolved" colour)</td></tr>
+    <tr><td><span class="v">C#</span></td><td>adds the 9th</td></tr>
+    <tr><td><span class="v">D#</span></td><td>an inversion (same chord, re&#8209;stacked)</td></tr>
+  </table>
+  <p class="note">Both octaves of black keys work, you can hold several at once, and the FM&#8209;1 also offers 7TH, 9TH, SUS4 and POWER as standing chord modes on <kbd>SEL</kbd><span class="plus">+</span><kbd class="knob">KNOB 1</kbd>, once you know which colour you want everywhere.</p>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Tap <kbd>SEL</kbd> until the page titled <b>SEL&nbsp;2</b> shows. <span class="v">STRUM</span> rolls each chord's notes like a strummed guitar (right: low to high); <span class="v">VLEAD</span> ON is voice leading: each chord voiced as close as possible to the last, so progressions glide instead of jumping. VLEAD on a pad is pure atmosphere.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>Black keys gone silent on a synth track? That is chord or scale mode working as designed: set CHORD to OFF and KEYS to OFF (both on the <kbd>SEL</kbd> hold) and the keyboard is fully chromatic again. A recorded pass you regret: <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> undoes it. Recorded chords keep the notes they were played as; if a loop clashes after a key change, undo that take and record it again.</p></div>
+</section>
+
+<!-- ============================ L6 p19 ============================ -->
+<section class="page" id="l6" data-part="Part 2 · Rhythm and low end">
+    <div class="kicker"><span class="chno">L6</span><span>Lesson six · Rhythm</span></div>
+  <h1>Drums, gently</h1>
+  <p class="lead">Track 4 is a sixteen&#8209;sound drum machine played on the white keys. We will start with kits that whisper rather than bang, and record a beat the same forgiving way you recorded your pads.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul>
+      <li>Ideally, your pad loop from Lessons 3 or 5 is on the device (autosave will have kept it). An empty loop also works; you will just free&#8209;take the drums first instead.</li>
+      <li>Turn <kbd class="knob">ALGORITHM</kbd> to track <span class="tt t4">4</span>. The screen turns orange.</li>
+    </ul>
+  </div>
+
+  <h2>The sixteen sounds, one per white key</h2>
+  <svg viewBox="0 0 176 22" width="100%" style="margin:1mm 0 1.5mm;">
+    <g font-size="2.7" font-weight="600" text-anchor="middle">
+      <g>
+        <rect x="2"   y="2" width="20" height="8.5" rx="1.2" fill="#e06a1f"/><rect x="23.8" y="2" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+        <rect x="45.6" y="2" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/><rect x="67.4" y="2" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+        <rect x="89.2" y="2" width="20" height="8.5" rx="1.2" fill="#e06a1f"/><rect x="111"  y="2" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+        <rect x="132.8" y="2" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/><rect x="154.6" y="2" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+      </g>
+      <g fill="#fff"><text x="12" y="6.2">1 KICK</text><text x="99.2" y="6.2">5 HAT</text></g>
+      <g fill="#6b4423">
+        <text x="33.8" y="6.2">2 KICK 2</text><text x="55.6" y="6.2">3 SNARE</text><text x="77.4" y="6.2">4 CLAP</text>
+        <text x="121" y="6.2">6 OPEN HAT</text><text x="142.8" y="6.2">7 PEDAL</text><text x="164.6" y="6.2">8 RIM</text>
+      </g>
+      <g>
+        <rect x="2"   y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/><rect x="23.8" y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+        <rect x="45.6" y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/><rect x="67.4" y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+        <rect x="89.2" y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/><rect x="111"  y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+        <rect x="132.8" y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/><rect x="154.6" y="12" width="20" height="8.5" rx="1.2" fill="#fbeadd" stroke="#e06a1f" stroke-width=".4"/>
+      </g>
+      <g fill="#6b4423">
+        <text x="12" y="16.2">9 SNARE 2</text><text x="33.8" y="16.2">10 LOW TOM</text><text x="55.6" y="16.2">11 HI TOM</text><text x="77.4" y="16.2">12 CRASH</text>
+        <text x="99.2" y="16.2">13 RIDE</text><text x="121" y="16.2">14 SHAKER</text><text x="142.8" y="16.2">15 CONGA</text><text x="164.6" y="16.2">16 COWBELL</text>
+      </g>
+    </g>
+  </svg>
+  <p class="note">The two keys you will lean on are shaded: <b>key&nbsp;1</b> (kick) and <b>key&nbsp;5</b> (hat). A black key plays the same sound as the white key to its left, so two fingers can share one drum for fast patterns. The closed and pedal hats automatically cut the open hat short, as on a real kit.</p>
+
+  <ol class="steps">
+    <li><p><b>Choose a gentle kit.</b> Turn <kbd class="knob">PRESETS</kbd>: on track 4 it browses the 37 drum kits. For this music, audition <span class="v">AMBIENT</span>, <span class="v">LO&#8209;FI</span>, <span class="v">JAZZ</span>, <span class="v">BOOMBAP</span> and <span class="v">DUST</span> (a hazy treatment of the sampled acoustic kit). Changing kit never changes a recorded pattern, so you can swap kits under a beat forever.</p></li>
+    <li><p><b>Learn the dynamics trick.</b> Hold <kbd>OCT−</kbd> while you hit a drum: a <b>ghost</b> note, quiet and dark. Hold <kbd>OCT+</kbd>: a <b>hard</b> hit. The FM&#8209;1's keys cannot feel how hard you press, so these two buttons are your touch sensitivity, and they record exactly as played.</p></li>
+  </ol>
+</section>
+
+
+<!-- ============================ L6 p20 : PATTERN + COUNTED TAKE ============================ -->
+<section class="page" data-part="Part 2 · Rhythm and low end">
+  <h2 style="margin-top:0;">A pattern to copy, and a take you can count</h2>
+  <p>If a blank bar feels like a dare, borrow this one. Sixteen steps make one bar (at the default step size of 1/16), counted <b>1&nbsp;2&nbsp;3&nbsp;4</b> across it; the pattern below is the gentle backbone of half the lo&#8209;fi records ever made.</p>
+  <svg viewBox="0 0 176 46" width="100%" style="margin:1.5mm 0 1mm;">
+    <!-- beat numbers -->
+    <g font-size="3.4" font-weight="700" fill="#3d5a80" text-anchor="middle">
+      <text x="30.2" y="5">1</text><text x="67.2" y="5">2</text><text x="104.2" y="5">3</text><text x="141.2" y="5">4</text>
+    </g>
+    <!-- lane labels -->
+    <g font-size="2.9" font-weight="600" fill="#5a544a" text-anchor="end">
+      <text x="23" y="13.6">HAT · key 5</text>
+      <text x="23" y="25.6">SNARE · key 3</text>
+      <text x="23" y="37.6">KICK · key 1</text>
+    </g>
+    <!-- grid: 16 cells per lane, x start 26, cell w 9.25, h 8 -->
+    <g>
+      <!-- cells -->
+      <g fill="#f3efe6" stroke="#ddd6c8" stroke-width=".3">
+        <rect x="26.00" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="35.25" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="44.50" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="53.75" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="63.00" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="72.25" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="81.50" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="90.75" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="100.00" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="109.25" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="118.50" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="127.75" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="137.00" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="146.25" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="155.50" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="164.75" y="9.0" width="8.45" height="8" rx="1"/>
+        <rect x="26.00" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="35.25" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="44.50" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="53.75" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="63.00" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="72.25" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="81.50" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="90.75" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="100.00" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="109.25" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="118.50" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="127.75" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="137.00" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="146.25" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="155.50" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="164.75" y="21.0" width="8.45" height="8" rx="1"/>
+        <rect x="26.00" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="35.25" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="44.50" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="53.75" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="63.00" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="72.25" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="81.50" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="90.75" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="100.00" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="109.25" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="118.50" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="127.75" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="137.00" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="146.25" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="155.50" y="33.0" width="8.45" height="8" rx="1"/>
+        <rect x="164.75" y="33.0" width="8.45" height="8" rx="1"/>
+      </g>
+      <g>
+        <rect x="26.00" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+        <rect x="44.50" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="0.45"/>
+        <rect x="63.00" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+        <rect x="81.50" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="0.45"/>
+        <rect x="100.00" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+        <rect x="118.50" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="0.45"/>
+        <rect x="137.00" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+        <rect x="155.50" y="9.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="0.45"/>
+        <rect x="63.00" y="21.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+        <rect x="137.00" y="21.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+        <rect x="26.00" y="33.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+        <rect x="118.50" y="33.0" width="8.45" height="8" rx="1" fill="#e06a1f" opacity="1"/>
+      </g>
+      <!-- step numbers under kick lane -->
+      <g font-size="2.3" fill="#8a8378" text-anchor="middle">
+        <text x="30.20" y="44.6">1</text>
+        <text x="39.45" y="44.6">2</text>
+        <text x="48.70" y="44.6">3</text>
+        <text x="57.95" y="44.6">4</text>
+        <text x="67.20" y="44.6">5</text>
+        <text x="76.45" y="44.6">6</text>
+        <text x="85.70" y="44.6">7</text>
+        <text x="94.95" y="44.6">8</text>
+        <text x="104.20" y="44.6">9</text>
+        <text x="113.45" y="44.6">10</text>
+        <text x="122.70" y="44.6">11</text>
+        <text x="131.95" y="44.6">12</text>
+        <text x="141.20" y="44.6">13</text>
+        <text x="150.45" y="44.6">14</text>
+        <text x="159.70" y="44.6">15</text>
+        <text x="168.95" y="44.6">16</text>
+      </g>
+    </g>
+  </svg>
+  <p class="note">Solid orange = a normal hit; pale orange = a <b>ghost</b> (hold <kbd>OCT−</kbd> as you play it). Kick on the "1" and once more on the "and" after beat&nbsp;3, snare on beats 2 and 4, straight hats with every second one kept quiet. Play it slowly on the keys first; it needs only three fingers.</p>
+
+  <h3>A counted four&#8209;bar take, start to finish</h3>
+  <p class="tight">This is the count&#8209;in workflow from Lesson&nbsp;3, written out once in full on an empty loop, so there is no guessing:</p>
+  <ol class="steps">
+    <li><p>On TRACKS, check the tempo (a kindly 75–85 is lovely; keep whatever a free take already set if you have one). Make sure track <span class="tt t4">4</span> is selected.</p></li>
+    <li><p>Press <kbd>REC</kbd> while stopped, then set the dials on the armed screen: <span class="v">LENGTH</span> <i>4&nbsp;bars</i> · <span class="v">START</span> <i>count</i> · <span class="v">QUANT</span> <i>on</i> (on a completely empty loop a fourth dial, <span class="v">MODE</span>, appears first: set it to <i>tempo</i>; once any track holds notes that dial is gone and the set tempo is simply used).</p></li>
+    <li><p>Press <kbd>PLAY</kbd>. One bar of clicks counts you in, <b>4&#8209;3&#8209;2&#8209;1</b> on the screen, then recording begins.</p></li>
+    <li><p>Play the pattern above, round and round, counting <b>1&nbsp;2&nbsp;3&nbsp;4</b> with the click, for four bars (four counts of four). Perfection not required: quantise tidies the timing.</p></li>
+    <li><p>Press <kbd>REC</kbd>. Recording stops and your four&#8209;bar beat plays on, looping. (Changed your mind during the count&#8209;in? <kbd>REC</kbd> cancels it.)</p></li>
+  </ol>
+  <div class="aside"><div class="label">Why four bars and not one</div>
+  <p>A longer loop leaves room for the pattern to vary: drop the kick syncopation in bars 1 and 2, let it in for bars 3 and 4, and the beat breathes without any extra machinery.</p></div>
+</section>
+
+<!-- ============================ L6 p20 ============================ -->
+<section class="page" data-part="Part 2 · Rhythm and low end">
+  <h2 style="margin-top:0;">Record a beat under your loop</h2>
+  <div class="row c-3-2">
+    <div>
+      <ol class="steps">
+        <li><p>Press <kbd>PLAY</kbd> so your pad loop runs (empty device? use the counted take on the previous page, or free&#8209;take the drums as in Lesson&nbsp;3).</p></li>
+        <li><p>Press <kbd>REC</kbd> while it plays: track 4 starts recording immediately. Lay down just a kick pattern on key&nbsp;1 on the first pass, nothing else. Press <kbd>REC</kbd> to stop recording and listen to it loop.</p></li>
+        <li><p><kbd>REC</kbd> again and add hats on key&nbsp;5, holding <kbd>OCT−</kbd> for most of them so they sit back as ghosts. Another pass for a soft snare or rim on the backbeat (keys 3 or 8, on counts 2 and 4). Build the beat in quiet layers, one sound per pass.</p></li>
+        <li><p><b>A roll without the finger work:</b> hold <kbd>ARP</kbd> and hold the hat key: it repeats in perfect time at the rate on <kbd class="knob">KNOB 1</kbd> (1/16 to start). Recorded while a take runs, rolls are written into the pattern as repeats.</p></li>
+        <li><p><b>Swing it.</b> On TRACKS, <kbd class="knob">KNOB 1</kbd> is global swing: push it to 55–62 and straight hats start to saunter. 0 is rigid; 100 is the strongest classic MPC lope.</p></li>
+      </ol>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:drums-kit.png}}" alt="The DRUMS kit page"></span>
+        <figcaption><b>The DRUMS screen, kit page</b> (tap <kbd>EDIT</kbd> or <kbd>SEQ</kbd> on TRACKS with track 4 selected, then tap again to flip grid ↔ kit): sixteen pads that flash on every hit, with the kit, the drums' level, reverb send and pan on the dials.</figcaption>
+      </figure>
+      <div class="aside"><div class="label">Space for the drums too</div>
+      <p>That <span class="v">REVERB</span> dial on the kit page is how far away the drums stand. For this style of music, a generous send and a quiet level beats a loud dry kit every time.</p></div>
+    </div>
+  </div>
+
+  <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A soft, swung beat breathing under your pad loop: ghost hats, a patient kick, a snare that taps rather than cracks.</p></div></div>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Overdub a shaker (key&nbsp;14) played only as ghosts, every eighth note. Then swap kits with <kbd class="knob">PRESETS</kbd> while the beat plays and hear the same pattern wearing different clothes.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>To erase one drum from the beat, hold <kbd>EDIT</kbd> and hold that drum's key <b>while the loop plays</b>: it is wiped from every step the playhead passes while you hold it (hold it for one full bar and that bar's hats are gone). Do the same while <b>stopped</b> and the sound is removed from the whole pattern at once. The broader erasers still apply: <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> undoes the last pass, and holding <kbd>REC</kbd> ~2&nbsp;s clears track 4 entirely.</p></div>
+</section>
+
+<!-- ============================ L7 p21 ============================ -->
+<section class="page" id="l7" data-part="Part 2 · Rhythm and low end">
+    <div class="kicker"><span class="chno">L7</span><span>Lesson seven · Rhythm</span></div>
+  <h1>Bass, melody and the mix</h1>
+  <p class="lead">A pad, a beat, and now the two voices that complete it: something low holding the floor, something light carrying a tune. Then you will balance all four layers like a tiny mixing desk.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul>
+      <li>Pad on track <span class="tt t1">1</span>, chords or Rhodes on track <span class="tt t2">2</span>, beat on track <span class="tt t4">4</span>, all looping (Lessons 3–6). Fewer layers is fine too.</li>
+      <li>Key and scale set from Lesson&nbsp;5, so the bass and melody land in tune automatically.</li>
+    </ul>
+  </div>
+
+  <h2>The low end</h2>
+  <ol class="steps">
+    <li><p>Turn <kbd class="knob">ALGORITHM</kbd> to track <span class="tt t3">3</span> (yellow) and browse <kbd class="knob">PRESETS</kbd> to the basses. <span class="v">SUB BASS</span> is deep and pure; <span class="v">808 BOOM</span> hums and <i>slides</i> between held notes; <span class="v">DEEP BASS</span> and <span class="v">PLUCK BASS</span> are rounder and shorter. The 808&#8209;family and sub basses sound two octaves below the printed keys, so key&nbsp;5 is already properly low.</p></li>
+    <li><p>KEYS is a <b>per&#8209;track</b> setting, so give this track the safety net you gave track 2: hold <kbd>SEL</kbd> and turn <kbd class="knob">KNOB 3</kbd> to <span class="v">SNAP</span>. Then record a bass line of long single notes, mostly the home key, moving once or twice a bar. Most basses are <span class="v">MONO</span>, one note at a time, which is exactly what a bass line wants.</p></li>
+  </ol>
+  <div class="aside"><div class="label">Small speakers and big bass</div>
+  <p>The FM&#8209;1's built&#8209;in speaker cannot reproduce very low notes; headphones or a proper speaker reveal what the sub is actually doing.</p></div>
+
+  <h2>A melody that floats, and the three&#8209;track reality</h2>
+  <p>One honest constraint first: <b>a synth track holds one sound at a time</b>, and that sound plays <i>everything</i> recorded on the track. Turn <kbd class="knob">PRESETS</kbd> on track 2 and your recorded Rhodes chords become kalimba chords: the sequencer stores notes, the track supplies the voice. GarageBand gives unlimited tracks; the FM&#8209;1 gives three melodic voices plus drums, and choosing which three deserve the song is half the craft. A melody has three homes:</p>
+  <ul class="plain">
+    <li><b>Share track 2's voice</b> (the simple path): overdub the melody onto track 2 an octave up, played in the same Rhodes. One instrument, two roles, and it always blends. One limit to know: a step holds at most <b>four notes</b>, so three&#8209;note TRIAD chords leave exactly one voice spare per step; place melody notes mostly <i>between</i> the chord hits, and if one lands on a full step the oldest held note politely gives way.</li>
+    <li><b>Trade the chords away:</b> clear or thin track 2, load <span class="v">KALIMBA</span>, <span class="v">MUSIC BOX</span> or <span class="v">MARIMBA</span>, and let the pad carry the harmony alone. Minimal suits this music.</li>
+    <li><b>Save it for a section:</b> in Lesson&nbsp;10, each saved section stores its own sounds per track, so section&nbsp;A can be Rhodes chords and section&nbsp;B the kalimba melody.</li>
+  </ul>
+  <ol class="steps">
+    <li><p>Take the simple path now: stay on track <span class="tt t2">2</span>, set CHORD to OFF for single notes (hold <kbd>SEL</kbd>, <kbd class="knob">KNOB 1</kbd>), keep KEYS on SNAP, tap <kbd>OCT+</kbd> up an octave, and press <kbd>REC</kbd> while the loop plays.</p></li>
+    <li><p>Record sparse phrases: three or four notes, then silence. In this genre the gaps are the melody. (Set CHORD back afterwards if you still want the chord keys live.)</p></li>
+  </ol>
+
+</section>
+
+<!-- ============================ L7 p22 ============================ -->
+<section class="page" data-part="Part 2 · Rhythm and low end">
+  <h2 style="margin-top:0;">Mixing: the GLO layer is your desk</h2>
+  <div class="row c-3-2">
+    <div>
+      <p>Hold <kbd>GLO</kbd> and the FM&#8209;1 becomes a four&#8209;channel mixer for as long as you hold it:</p>
+      <table>
+        <tr><th style="width:38mm;">While holding GLO</th><th>Does</th></tr>
+        <tr><td><kbd class="key">keys 1–4</kbd></td><td><b>mute</b> / unmute tracks 1–4 (a quick fade; the pattern keeps running in time underneath)</td></tr>
+        <tr><td><kbd class="key">keys 5–8</kbd></td><td><b>solo</b> tracks 1–4 (several solos add together)</td></tr>
+        <tr><td><kbd class="knob">KNOB 1–4</kbd></td><td>the <b>levels</b> of tracks 1–4</td></tr>
+        <tr><td><kbd class="key">key 16</kbd></td><td>tap tempo (two or more taps)</td></tr>
+      </table>
+      <p>Balance the four layers so the pad is a bed, the bass is felt, the drums whisper and the melody floats on top. Two finer controls live on TRACKS: <kbd class="knob">KNOB 2</kbd> is the <i>selected</i> track's level and <kbd class="knob">KNOB 4</kbd> its <b>pan</b> (left–right position); nudging the melody slightly off&#8209;centre adds air.</p>
+      <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A complete four&#8209;layer piece: pad, chords or melody, bass, beat, balanced so no layer shouts. This is a track. Yours.</p></div></div>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:mix-layer.png}}" alt="The GLO mix layer"></span>
+        <figcaption><b>Hold <kbd>GLO</kbd>:</b> mute and solo tiles for the four tracks, fill keys (Lesson&nbsp;9), tap tempo, and the four levels on the dials, each in its track's colour.</figcaption>
+      </figure>
+      <div class="gb"><div class="label">GarageBand translation</div>
+      <p>GLO is the mixer column of every GarageBand track, compressed into one held button: M, S, volume fader and pan, for all four tracks at once.</p></div>
+    </div>
+  </div>
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Perform the mix: hold <kbd>GLO</kbd> and pull tracks in and out with the mute keys, starting from just pad and texture, adding bass, then drums, then melody. You have just discovered the arrangement moves in Lesson&nbsp;10. (Need both hands? Hold <kbd>GLO</kbd> and tap <kbd>HOME</kbd> to lock the mixer open; any other button releases it.)</p></div>
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>Nothing here destroys anything: a muted track is still there (unmute it with the same key, or on TRACKS turn its level knob, which unmutes as it moves), solos stack until un&#8209;soloed, and levels are just levels. If a recorded bass or melody pass misfires, the usual <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> undoes it.</p></div>
+</section>
+
+<!-- ============================ L8 p23 ============================ -->
+<section class="page" id="l8" data-part="Part 2 · Rhythm and low end">
+    <div class="kicker"><span class="chno">L8</span><span>Lesson eight · Rhythm</span></div>
+  <h1>The step sequencer, essentials only</h1>
+  <p class="lead">Everything so far was played live. The step sequencer is the other door into the same patterns: a grid where you place and remove hits by hand, perfect for precision and for slow experiments.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul>
+      <li>Your loop from the last lessons, playing or stopped. Select track <span class="tt t4">4</span> for the first half of this lesson.</li>
+    </ul>
+  </div>
+
+  <div class="row c-3-2">
+    <div>
+      <h3>The DRUMS grid: see the whole beat</h3>
+      <ol class="steps">
+        <li><p>On TRACKS with track 4 selected, tap <kbd>SEQ</kbd>: the <b>DRUMS grid</b>, sixteen sounds down, sixteen steps across, your recorded beat drawn as marks (louder hits brighter).</p></li>
+        <li><p><kbd class="knob">KNOB 1</kbd> picks the sound row, <kbd class="knob">KNOB 2</kbd> the step, <kbd class="knob">KNOB 3</kbd> turned right places a hit there (left clears it), <kbd class="knob">KNOB 4</kbd> sets that hit's level, ghost to hard.</p></li>
+        <li><p>Faster with the keys: the 16 white keys are the 16 steps <i>of the sound currently picked, on the page shown</i>; press one to set a step, press it again to clear it. The black keys silently switch which sound you are editing (some black keys cover a pair, press again for the pair's other sound; others pick a single sound).</p></li>
+        <li><p><b>Longer beats have pages.</b> A pattern can run to 64 steps and the screen shows 16 at a time: <kbd>OCT−</kbd> / <kbd>OCT+</kbd> turn the page (1–16, 17–32, 33–48, 49–64, up to the track's length). The counted four&#8209;bar take from Lesson&nbsp;6 spans four pages, and the keys always edit the page on screen.</p></li>
+      </ol>
+      <h3>The SEQ layer: the same grid, anywhere</h3>
+      <p>On any track, hold <kbd>SEQ</kbd>: the white keys become the pattern's 16 steps (lit = plays). Tap an empty step to set it (drums: with the sound shown; synths: with the last note or chord you played), tap a lit one to clear it. Longer patterns page here too: with <kbd>SEQ</kbd> held, <kbd>OCT−</kbd> / <kbd>OCT+</kbd> turn the page of steps (on a synth track, the first four black keys as well). While holding SEQ, <kbd class="knob">KNOB 2</kbd> is <span class="v">DIV</span> and <kbd class="knob">KNOB 4</kbd> is <span class="v">LENGTH</span>; those two are the subject of the next page.</p>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:drums-grid.png}}" alt="The DRUMS grid">
+          <span class="adot" style="left:6%; top:21%;">1</span>
+          <span class="adot" style="left:60%; top:48%;">2</span>
+          <span class="adot" style="left:47%; top:85%;">3</span>
+        </span>
+        <figcaption><b>The DRUMS grid.</b> <span class="leg">1</span>the kit and its number; <span class="leg">2</span>sixteen sound lanes across sixteen steps, a boom&#8209;bap pattern drawn in (brighter marks are louder hits); <span class="leg">3</span>the dials: sound, step, hit, level. Tap <kbd>SEQ</kbd> again to flip to the kit page; <kbd>HOME</kbd> returns to TRACKS.</figcaption>
+      </figure>
+      <div class="gb"><div class="label">GarageBand translation</div>
+      <p>This is GarageBand's Beat Sequencer: the same rows&#8209;of&#8209;cells idea, driven by knobs and keys instead of taps on glass.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ L8 p24 ============================ -->
+<section class="page" data-part="Part 2 · Rhythm and low end">
+  <h2 style="margin-top:0;">Length, division, and the slow&#8209;music trick</h2>
+  <p>Each track's pattern has its own <span class="v">LENGTH</span> (1 to 64 steps) and its own <span class="v">DIV</span>, how much musical time one step lasts: from 1/32 of a bar up to one or even two whole bars per step. Both live on the <kbd>SEQ</kbd> hold (<kbd class="knob">KNOB 4</kbd> and <kbd class="knob">KNOB 2</kbd>). One honest mechanic first: <b>changing DIV never moves notes between steps</b>; every step simply lasts longer or shorter, so flipping a recorded 1/16 pattern to 1BAR just stretches the whole take sixteen&#8209;fold. Slow music is best <i>built</i> slow:</p>
+  <h3>Build a slow chord bed from a clean start</h3>
+  <p class="note tight">This replaces the pad's pattern, so park the loop somewhere safe first: hold <kbd>SAVE</kbd> — among <kbd class="key">keys 5–8</kbd>, a <b>dark</b> key is an <b>empty</b> section, and pressing a dark one saves the whole loop there without touching anything else (lit keys already hold music, so leave those alone; Lesson&nbsp;10 explains sections). If all four are lit, or you would rather not touch sections yet, postpone this exercise until after Lesson&nbsp;10; nothing else depends on it.</p>
+  <ol class="steps">
+    <li><p>Select the pad, track <span class="tt t1">1</span>, and clear its pattern: hold <kbd>REC</kbd> about two seconds until the ring fills. (<kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> right now brings it straight back.)</p></li>
+    <li><p>Hold <kbd>SEQ</kbd>: turn <kbd class="knob">KNOB 4</kbd> (LENGTH) to <span class="v">4</span> and <kbd class="knob">KNOB 2</kbd> (DIV) to <span class="v">1BAR</span>. Four steps, each lasting a whole bar.</p></li>
+    <li><p>Give <i>this</i> track chords too: CHORD is per&#8209;track (Lesson&nbsp;5 set it on track 2 only), so hold <kbd>SEL</kbd> and turn <kbd class="knob">KNOB 1</kbd> to <span class="v">TRIAD</span> here; key and scale are shared by all synth tracks and already right.</p></li>
+    <li><p>Write a known chord onto each step (an empty step takes the chord you played last): play <kbd class="key">key 5</kbd> (the home chord, I), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 1</kbd> to put it on step 1; play <kbd class="key">key 10</kbd> (VI), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 2</kbd> for step 2; play <kbd class="key">key 8</kbd> (IV), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 3</kbd> for step 3; play <kbd class="key">key 9</kbd> (V), then <kbd>SEQ</kbd><span class="plus">+</span><kbd class="key">key 4</kbd> for step 4.</p></li>
+    <li><p><kbd>PLAY</kbd>. The pad changes chord once a bar (how much of each bar it rings is the PATTERN page's GATE; your pad's long release does the rest) while the drums tick in 1/16 underneath. For glacial: DIV <span class="v">2BAR</span>, one chord every two bars.</p></li>
+  </ol>
+  <div class="aside"><div class="label">Polymeter, free of charge</div>
+  <p>Length belongs to a whole <b>track</b> (all sixteen drum sounds share track 4's one pattern and length), so the trick lives between tracks: set this chord bed's LENGTH to <span class="v">3</span> and a three&#8209;chord round turns against the four&#8209;bar drums, realigning every twelve bars. Set it back to 4 when done; the fourth chord returns, since shortening hides far steps rather than erasing them.</p></div>
+
+  <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A beat you can see and edit cell by cell, and a chord bed you placed by hand that changes on a one&#8209;bar clock over drums ticking in 1/16: two timescales in one loop.</p></div></div>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>On the grid, demote every hat except the ones on the beat to <b>ghost</b> with <kbd class="knob">KNOB 4</kbd>, and push one unexpected hat to <b>hard</b>. Tiny level moves like this are where grooves actually live.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>A step you just set: tap its key again (SEQ held, or on the grid) and it is gone; <kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> undoes the last change (one level, so after further edits the road back to the old pad pass is to record it again). A silent synth pattern? Check DIV: at 1BAR it crawls, and may not have reached its next step yet.</p></div>
+
+  <p class="note" style="margin-top:3mm;"><b style="font-family:'Inter'; font-size:7.2pt; letter-spacing:.18em; color:var(--accent);">PARKED FOR LATER</b>&ensp;Per&#8209;step nudges, parameter locks and the NOTES editor wait in <a href="#ch15">"Where to next", page&nbsp;31</a>.</p>
+</section>
+
+<!-- ============================ L9 p25 ============================ -->
+<section class="page" id="l9" data-part="Part 3 · Performing and keeping it">
+    <div class="kicker"><span class="chno">L9</span><span>Lesson nine · Performing</span></div>
+  <h1>Live hands: punch&#8209;in effects and fills</h1>
+  <p class="lead">Hold <kbd>FX</kbd> and the whole keyboard becomes 27 momentary effects on the entire mix: each one lasts exactly as long as your finger does, lands in time, and lets go cleanly. This is how a loop becomes a performance.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul><li>Your four&#8209;layer loop playing. Nothing else matters; punch&#8209;ins work on whatever is sounding, and none of them is ever recorded into your loop.</li></ul>
+  </div>
+
+  <div class="row c-3-2">
+    <div>
+      <h3>Six to learn first (an ambient hand's picks)</h3>
+      <table>
+        <tr><th style="width:30mm;">Hold FX, then hold</th><th>Effect</th></tr>
+        <tr><td><kbd class="key">A#4</kbd> (black)</td><td><span class="v">FREEZE</span>: the mix is poured into the reverb and held there, a sustained cloud, for as long as you hold the key; let go and it dies away slowly</td></tr>
+        <tr><td><kbd class="key">key 9</kbd></td><td><b>low&#8209;pass sweep</b>: the music sinks underwater and returns</td></tr>
+        <tr><td><kbd class="key">key 10</kbd></td><td><b>high&#8209;pass sweep</b>: everything thins to a distant shimmer</td></tr>
+        <tr><td><kbd class="key">key 7</kbd></td><td><b>tape stop</b>: the record winds down to silence</td></tr>
+        <tr><td><kbd class="key">key 8</kbd></td><td><b>half speed</b>: everything an octave down, at half pace</td></tr>
+        <tr><td><kbd class="key">F#5</kbd> (black)</td><td><span class="v">FADE OUT</span>: the mix fades to nothing over two beats, the politest ending in music</td></tr>
+      </table>
+      <p class="note">The other 21 are drawn on screen while FX is held (loops of various lengths, stutter, reverse, bit crush, kill&#8209;EQ keys and more); explore freely, nothing sticks. Since 2.8 you can soften how effects enter and leave: hold <kbd>FX</kbd> and turn <kbd class="knob">SELECT</kbd>, 0 (instant) to 15 (about a third of a second).</p>
+      <h3>The knobs while FX is held</h3>
+      <p class="tight"><kbd class="knob">KNOB 1</kbd> master <span class="v">FILTER</span> (the classic DJ sweep) · <kbd class="knob">KNOB 2</kbd> <span class="v">DUST</span> · <kbd class="knob">KNOB 3</kbd> <span class="v">DUCK</span> (every kick gently pumps the synths down and back, the "sidechain" sound) · <kbd class="knob">KNOB 4</kbd> the selected track's own filter.</p>
+      <p class="tight" style="margin-top:1.5mm;">Two throws: hold <kbd>FX</kbd><span class="plus">+</span><kbd>OCT−</kbd> and every track's reverb send goes full while held; <kbd>FX</kbd><span class="plus">+</span><kbd>OCT+</kbd> does the same for the delay. Your saved mix is never changed.</p>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:punch-layer.png}}" alt="The punch-in FX layer"></span>
+        <figcaption><b>Hold <kbd>FX</kbd>:</b> all 27 effects drawn as a keyboard, white keys in rows, black keys between them; FREEZE is held here, lit white. The dials below are FILTER, DUST, DUCK and the track filter.</figcaption>
+      </figure>
+      <div class="aside"><div class="label">Both hands free</div>
+      <p>Hold <kbd>FX</kbd>, tap <kbd>HOME</kbd>: the FX layer locks open (the button blinks). One hand rides FREEZE, the other the filter. Any other button releases the lock.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ L9 p26 ============================ -->
+<section class="page" data-part="Part 3 · Performing and keeping it">
+  <h2 style="margin-top:0;">Fills: a one&#8209;finger "something is about to happen"</h2>
+  <ol class="steps">
+    <li><p>Hold <kbd>GLO</kbd> and hold <kbd class="key">key 9</kbd>: a <b>fill</b> runs for as long as you hold it. Hold <kbd>GLO</kbd> and tap <kbd class="key">key 10</kbd> instead and the <b>whole next bar</b> plays as a fill, then everything returns to normal (tap again before the bar to cancel).</p></li>
+    <li><p>Out of the box a fill changes nothing audible, because no step in your patterns is marked for it yet: fills act only on steps you label <i>fill&#8209;only</i> (they play during fills) or <i>no&#8209;fill</i> (they drop out). The full system is on <a href="#ch15">page&nbsp;31</a>; the sixty&#8209;second taste below makes one fill real right now.</p></li>
+  </ol>
+  <div class="aside"><div class="label">Make one fill audible, in four moves</div>
+  <p class="tight"><span class="v">1.</span> On the drum track, hold <kbd>SEQ</kbd> and press the black key <kbd class="key">A#4</kbd>: the sound under edit becomes <span class="v">CRASH</span>, silently. Still holding SEQ, turn the page with <kbd>OCT−</kbd> / <kbd>OCT+</kbd> until the title reads <b>page&nbsp;1</b> (steps 1–16).</p>
+  <p class="tight"><span class="v">2.</span> Still holding <kbd>SEQ</kbd>, glance at <kbd class="key">key 16</kbd>'s tile: in the Lesson&nbsp;6 pattern it is empty (unlit); if you have reshaped your beat since, pick any unlit step at a bar's end instead. Tap it: a crash lands there. Empty on purpose: a fill condition belongs to the <b>whole step, every sound in it</b>, so marking a busy step (step&nbsp;1, say, with its kick and hat) would drag those hits into fill&#8209;only too.</p>
+  <p class="tight"><span class="v">3.</span> Still holding <kbd>SEQ</kbd>, now <i>hold</i> that step key and tap <kbd>OCT+</kbd> once: a small <span class="v">F</span> marks the tile. The crash now plays <b>only during fills</b>.</p>
+  <p class="tight"><span class="v">4.</span> Let everything go, then hold <kbd>GLO</kbd> and <i>hold</i> <kbd class="key">key 9</kbd> through one full round of the loop: the moment the playhead crosses that step with the fill held, the crash rings; let go and it vanishes again. (The four&#8209;bar pattern only passes step&nbsp;16 once a round, so for a crash that greets <i>every</i> fill bar, repeat moves 2–3 on the last step of pages 2, 3 and 4 as well, <kbd>OCT+</kbd> turning the pages while SEQ is held. Remove any of them later: SEQ held, tap the step.)</p></div>
+
+  <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>Your loop as a living thing: frozen into reverb clouds, swept underwater, wound down and restarted, all with single fingers and all without recording a thing.</p></div></div>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Practise one complete transition, one move at a time. The layers are exclusive: whichever function button is held owns the keys (and FX outranks the others), so chain the moves rather than stacking them. Hold <kbd>FX</kbd> with FREEZE for two bars → let both go → straight onto <kbd>GLO</kbd>, unmute the drums → still on GLO, tap <kbd class="key">key 10</kbd> for a fill bar → hands off. That is a chorus entrance, performed.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>The punch&#8209;ins themselves make no mess: effects and throws end the moment you release them, and are never recorded. Two things from this page <b>do</b> persist. The knobs: if the mix sounds odd afterwards, hold <kbd>FX</kbd> and set <kbd class="knob">KNOB 1</kbd> (FILTER) back to centre, <kbd class="knob">KNOB 2</kbd>/<kbd class="knob">KNOB 3</kbd> (DUST, DUCK) back toward 0, and check the track filter, <kbd class="knob">KNOB 4</kbd>, is centred. And the fill crash: that was a real pattern edit, so the step and its <span class="v">F</span> condition stay in your pattern, through autosave and into any section you save, until you remove them — hold <kbd>SEQ</kbd>, pick CRASH with <kbd class="key">A#4</kbd>, and tap its step.</p></div>
+
+  <div class="gb"><div class="label">GarageBand translation</div>
+  <p>Punch&#8209;ins are GarageBand's Remix FX (the DJ pad with filter, gater, downsampler and vinyl stop), mapped to real keys, always in tempo, and strictly momentary.</p></div>
+</section>
+
+<!-- ============================ L10 p27 ============================ -->
+<section class="page" id="l10" data-part="Part 3 · Performing and keeping it">
+    <div class="kicker"><span class="chno">L10</span><span>Lesson ten · Keeping it</span></div>
+  <h1>Sections, songs, and saving your music</h1>
+  <p class="lead">So far you have one loop. A piece of music is several: an intro, a verse, a lift, an ending. SLOOP calls these <b>sections A to D</b>, and you move between them live, on the bar, with one hand.</p>
+
+  <div class="start"><div class="label"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="2.2" fill="currentColor"/><circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>starting from here</div>
+    <ul><li>The loop you have built across this book, playing or stopped. Everything here lives on the <kbd>SAVE</kbd> hold.</li></ul>
+  </div>
+
+  <div class="row c-3-2">
+    <div>
+      <ol class="steps">
+        <li><p><b>Save the loop as section A:</b> hold <kbd>SAVE</kbd> and press <kbd class="key">key 5</kbd>. (Saving over a section that already holds something asks you to press the same key again within 3 seconds.)</p></li>
+        <li><p><b>Make a variation.</b> Change the loop: mute the drums and thin the pad (a quieter "verse"), or add a second melody pass. Save it into <span class="v">B</span>: <kbd>SAVE</kbd><span class="plus">+</span><kbd class="key">key 6</kbd>. A lifted version into <span class="v">C</span> (key&nbsp;7), an ending into <span class="v">D</span> (key&nbsp;8).</p></li>
+        <li><p><b>Play them live:</b> hold <kbd>SAVE</kbd> and press <kbd class="key">keys 1–4</kbd> for A–D. While music plays, the new section begins <b>on the next bar</b>, every track from its first step, always in time. (Stopped, it loads immediately.)</p></li>
+        <li><p><b>Chain without hands:</b> keep <kbd>SAVE</kbd> held and tap several section keys in a row, <i>A&nbsp;B&nbsp;B&nbsp;C</i>, up to eight, repeats welcome. Let go: they play in turn, round and round.</p></li>
+        <li><p><b>Record the arrangement:</b> <kbd>SAVE</kbd><span class="plus">+</span><kbd class="key">key 14</kbd> starts <b>SONG&nbsp;REC</b>: from the next bar, every section you play, and for how long, is written down as the song. The same combination (or stopping) ends it. <kbd>SAVE</kbd><span class="plus">+</span><kbd class="key">key 13</kbd> then flips between <i>loop</i> and <i>song</i> mode; in song mode, <kbd>PLAY</kbd> performs the whole written song and stops at the end.</p></li>
+      </ol>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:song-layer.png}}" alt="The SAVE song layer"></span>
+        <figcaption><b>Hold <kbd>SAVE</kbd>:</b> play A–D on the top row (a chain of A&nbsp;B&nbsp;B shown in the title), save into A–D on the second row, loop/song and SONG&nbsp;REC below. The SONG screen (key&nbsp;16, or tap <kbd>SAVE</kbd> on TRACKS) edits the written song step by step.</figcaption>
+      </figure>
+      <div class="gb"><div class="label">GarageBand translation</div>
+      <p>Sections are GarageBand's song sections in Live Loops clothing: each one is a full snapshot of all four tracks, and SONG&nbsp;REC is "record your Live Loops performance into an arrangement".</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ L10 p28 ============================ -->
+<section class="page" data-part="Part 3 · Performing and keeping it">
+  <h2 style="margin-top:0;">What is actually saved where</h2>
+  <svg viewBox="0 0 176 46" width="100%" style="margin:1mm 0 2mm;">
+    <defs><marker id="ah" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#5a544a"/></marker></defs>
+    <!-- backup envelope -->
+    <rect x="1" y="1.5" width="174" height="37.5" rx="2.6" fill="none" stroke="#3d5a80" stroke-width=".55" stroke-dasharray="2.2 1.6"/>
+    <text x="4" y="43.8" font-size="2.7" fill="#3d5a80" font-weight="600">WEB&#8209;EDITOR BACKUP: one file holds all of this, plus your user presets, samples, kits and settings (not ☆ favourites)</text>
+    <rect x="6" y="9" width="50" height="22" rx="2" fill="#e9eef4" stroke="#3d5a80" stroke-width=".6"/>
+    <text x="31" y="17" font-size="3.4" font-weight="700" fill="#3d5a80" text-anchor="middle">WORKING LOOP</text>
+    <text x="31" y="22" font-size="2.7" fill="#5a544a" text-anchor="middle">what you hear in loop mode</text>
+    <text x="31" y="26" font-size="2.7" fill="#5a544a" text-anchor="middle">kept by autosave</text>
+    <g font-size="3.6" font-weight="700" text-anchor="middle">
+      <rect x="80" y="7"  width="13" height="10" rx="1.6" fill="#2f6fde"/><text x="86.5" y="13.8" fill="#fff">A</text>
+      <rect x="95" y="7"  width="13" height="10" rx="1.6" fill="#27a05f"/><text x="101.5" y="13.8" fill="#fff">B</text>
+      <rect x="80" y="19" width="13" height="10" rx="1.6" fill="#d9a62e"/><text x="86.5" y="25.8" fill="#fff">C</text>
+      <rect x="95" y="19" width="13" height="10" rx="1.6" fill="#e06a1f"/><text x="101.5" y="25.8" fill="#fff">D</text>
+    </g>
+    <text x="94" y="35" font-size="2.7" fill="#5a544a" text-anchor="middle">four saved sections</text>
+    <path d="M58,16 L77,13" stroke="#5a544a" stroke-width=".6" marker-end="url(#ah)"/>
+    <path d="M77,25 L58,22" stroke="#5a544a" stroke-width=".6" marker-end="url(#ah)"/>
+    <text x="67" y="11" font-size="2.5" fill="#5a544a" text-anchor="middle">SAVE + 5–8</text>
+    <text x="67" y="28.6" font-size="2.5" fill="#5a544a" text-anchor="middle">SAVE + 1–4</text>
+    <rect x="128" y="9" width="40" height="22" rx="2" fill="#f3efe6" stroke="#a08b4f" stroke-width=".6"/>
+    <text x="148" y="17" font-size="3.2" font-weight="700" fill="#7a683a" text-anchor="middle">SONG</text>
+    <text x="148" y="22" font-size="2.6" fill="#5a544a" text-anchor="middle">A–D in order,</text>
+    <text x="148" y="26" font-size="2.6" fill="#5a544a" text-anchor="middle">up to 16 steps</text>
+    <path d="M111,18 L125,18" stroke="#5a544a" stroke-width=".6" marker-end="url(#ah)"/>
+  </svg>
+  <p>A <b>section</b> is a complete snapshot: all four tracks (sounds, patterns, kit, filters) plus the loop's tempo, swing, key and texture. Track <b>mutes, levels and pans</b> save with it too (confirmed in the firmware source), so a muted&#8209;drums "verse" stores faithfully; the per&#8209;<i>sound</i> drum mutes from EDIT's MUTE mode are the one performance tool that does not. Your <b>working loop</b> is separate from the four sections: loading a section copies it into the working loop, saving copies the working loop into a section. The FM&#8209;1 holds <b>one song</b> at a time: four sections and the order they play in.</p>
+  <div class="careful"><div class="label">Keeping more than one piece of music</div>
+  <p>A to D are four <i>sections of one song</i>, not four songs. To keep several pieces, save one web&#8209;editor <b>backup file per song</b> (Chapter&nbsp;2) and restore whichever you want to play; the editor's Song&nbsp;&amp;&nbsp;sections page can also export a single song as its own small file. This is the one habit that protects weeks of work, so make it a ritual: finish a piece, save a backup, name the file after the song.</p></div>
+
+  <div class="hear"><svg viewBox="0 0 96 30" class="wave"><defs><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#5b8ff0"/><stop offset=".36" stop-color="#3fbf7c"/><stop offset=".68" stop-color="#f0bf45"/><stop offset="1" stop-color="#f08045"/></linearGradient></defs><path d="M2,15 C8,1 14,1 20,15 S32,29 38,15 S48,4 54,15 S62,24 68,15 S74,9 79,15 S85,19 88,15 S92,13 94,15" fill="none" stroke="url(#gt)" stroke-width="2.4" stroke-linecap="round"/></svg><div><div class="label"><svg viewBox="0 0 12 12"><path d="M3,1.8 L10,6 L3,10.2Z" fill="currentColor"/></svg>you should now be hearing</div><p>A piece with a shape: sections handed over on the bar, a written arrangement that plays itself start to finish, and a backup file on your Mac with its name on it.</p></div></div>
+
+  <div class="try"><div class="label"><svg viewBox="0 0 12 12"><path d="M6,0 C6.6,4 8,5.4 12,6 C8,6.6 6.6,8 6,12 C5.4,8 4,6.6 0,6 C4,5.4 5.4,4 6,0Z" fill="currentColor"/></svg>try this</div>
+  <p>Open the SONG screen (<kbd>SAVE</kbd><span class="plus">+</span><kbd class="key">key 16</kbd>), stop playback if it is running (the song's settings edit only while stopped), and edit the written song by hand: <kbd class="knob">KNOB 1</kbd> walks the steps, <kbd class="knob">KNOB 2</kbd> sets each step's section, <kbd class="knob">KNOB 3</kbd> its length in bars. Stretch your ending section to eight bars.</p></div>
+
+  <div class="careful"><div class="label">Handle with care: the five moves that replace music</div>
+  <table style="margin:1mm 0 0; font-size:7.8pt;">
+    <tr><td style="width:52mm;"><kbd>SAVE</kbd><span class="plus">+</span><kbd class="key">keys 1–4</kbd> while <b>stopped</b></td><td>loads that section over your working loop <b>at once, no confirmation</b>: save the loop into a section first</td></tr>
+    <tr><td>SONG screen → <kbd>OCT+</kbd> twice</td><td>the same load, which is exactly why it asks twice</td></tr>
+    <tr><td>SAVE pages → TOOLS → <span class="v">NEW</span></td><td>replaces the whole working loop; undo recovers only the last&#8209;edited track's pattern</td></tr>
+    <tr><td>SAVE pages → SECTION → <span class="v">ERASE</span></td><td>deletes a saved section, <b>no undo</b>: park it in another slot first if in doubt</td></tr>
+    <tr><td>Editor → <b>Restore from a file</b></td><td>replaces everything on the FM&#8209;1 with the file's contents</td></tr>
+  </table>
+  <p style="margin-top:1.6mm;">Everything else in this book sits under undo, clear&#8209;and&#8209;redo, or simple switch&#8209;it&#8209;off. The screen messages mean what they say: <i>EMPTY SECTION: REC</i> is a section with nothing in it yet, and <i>STOP THE SONG FIRST</i> just wants <kbd>PLAY</kbd> pressed before a change.</p></div>
+</section>
+
+<!-- ============================ CH14 p29 : WEB EDITOR ============================ -->
+<section class="page" id="ch14" data-part="Part 3 · Performing and keeping it">
+  <div class="kicker"><span class="chno">14</span><span>Chapter fourteen</span></div>
+  <h1>The web editor in ten minutes</h1>
+  <p class="lead">Everything on the FM&#8209;1, mirrored live in a browser tab: bigger screen, mouse&#8209;draggable knobs, and the doors to backups, your own samples and much more. You met it in Chapter&nbsp;2; here is the guided lap.</p>
+
+  <ol class="steps">
+    <li><p>Open <a href="https://isod89.github.io/sloop-fm1/webapp/editor/">isod89.github.io/sloop-fm1/webapp/editor</a> in Chrome or Edge, FM&#8209;1 on USB, press <b>Connect</b>. The editor follows the device live: turn a knob on the FM&#8209;1 and the screen value moves, and vice versa. Every value is a tile you drag up or down like a knob; double&#8209;click resets it.</p></li>
+    <li><p>Walk the sidebar. <b>Sound</b>: every parameter of the selected track as cards, one per button. <b>Sequencer</b>: the pattern as a grid or piano roll, clickable. <b>Library</b>: a sound library kept in your browser, searchable and taggable, with drag and drop to the device's 32 user slots. <b>Song&nbsp;&amp;&nbsp;sections</b>: load and save A–D, export a song as a file, and the <b>Backup</b> button from Chapter&nbsp;2. <span class="v">LIVE</span>: the whole instrument laid out for performing from the computer, phone or tablet.</p></li>
+    <li><p>Record your music into the Mac: on USB the FM&#8209;1 is also an <b>audio input</b> called <i>Felucca</i>: everything the headphones hear, dust, texture and punch&#8209;ins included, offered to any recording app. The box below walks it through for GarageBand.</p></li>
+  </ol>
+
+  <div class="gb"><div class="label">Recording into GarageBand, step by step</div>
+  <p class="tight"><span class="v">1.</span> FM&#8209;1 on USB; on the device, hold <kbd>HOME</kbd> → AUDIO → set <b>USB&nbsp;AUDIO</b> to <span class="v">FULL</span>, so the Mac receives a fixed, healthy level whatever the MASTER knob does.</p>
+  <p class="tight"><span class="v">2.</span> In GarageBand, open <b>Settings → Audio/MIDI</b> and choose <b>Felucca</b> as the <b>Input Device</b> (your speakers stay the output).</p>
+  <p class="tight"><span class="v">3.</span> Create an <b>Audio track</b> (the microphone icon), input channels 1&nbsp;+&nbsp;2 (stereo), and leave software monitoring off so you listen on the FM&#8209;1's own output.</p>
+  <p class="tight"><span class="v">4.</span> Arm the track, press GarageBand's record button, then press <kbd>PLAY</kbd> on the FM&#8209;1 (or play live). Stop both when done: your piece is now audio on the Mac, ready to trim, share, or build on.</p>
+  <p class="tight" style="margin-top:1.5mm;">GarageBand's exact menu names shift between versions; the constant parts are the input device named <i>Felucca</i>, a stereo audio track, and USB&nbsp;AUDIO&nbsp;=&nbsp;FULL on the FM&#8209;1. One cable carries MIDI, the editor and this audio at once.</p></div>
+
+  <div class="aside"><div class="label">Three small delights</div>
+  <p>The editor installs as an offline app (the <i>Install the app</i> link under Connect) so it works without internet. It speaks to an audience too: the <span class="v">LIVE</span> page has a help "?" on every card. And you can try the whole editor with no FM&#8209;1 attached by adding <span style="font-family:'IBM Plex Mono'; font-size:.9em;">?mock=1</span> to its address, a pleasant way to explore from the couch.</p></div>
+
+  <div class="mess"><div class="label"><svg viewBox="0 0 12 12"><path d="M3.2,4.2 H7.6 A3.1,3.1 0 0 1 7.6,10.4 H4.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5,1.6 L2.2,4.2 L5,6.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>made a mess?</div>
+  <p>The editor cannot find the FM&#8209;1: Chrome or Edge only, a data cable, no hub, allow MIDI, and close any other app or tab using MIDI, then reload. The audio input does not appear on the Mac: replug the FM&#8209;1, and in your recording app rescan audio devices. Flash writes (presets, backups) politely wait until the song is stopped; the editor will ask.</p></div>
+</section>
+
+<!-- ============================ CH15 p30 : WHERE TO NEXT ============================ -->
+<section class="page" id="ch15" data-part="Part 3 · Performing and keeping it">
+  <div class="kicker"><span class="chno">15</span><span>Chapter fifteen</span></div>
+  <h1>Where to next: the advanced shelf</h1>
+  <p class="lead">Everything this book deliberately parked, in one honest catalogue. Each item is a pleasant afternoon, none is required, and the official guide covers every one in depth (links on <a href="#links">page&nbsp;35</a>).</p>
+
+  <div class="row c-3-2">
+    <div>
+      <table>
+        <tr><th style="width:34mm;">When you are ready for…</th><th>Look up</th></tr>
+        <tr><td>A knob value on one step only (that Elektron sparkle)</td><td><b>Parameter locks</b>: <span class="combo"><kbd>SEQ</kbd><span class="plus">+</span>step<span class="plus">+</span><kbd class="knob">PRESETS</kbd></span></td></tr>
+        <tr><td>Human micro&#8209;timing, step by step</td><td><b>Nudge</b> (<span class="combo"><kbd>SEQ</kbd><span class="plus">+</span>step<span class="plus">+</span><kbd class="knob">KNOB 4</kbd></span>) and recording with <b>QUANT off</b></td></tr>
+        <tr><td>Fills that actually change the pattern</td><td><b>Fill conditions</b>: <span class="combo"><kbd>SEQ</kbd><span class="plus">+</span>step<span class="plus">+</span><kbd>OCT+</kbd></span>, then Lesson&nbsp;9's fill keys</td></tr>
+        <tr><td>Editing melodies note by note</td><td>The <b>NOTES piano roll</b>: tap <kbd>SEQ</kbd> on a synth track (tap again if PATTERN shows first)</td></tr>
+        <tr><td>A whole effect on one track (phaser, crush, fuzz…)</td><td><span class="v">INSERT</span>: FX pages → INSERT</td></tr>
+        <tr><td>Real DX7 sounds, thousands of them</td><td>The <span class="v">FM6</span> engine + the editor's FM6 panel (drop a .syx cartridge on it)</td></tr>
+        <tr><td>Your own sounds from recordings</td><td><b>Samples</b>: four slots of ~7.4&nbsp;s each, chopped or pitched across the keys, in the editor</td></tr>
+        <tr><td>Your own drum kits</td><td>The editor's <b>Drum kit</b> (your WAVs on 16 pads) and <b>Drum synth</b> (design synthesised kits from scratch)</td></tr>
+        <tr><td>A real keyboard, or syncing other gear</td><td><span class="v">MIDI</span>: the jack and USB, per&#8209;track channels, clock in and out, MIDI learn</td></tr>
+        <tr><td>Performing from a tablet, scenes, setlists</td><td>The editor's <span class="v">LIVE</span> page</td></tr>
+        <tr><td>Your own screen colours</td><td>The editor's <b>Theme</b> page</td></tr>
+      </table>
+    </div>
+    <div>
+      <figure class="shot" style="margin-top:1mm;">
+        <span class="frame"><img src="{{IMG:phys-page.png}}" alt="The PHYS engine edit page"></span>
+        <figcaption><b>A taste of the deep end:</b> the PHYS engine (physical models: plucked strings, bars, bells, drum heads) editing a koto. Twelve engines ship in SLOOP; every sound you have used is built from one of them, and the EDIT pages open them all up.</figcaption>
+      </figure>
+      <div class="aside"><div class="label">A path that suits this book's music</div>
+      <p>If you only take one road: <b>samples</b>. Record ten seconds of your world (a kettle, rain on the roof, the kids' piano), chop it in the editor, and play it back pitched across the keys through the GRAIN engine. Instant, deeply personal ambience.</p></div>
+      <div class="aside"><div class="label">Rehearse in the browser</div>
+      <p>An unofficial, free <a href="https://fm1-demo.pingywon.workers.dev/sloop/">interactive SLOOP tutorial</a> puts a clickable FM&#8209;1 lookalike on screen with seven guided lessons, drums to chords to a full arrangement. It simulates an older SLOOP (2.4) with its own sounds, so a few combinations and the audio differ from 2.8.4, but as a place to rehearse the tap&#8209;and&#8209;hold ideas away from the device it is a delight.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ R1 p31 : EVERYDAY CONTROLS ============================ -->
+<section class="page refpage" id="r1" data-part="Reference · print me">
+  <div class="refhead">
+    <h1 style="margin:0;">Everyday controls</h1>
+    <span class="kicker" style="margin:0">SLOOP 2.8.4 · keep beside the FM&#8209;1</span>
+  </div>
+  <div class="row c-1-1" style="">
+    <div>
+      <h3 style="margin-top:0;">Getting around</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd class="knob">ALGORITHM</kbd></td><td>select track 1–4 (waits inside a held layer, during a free take, on SONG and in the menu)</td></tr>
+        <tr><td><kbd class="knob">PRESETS</kbd></td><td>the track's sound · drums: the kit</td></tr>
+        <tr><td><kbd class="knob">SELECT</kbd></td><td>tempo on TRACKS and in layers · else: next/previous page</td></tr>
+        <tr><td>tap <kbd>HOME</kbd></td><td>TRACKS screen · again there: visualiser</td></tr>
+        <tr><td>hold <kbd>HOME</kbd></td><td>the settings menu (hold again to leave)</td></tr>
+        <tr><td>tap a button twice</td><td>its next settings page</td></tr>
+      </table>
+      <h3>Playing</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd>OCT−</kbd> / <kbd>OCT+</kbd></td><td>octave down/up · both: centre</td></tr>
+        <tr><td>drums + <kbd>OCT−</kbd>/<kbd>OCT+</kbd> held</td><td>ghost / hard hits</td></tr>
+        <tr><td><kbd>ARP</kbd><span class="plus">+</span>key held</td><td>note repeat (rate on <kbd class="knob">KNOB 1</kbd>)</td></tr>
+        <tr><td><kbd>SEL</kbd><span class="plus">+</span>any key</td><td>set the key of the song</td></tr>
+        <tr><td><kbd>SEL</kbd><span class="plus">+</span><kbd class="knob">K1</kbd>/<kbd class="knob">K2</kbd>/<kbd class="knob">K3</kbd></td><td>CHORD · SCALE · KEYS (OFF/SNAP/WHITE)</td></tr>
+        <tr><td>ARP&nbsp;2 page → HOLD ON</td><td>chords sustain after release (arp off)</td></tr>
+      </table>
+      <h3>Sound shaping</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;">tap <kbd>ENV</kbd></td><td>attack · decay · sustain · release</td></tr>
+        <tr><td>tap <kbd>LFO</kbd></td><td>slow movement; LFO&nbsp;DEST aims it</td></tr>
+        <tr><td><kbd>FX</kbd><span class="plus">+</span><kbd class="knob">KNOB 4</kbd></td><td>this track's filter (left LP · right HP · centre off)</td></tr>
+        <tr><td>tap <kbd>FX</kbd> (FX page)</td><td>drive · chorus · delay · reverb sends</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3 style="margin-top:0;">Recording</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd>REC</kbd> while playing</td><td>record this track now · again: stop recording</td></tr>
+        <tr><td><kbd>REC</kbd> while stopped</td><td>arm; empty loop: free take (close it with <kbd>REC</kbd> on the "1" after your last bar)</td></tr>
+        <tr><td>armed screen dials</td><td>mode · length (1/2/4 bars) · start (note/count&#8209;in) · quant</td></tr>
+        <tr><td><kbd>EDIT</kbd><span class="plus">+</span><kbd>OCT−</kbd> / <kbd>OCT+</kbd></td><td><b>undo</b> / redo (one level)</td></tr>
+        <tr><td>hold <kbd>REC</kbd> ~2&nbsp;s</td><td>clear the selected track (ring fills; release early = cancel)</td></tr>
+        <tr><td><kbd>EDIT</kbd><span class="plus">+</span>key</td><td>erase that sound/note: playing = where the playhead passes · stopped = whole pattern</td></tr>
+        <tr><td>GLO → GLOBAL → CLICK</td><td>metronome OFF / REC / ON (PLAY's light always flashes the beat)</td></tr>
+      </table>
+      <h3>Mix &amp; perform</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd>GLO</kbd><span class="plus">+</span>keys 1–4 / 5–8</td><td>mute / solo tracks 1–4</td></tr>
+        <tr><td><kbd>GLO</kbd><span class="plus">+</span><kbd class="knob">KNOB 1–4</kbd></td><td>track levels</td></tr>
+        <tr><td><kbd>GLO</kbd><span class="plus">+</span>key 9 (hold) / 10</td><td>fill while held / whole next bar</td></tr>
+        <tr><td><kbd>GLO</kbd><span class="plus">+</span>key 16</td><td>tap tempo</td></tr>
+        <tr><td><kbd>FX</kbd><span class="plus">+</span>key held</td><td>punch&#8209;in effect while held (27; never recorded)</td></tr>
+        <tr><td><kbd>FX</kbd><span class="plus">+</span><kbd class="knob">K1</kbd>/<kbd class="knob">K2</kbd>/<kbd class="knob">K3</kbd></td><td>master FILTER · DUST · DUCK</td></tr>
+        <tr><td>hold layer<span class="plus">+</span>tap <kbd>HOME</kbd></td><td>lock the layer open; any other button releases</td></tr>
+      </table>
+      <h3>Saving</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd>SAVE</kbd><span class="plus">+</span>keys 5–8</td><td>save loop into section A–D (used slot: same key again within 3&nbsp;s)</td></tr>
+        <tr><td><kbd>SAVE</kbd><span class="plus">+</span>keys 1–4</td><td>play section A–D on the next bar · several taps: a chain</td></tr>
+        <tr><td><kbd>SAVE</kbd><span class="plus">+</span>key 13 / 14 / 16</td><td>loop↔song · SONG&nbsp;REC · the SONG screen</td></tr>
+        <tr><td>autosave</td><td>automatic when stopped and idle about 2.5 s; stop and wait before switching off</td></tr>
+        <tr><td>web editor → Backup</td><td>the whole FM&#8209;1 in one file (☆ favourites excepted); one backup per finished song</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="note" style="margin-top:2mm; font-size:7.6pt;">GO values (SAVE, LOAD, NEW…): one knob click arms (<i>AGAIN:&nbsp;…</i>), a second within ~1.5&nbsp;s acts. Keys are counted 1 (lowest white, F3) to 16 (highest, G5).</p>
+</section>
+
+<!-- ============================ R2 p32 : DEEPER SHORTCUTS ============================ -->
+<section class="page refpage" id="r2" data-part="Reference · print me">
+  <div class="refhead">
+    <h1 style="margin:0;">Deeper shortcuts</h1>
+    <span class="kicker" style="margin:0">SLOOP 2.8.4 · for when the essentials feel small</span>
+  </div>
+  <div class="row c-1-1" style="">
+    <div>
+      <h3 style="margin-top:0;">The SEQ layer, with a step held</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;">…<span class="plus">+</span><kbd class="knob">KNOB 1</kbd></td><td>drums: which sound · synths: the step's note</td></tr>
+        <tr><td>…<span class="plus">+</span><kbd class="knob">KNOB 2</kbd></td><td>drums: level (ghost→hard) · synths: velocity</td></tr>
+        <tr><td>…<span class="plus">+</span><kbd class="knob">KNOB 3</kbd></td><td>ratchet ×1–×4 (repeats inside the step)</td></tr>
+        <tr><td>…<span class="plus">+</span><kbd class="knob">KNOB 4</kbd></td><td>nudge, −32…+31 (micro&#8209;timing)</td></tr>
+        <tr><td>…<span class="plus">+</span><kbd class="knob">PRESETS</kbd></td><td>parameter lock on that step (<kbd class="knob">ALGORITHM</kbd>: which parameter)</td></tr>
+        <tr><td>…<span class="plus">+</span><kbd>OCT+</kbd></td><td>fill condition: normal → FILL&nbsp;ONLY → NO&nbsp;FILL</td></tr>
+        <tr><td>…<span class="plus">+</span><kbd>OCT−</kbd></td><td>clear the step's nudge, locks and condition</td></tr>
+      </table>
+      <h3>SEQ layer, no step held</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd class="knob">KNOB 2</kbd> DIV</td><td>1/4 … 1/32, triplets, 1/2, 1BAR, 2BAR</td></tr>
+        <tr><td><kbd class="knob">KNOB 3</kbd> SWING</td><td>this track's swing (adds to global)</td></tr>
+        <tr><td><kbd class="knob">KNOB 4</kbd> LENGTH</td><td>1–64 steps (per track: polymeter)</td></tr>
+        <tr><td><kbd>OCT−</kbd>/<kbd>OCT+</kbd></td><td>step pages 1–16 · 17–32 · 33–48 · 49–64</td></tr>
+        <tr><td>black keys (drums)</td><td>pick the sound silently (some keys hold a pair: press again)</td></tr>
+      </table>
+      <h3>Whole&#8209;pattern moves (hold EDIT)</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd class="knob">KNOB 1</kbd> SHIFT</td><td>every step later/earlier (rotate the groove)</td></tr>
+        <tr><td><kbd class="knob">KNOB 2</kbd> LENGTH</td><td>right: ×2 (copied after itself) · left: ½</td></tr>
+        <tr><td><kbd class="knob">KNOB 3</kbd> TRANSPOSE</td><td>every note a semitone up/down (synths)</td></tr>
+        <tr><td>a black key (drums)</td><td>MUTE mode: white keys mute/unmute their sound live</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3 style="margin-top:0;">Chord mode's black keys (CHORD+)</h3>
+      <table class="ref">
+        <tr><td style="width:18mm;"><span class="v">F#</span></td><td>major ↔ minor</td></tr>
+        <tr><td><span class="v">G#</span></td><td>adds the 7th</td></tr>
+        <tr><td><span class="v">A#</span></td><td>sus4</td></tr>
+        <tr><td><span class="v">C#</span></td><td>adds the 9th</td></tr>
+        <tr><td><span class="v">D#</span></td><td>an inversion</td></tr>
+      </table>
+      <h3>Punch&#8209;in effects (hold FX)</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;">white keys 1–16</td><td>loops 1/4·1/8·1/16·1/32 · stutter · reverse · tape stop · half speed · LP sweep · HP sweep · phone · bit crush · alias · gate · echo · wobble</td></tr>
+        <tr><td>black keys</td><td>kill low/mid/high · rewind · octave up · flanger · auto&#8209;pan · <span class="v">FREEZE</span> (A#4) · loop 8T · mono · fade out (F#5)</td></tr>
+        <tr><td><kbd>FX</kbd><span class="plus">+</span><kbd>OCT−</kbd>/<kbd>OCT+</kbd> held</td><td>reverb throw / echo throw</td></tr>
+        <tr><td><kbd>FX</kbd> held<span class="plus">+</span><kbd class="knob">SELECT</kbd></td><td>punch&#8209;in fade, 0–15</td></tr>
+      </table>
+      <h3>Power&#8209;on and special</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;"><kbd>OCT−</kbd> held at power&#8209;on</td><td>USB rescue (reinstall from the browser)</td></tr>
+        <tr><td><kbd>OCT−</kbd><span class="plus">+</span><kbd>OCT+</kbd> at power&#8209;on</td><td>hardware calibration</td></tr>
+        <tr><td>hold <kbd>HOME</kbd></td><td>menu: screen colours, key lights, speaker low&#8209;cut, USB audio level, filter resonance, 2nd core</td></tr>
+      </table>
+      <h3>Where is…?</h3>
+      <table class="ref">
+        <tr><td style="width:34mm;">tempo</td><td><kbd class="knob">SELECT</kbd> on TRACKS · <kbd>GLO</kbd>+key&nbsp;16 tap</td></tr>
+        <tr><td>global swing</td><td>TRACKS <kbd class="knob">KNOB 1</kbd></td></tr>
+        <tr><td>track level / pan</td><td>TRACKS <kbd class="knob">KNOB 2</kbd> / <kbd class="knob">KNOB 4</kbd></td></tr>
+        <tr><td>drum level · reverb</td><td>DRUMS kit page <kbd class="knob">K2</kbd>/<kbd class="knob">K3</kbd></td></tr>
+        <tr><td>delay time · reverb size</td><td>FX pages → DLY · REV/CHO</td></tr>
+        <tr><td>texture bed</td><td>GLO → TEXTURE</td></tr>
+        <tr><td>firmware version</td><td>hold <kbd>HOME</kbd> → SYSTEM → ABOUT</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ GLOSSARY p33 ============================ -->
+<section class="page" id="gloss" data-part="Reference">
+  <div class="kicker"><span>Glossary</span></div>
+  <h1>Plain&#8209;words glossary</h1>
+  <p class="lead">Every musical and synthesis term this book used, each in one breath.</p>
+  <div class="row c-1-1" style="">
+    <div>
+      <dl class="gloss">
+        <dt>Bar · beat · BPM</dt><dd>Four beats make a bar in this book's music; BPM is beats per minute, the tempo.</dd>
+        <dt>Chord · key · scale</dt><dd>A chord is a few notes sounding together; the key is the home note music gravitates to; the scale is the family of notes that belong with it.</dd>
+        <dt>Cutoff</dt><dd>The point where a filter stops letting brightness through.</dd>
+        <dt>Delay</dt><dd>A repeating echo, in time with the tempo.</dd>
+        <dt>Division (DIV)</dt><dd>How much musical time one sequencer step lasts, from 1/32 of a bar to two whole bars.</dd>
+        <dt>Engine · preset</dt><dd>An engine is a way of making sound (SLOOP has twelve); a preset is a finished sound built on one.</dd>
+        <dt>Envelope (ATK/DEC/SUS/REL)</dt><dd>The shape of one note's loudness: fade in, settle, held level, fade out.</dd>
+        <dt>Filter (low&#8209;pass / high&#8209;pass)</dt><dd>A tone control: low&#8209;pass darkens by removing highs; high&#8209;pass thins by removing lows.</dd>
+        <dt>Free take</dt><dd>SLOOP's "play first" recording: perform freely, press REC on the "1" after your last bar, and the loop forms around what you played.</dd>
+        <dt>Ghost note</dt><dd>A deliberately quiet hit that gives a groove its texture.</dd>
+        <dt>LFO</dt><dd>A slow, invisible hand turning a control round and round: movement you do not have to play.</dd>
+      </dl>
+    </div>
+    <div>
+      <dl class="gloss">
+        <dt>Modulation</dt><dd>Anything automatically moving a control, such as an LFO moving a filter.</dd>
+        <dt>Mono · poly · voice</dt><dd>A voice is one note sounding; mono sounds play one voice at a time, poly several.</dd>
+        <dt>Overdub</dt><dd>Recording another pass on top of what is already in the loop.</dd>
+        <dt>Punch&#8209;in effect</dt><dd>A momentary effect on the whole mix that lasts exactly as long as the key is held and is never recorded.</dd>
+        <dt>Quantise (QUANT)</dt><dd>Nudging recorded notes onto the timing grid; off, your human timing is kept.</dd>
+        <dt>Ratchet</dt><dd>A hit repeating two, three or four times inside its own step.</dd>
+        <dt>Reverb · send</dt><dd>Reverb is the sound of a space; a send is how much of a track you pour into a shared effect.</dd>
+        <dt>Section</dt><dd>A saved snapshot of the whole loop (all four tracks and its settings); SLOOP holds four, A to D, and a song is sections in order.</dd>
+        <dt>Sidechain (DUCK)</dt><dd>The kick momentarily pushing everything else down, giving electronic music its pumping breath.</dd>
+        <dt>Step sequencer</dt><dd>A grid of on/off cells that plays a pattern; what you record live and what you place by hand are the same pattern.</dd>
+        <dt>Swing</dt><dd>Delaying every second step a little, so straight time starts to saunter.</dd>
+        <dt>Texture</dt><dd>SLOOP's generated bed of rain, wind, vinyl or tape under the whole mix.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TROUBLESHOOTING + LINKS p34 ============================ -->
+<section class="page" id="links" data-part="Reference">
+  <div class="kicker"><span>Troubleshooting &amp; links</span></div>
+  <h1>When something seems wrong</h1>
+  <table>
+    <tr><th style="width:58mm;">Symptom</th><th>Cure</th></tr>
+    <tr><td>The installer or editor cannot find the FM&#8209;1</td><td>Chrome or Edge, a <b>data</b> cable, no hub, allow MIDI; close every other app or tab using MIDI, then reload</td></tr>
+    <tr><td>The black keys are silent on a synth track</td><td>Chord or scale mode is on (by design): set CHORD OFF and KEYS OFF on the <kbd>SEL</kbd> hold</td></tr>
+    <tr><td>Recorded notes moved from where I played them</td><td>Quantise at work: record with QUANT off (armed screen, <kbd class="knob">KNOB 4</kbd>) to keep your timing</td></tr>
+    <tr><td>Notes fade out when many sound at once</td><td>The processor is at its limit; SLOOP fades one voice at a time rather than glitching. Fewer held notes, or a lighter sound, helps</td></tr>
+    <tr><td>The USB recording is quiet</td><td>Hold <kbd>HOME</kbd> → AUDIO → USB AUDIO = <span class="v">FULL</span>, or turn MASTER up</td></tr>
+    <tr><td>The USB audio input does not appear</td><td>Replug the FM&#8209;1; in your recording app, rescan audio devices</td></tr>
+    <tr><td><i>STOP THE SONG FIRST</i> / <i>STOP FIRST</i></td><td>That change waits until playback is stopped; press <kbd>PLAY</kbd> and try again</td></tr>
+    <tr><td><i>EMPTY SECTION: REC</i></td><td>That section has nothing saved in it yet: <kbd>SAVE</kbd><span class="plus">+</span>keys 5–8 first</td></tr>
+    <tr><td>Something genuinely broken</td><td>It is a beta: the author wants to know. Report what you did, what you expected, what happened, and your version (hold <kbd>HOME</kbd> → SYSTEM → ABOUT) on the project's issues page below</td></tr>
+  </table>
+
+  <h2>The links that matter</h2>
+  <table>
+    <tr><td style="width:44mm;"><b>Install / update SLOOP</b></td><td><a href="https://isod89.github.io/sloop-fm1/">isod89.github.io/sloop&#8209;fm1</a></td></tr>
+    <tr><td><b>The web editor</b></td><td><a href="https://isod89.github.io/sloop-fm1/webapp/editor/">isod89.github.io/sloop&#8209;fm1/webapp/editor</a></td></tr>
+    <tr><td><b>The complete official guide</b></td><td><a href="https://github.com/isod89/sloop-fm1/blob/v2.8.4/GUIDE.md">github.com/isod89/sloop&#8209;fm1 → GUIDE.md at the v2.8.4 tag</a>, the exact edition this book matches (every button, every page; its final section is a one&#8209;page cheat sheet)</td></tr>
+    <tr><td><b>The short manual</b></td><td><a href="https://github.com/isod89/sloop-fm1/blob/v2.8.4/SLOOP.md">github.com/isod89/sloop&#8209;fm1 → SLOOP.md at the v2.8.4 tag</a></td></tr>
+    <tr><td><b>Releases &amp; what's new</b></td><td><a href="https://github.com/isod89/sloop-fm1/releases">github.com/isod89/sloop&#8209;fm1/releases</a>, for versions newer than this book (and their current documentation)</td></tr>
+    <tr><td><b>Report a bug</b></td><td><a href="https://github.com/isod89/sloop-fm1/issues">github.com/isod89/sloop&#8209;fm1/issues</a></td></tr>
+    <tr><td><b>Return to official firmware</b></td><td>M&#8209;UPGRADE from <a href="https://www.m-vave.com">m&#8209;vave.com</a> (Downloads → PC Software), official FM&#8209;1 V16 file; fallback: <a href="https://isod89.github.io/clipper-fm1/webapp/installer/">the Clipper installer's</a> "Return to the official firmware"</td></tr>
+    <tr><td><b>Practise in the browser</b></td><td>An unofficial <a href="https://fm1-demo.pingywon.workers.dev/sloop/">interactive SLOOP tutorial</a>: a clickable FM&#8209;1 lookalike with seven guided lessons (simulates SLOOP&nbsp;2.4, so details differ from 2.8.4)</td></tr>
+    <tr><td><b>Fellow travellers</b></td><td>The long&#8209;running FM&#8209;1 thread on <a href="https://www.elektronauts.com/t/m-vave-fm-1/252170">Elektronauts</a>, where firmware news lands daily</td></tr>
+  </table>
+
+  <hr class="sp">
+  <p class="note">SLOOP is by <b>isod89</b>, built on <b>Felucca</b> by Leo Kuroshita (Hügelton Instruments), free software under GPL&#8209;3.0; the screen images in this handbook are the SLOOP project's own, used under that licence with gratitude. M&#8209;VAVE and FM&#8209;1 are trademarks of their owners; neither SLOOP nor this handbook is affiliated with them. <i>SLOOP, Gently</i> was written against SLOOP 2.8.4 and its official documentation in November 2026; firmware moves quickly, so when this book and a newer SLOOP disagree, trust the release notes.</p>
+</section>
+

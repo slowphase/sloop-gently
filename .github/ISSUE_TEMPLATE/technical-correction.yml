@@ -1,0 +1,49 @@
+name: Technical correction
+description: Something in the book doesn't match what SLOOP or the FM-1 actually does.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping! A rough description is perfectly fine. You don't need to know the right answer, only that something didn't work as the book said.
+  - type: input
+    id: where
+    attributes:
+      label: Where in the book?
+      description: Lesson, page or screen number, and which edition (A4 or iPad mini).
+      placeholder: "e.g. Lesson 6, A4 page 24"
+    validations:
+      required: true
+  - type: textarea
+    id: book
+    attributes:
+      label: What the book says
+      placeholder: "e.g. Hold OCT- while playing for a ghost note"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      placeholder: "e.g. Nothing changed, the hit was the same volume"
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: SLOOP version on your FM-1
+      description: Leave blank if unsure.
+      placeholder: "e.g. 2.8.4"
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Did you try this on a real FM-1?
+      options:
+        - "Yes, on my FM-1"
+        - "No, I spotted it while reading"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Photos of the screen are very welcome.
