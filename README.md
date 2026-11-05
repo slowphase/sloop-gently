@@ -1,6 +1,11 @@
-# SLOOP, Gently
+<p align="center">
+  <img src="previews/hero.jpg" alt="SLOOP, Gently. Atmospheres first, drums later." width="100%">
+</p>
 
-**Atmospheres first, drums later.**
+<p align="center">
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/licence-CC%20BY--SA%204.0-d4ff3a?style=flat-square&labelColor=19191c" alt="Licence: CC BY-SA 4.0"></a>
+  <a href="https://github.com/suprsomething/sloop-gently/releases"><img src="https://img.shields.io/github/downloads/suprsomething/sloop-gently/total?style=flat-square&label=downloads&color=d4ff3a&labelColor=19191c" alt="Total downloads"></a>
+</p>
 
 *A free, illustrated beginner's handbook for SLOOP on the M-VAVE FM-1.*
 
