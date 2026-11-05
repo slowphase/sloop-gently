@@ -84,7 +84,7 @@ Please install and update SLOOP using the official installer and release notes, 
 
 The handbook has its own version number, separate from the firmware it describes. "v0.9 Preview" is the version of this book; "SLOOP 2.8.4" is the firmware it was written for.
 
-| | |
+| | Status |
 | --- | --- |
 | Handbook | v0.9 Preview |
 | Documented firmware | SLOOP 2.8.4 |
