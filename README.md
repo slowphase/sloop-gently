@@ -4,7 +4,6 @@
 
 <p align="center">
   <a href="LICENSE.md"><img src="https://img.shields.io/badge/licence-CC%20BY--SA%204.0-d4ff3a?style=flat-square&labelColor=19191c" alt="Licence: CC BY-SA 4.0"></a>
-  <a href="https://github.com/slowphase/sloop-gently/releases"><img src="https://img.shields.io/github/downloads/slowphase/sloop-gently/total?style=flat-square&label=downloads&color=d4ff3a&labelColor=19191c" alt="Total downloads"></a>
 </p>
 
 *A free, illustrated beginner's handbook for [SLOOP](https://github.com/isod89/sloop-fm1) on the [M-VAVE FM-1](https://www.cuvave.com/product?id=fm-1).*
